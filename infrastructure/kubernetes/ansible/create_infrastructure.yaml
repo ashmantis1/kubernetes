@@ -1,0 +1,42 @@
+- name: Deploy infrastructure
+  hosts: localhost
+  connection: local
+  
+  tasks:
+  - name: Template cloudinit
+    ansible.builtin.template:
+      src: ./templates/cloudinit.yaml.jinja2
+      dest: ../terraform/cloudinit/user-data.yaml
+    
+  - name: Deploy nodes on proxmox
+    community.general.terraform: 
+      project_path: ../terraform
+      state: present
+      workspace: ashman-hl-workspace
+      variables:
+        dns_zone: "{{dns_zone}}"
+        dns_key_name: "{{dns_key_name}}"
+        dns_key_secret: "{{dns_key_secret}}"
+        dns_server: "{{dns_server}}"
+        proxmox_host: "{{proxmox_host}}"
+        proxmox_user: "{{proxmox_user}}"
+        proxmox_password: "{{proxmox_password}}"
+        cluster_name: "{{cluster_name}}"
+        master_count: "{{master_count}}"
+        worker_count: "{{worker_count}}"
+        master_cpu: "{{master_cpu}}"
+        master_memory: "{{master_memory}}"
+        worker_cpu: "{{worker_cpu}}"
+        worker_memory: "{{worker_memory}}"
+    register: tf_out 
+  - name: Add masters to inventory 
+    ansible.builtin.add_host:
+      name: "{{item}}"
+      groups: masters
+    loop: "{{tf_out.outputs.master_ips.value}}"
+  - name: Add workers to inventory
+    ansible.builtin.add_host:
+      name: "{{item}}"
+      groups: workers
+    loop: "{{tf_out.outputs.worker_ips.value}}"
+  

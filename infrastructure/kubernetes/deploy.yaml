@@ -1,0 +1,5 @@
+# Ansible local host runner
+- name: Run Terraform
+  ansible.builtin.import_playbook: ./ansible/create_infrastructure.yaml
+- name: Configure nodes
+  ansible.builtin.import_playbook: ./ansible/configure_nodes.yaml

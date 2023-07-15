@@ -32,3 +32,8 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+
+#Ignore application specific files
+user-data.yaml
+infrastructure/kubernetes/terraform/cloudinit/user-data.yaml
