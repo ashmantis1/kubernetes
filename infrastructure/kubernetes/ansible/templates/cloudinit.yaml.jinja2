@@ -4,7 +4,6 @@ packages:
   - qemu-guest-agent
 
 timezone: Australia/Sydney
-hostname: k8s-node
 users:
   - name: {{ ansible_user }}
     passwd: {{ node_password_hash }}

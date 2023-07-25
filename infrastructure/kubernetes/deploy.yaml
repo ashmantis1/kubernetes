@@ -1,5 +1,19 @@
 # Ansible local host runner
 - name: Run Terraform
-  ansible.builtin.import_playbook: ./ansible/create_infrastructure.yaml
-- name: Configure nodes
-  ansible.builtin.import_playbook: ./ansible/configure_nodes.yaml
+  ansible.builtin.import_playbook: ./ansible/playbooks/create_infrastructure.yaml
+  tags: configure,k8s, masters, workers
+- name: Configure masters
+  ansible.builtin.import_playbook: ./ansible/playbooks/configure_masters.yaml
+  tags: configure
+- name: Configure workers
+  ansible.builtin.import_playbook: ./ansible/playbooks/configure_workers.yaml
+  tags: configure
+- name: Deploy k8s bootstrap 
+  ansible.builtin.import_playbook: ./ansible/playbooks/deploy_bootstrap.yaml
+  tags: k8s
+- name: Deploy k8s control plane
+  ansible.builtin.import_playbook: ./ansible/playbooks/deploy_masters.yaml
+  tags: k8s,masters
+- name: Deploy k8s workers
+  ansible.builtin.import_playbook: ./ansible/playbooks/deploy_workers.yaml
+  tags: k8s,workers

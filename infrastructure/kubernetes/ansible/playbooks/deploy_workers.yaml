@@ -1,0 +1,7 @@
+- name: Boostrap node for k8s cluster 
+  hosts: workers
+  become: true
+  tasks:
+
+    - name: Join cluster using generated command
+      ansible.builtin.shell: "{{ hostvars[groups['bootstrap'][0]]['worker_join_command'] }}"

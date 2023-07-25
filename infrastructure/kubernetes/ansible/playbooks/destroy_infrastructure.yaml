@@ -3,15 +3,10 @@
   connection: local
   
   tasks:
-  - name: Template cloudinit
-    ansible.builtin.template:
-      src: ./templates/cloudinit.yaml.jinja2
-      dest: ../terraform/cloudinit/user-data.yaml
-    
-  - name: Deploy nodes on proxmox
+  - name: Destroy nodes on proxmox
     community.general.terraform: 
-      project_path: ../terraform
-      state: present
+      project_path: ../../terraform
+      state: absent
       workspace: ashman-hl-workspace
       variables:
         dns_zone: "{{dns_zone}}"
@@ -28,15 +23,3 @@
         master_memory: "{{master_memory}}"
         worker_cpu: "{{worker_cpu}}"
         worker_memory: "{{worker_memory}}"
-    register: tf_out 
-  - name: Add masters to inventory 
-    ansible.builtin.add_host:
-      name: "{{item}}"
-      groups: masters
-    loop: "{{tf_out.outputs.master_ips.value}}"
-  - name: Add workers to inventory
-    ansible.builtin.add_host:
-      name: "{{item}}"
-      groups: workers
-    loop: "{{tf_out.outputs.worker_ips.value}}"
-  

@@ -10,7 +10,6 @@ terraform {
 
 }
 
-
 module "nodes" {
     source = "./modules/nodes"
     proxmox_host = var.proxmox_host

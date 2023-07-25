@@ -1,0 +1,25 @@
+---
+
+- name: Configure masters
+  hosts: masters
+  strategy: free
+  become: true
+  roles: 
+    - ../roles/node_setup
+  tasks:
+    - name: Set hostname to var
+      ansible.builtin.command: hostname -I
+      register: node_ip
+    - name: get index of ip relative to masters array and add one to set it to master value
+      ansible.builtin.set_fact:
+        index: "{{ (lookup('ansible.utils.index_of', data=groups['masters'], test='search', value=node_ip.stdout|trim) | int) +1 }}"
+    - name: Set hostname
+      ansible.builtin.hostname: 
+        name: 'k8s-master-{{ "%02d" | format(index|int) }}'
+
+     
+
+
+
+    
+      

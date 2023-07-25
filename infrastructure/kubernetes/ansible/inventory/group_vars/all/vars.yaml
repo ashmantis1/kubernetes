@@ -14,7 +14,7 @@ ssh_pub_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC84bHzptCGQ7rY/6DiNnnvIUDUAJR
 node_password_hash: "{{vault_node_password_hash}}"
 
 master_count: 3
-worker_count: 2
+worker_count: 3
 
 master_cpu: 4
 master_memory: 4096
@@ -24,6 +24,13 @@ worker_memory: 8192
 
 #k8s details
 cluster_name: "k8s"
+api_loadbalancer_ip: "10.10.10.200" #kube-vip must be in correct subnet 
+api_loadbalancer_interface: eth0  #kube-vip
 
 # User for ansible to use on the nodes
 ansible_user: cloud-user
+
+#Software versions
+containerd-version: 1.7.2
+
+#
