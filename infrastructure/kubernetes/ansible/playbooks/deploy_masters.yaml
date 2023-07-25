@@ -1,12 +1,31 @@
-- name: Boostrap node for k8s cluster 
-  hosts: masters
+- name: Boostrap node for k8s cluster 1
+  hosts: masters[1]
   become: true
   tasks:
 
     - name: Join cluster using generated command masters
       ansible.builtin.shell: "{{ hostvars[groups['bootstrap'][0]]['control_plane_join_command'] }}"
       when: "'bootstrap' not in group_names"
+    
+    - name: Rune kube-vip configuration
+      include_role:
+        name: ../roles/kube_vip
+      vars:
+        interface: "{{api_loadbalancer_interface}}"
+        vip: "{{api_loadbalancer_ip}}"
+      when: "'bootstrap' not in group_names"
+    - name: Sleep
+      ansible.builtin.wait_for:
+        timeout: 25
+- name: Boostrap node for k8s cluster 2
+  hosts: masters[2]
+  become: true
+  tasks:
 
+    - name: Join cluster using generated command masters
+      ansible.builtin.shell: "{{ hostvars[groups['bootstrap'][0]]['control_plane_join_command'] }}"
+      when: "'bootstrap' not in group_names"
+    
     - name: Rune kube-vip configuration
       include_role:
         name: ../roles/kube_vip

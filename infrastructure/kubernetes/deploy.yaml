@@ -17,3 +17,5 @@
 - name: Deploy k8s workers
   ansible.builtin.import_playbook: ./ansible/playbooks/deploy_workers.yaml
   tags: k8s,workers
+# - name: Destroy cluster
+#   ansible.builtin.import_playbook: ./ansible/playbooks/destroy_cluster.yaml
