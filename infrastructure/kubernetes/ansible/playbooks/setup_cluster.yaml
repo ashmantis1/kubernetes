@@ -1,0 +1,27 @@
+- name: Setup kubernetes cluster
+  hosts: bootstrap 
+  become: true 
+  tasks: 
+    - name: Install python k8s 
+      ansible.builtin.apt:
+        name: python3-kubernetes
+        state: present
+    
+    - name: deploy cilium
+      include_role:
+        name: ../roles/cilium
+    - name: add worker label to nodes
+  
+      k8s: 
+        kubeconfig: "/etc/kubernetes/admin.conf"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Node
+          metadata: 
+            name: "k8s-worker-{{'%02d' | format(ansible_loop.index)}}"
+            labels: 
+              node-role.kubernetes.io/worker: worker
+      loop: "{{groups['workers']}}"
+      loop_control: 
+        extended: true

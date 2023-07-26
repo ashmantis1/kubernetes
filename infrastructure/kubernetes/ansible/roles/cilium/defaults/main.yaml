@@ -1,0 +1,2 @@
+cilium_version: 1.13.4
+kubeconfig_path: "/etc/kubernetes/admin.conf"
