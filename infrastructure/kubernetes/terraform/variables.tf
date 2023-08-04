@@ -43,6 +43,16 @@ variable "cluster_name" {
     type = string 
 }
 
+variable "master_nodes" {
+    description = "List of master nodes"
+    type = list(string)
+}
+
+variable "worker_nodes" {
+    description = "List of worker nodes"
+    type = list(string)
+}
+
 variable "master_count" {
     description = "Number of master nodes"
     type = number 
@@ -71,4 +81,9 @@ variable "worker_cpu" {
 variable "worker_memory" {
     description = "Worker node RAM in MB"
     type = number 
+}
+
+variable "api_ip" {
+    description = "API IP address"
+    type = string 
 }

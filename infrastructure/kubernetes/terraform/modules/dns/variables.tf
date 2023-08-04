@@ -37,3 +37,8 @@ variable "worker_ips" {
     description = "List of worker node IP addresses"
     type = list(string)
 }
+
+variable "api_ip" {
+    description = "API IP address"
+    type = string 
+}

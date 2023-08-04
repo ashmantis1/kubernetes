@@ -15,11 +15,13 @@ module "nodes" {
     proxmox_host = var.proxmox_host
     proxmox_user = var.proxmox_user
     proxmox_password = var.proxmox_password
-
+    // Misc details
     cluster_name = var.cluster_name
     dns_server = var.dns_server
-
+  
     // Node details
+    master_nodes = var.master_nodes
+    worker_nodes = var.worker_nodes
     master_count = var.master_count
     worker_count = var.worker_count
     // master 
@@ -44,4 +46,6 @@ module "dns" {
     //k8s nodes details
     master_ips = module.nodes.master_ips
     worker_ips = module.nodes.worker_ips
+    // API loadbalancer IP
+    api_ip = var.api_ip
 }

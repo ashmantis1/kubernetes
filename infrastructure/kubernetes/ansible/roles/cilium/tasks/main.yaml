@@ -1,3 +1,8 @@
+- name: Template l2 config map 
+  ansible.builtin.template: 
+    src: l2-cm.yaml.jinja2
+    dest: /etc/kubernetes/manifests/l2-cm.yaml
+    mode: 0644
 - name: Install Helm 
   ansible.builtin.shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 - name: Add cilium helm chart 
@@ -5,10 +10,23 @@
     name: cilium
     repo_url: "https://helm.cilium.io"
     kubeconfig: "{{kubeconfig_path}}"
+
 - name: Install cilium 
   kubernetes.core.helm: 
     name: cilium 
     chart_ref: cilium/cilium
     namespace: kube-system
+    #state: absent
     chart_version: "{{cilium_version}}"
     kubeconfig: "{{kubeconfig_path}}"
+    set_values: 
+      # - value: bgp.enabled=true
+      # - value: bgp.announce.loadbalancerIP=true
+      - value: l2announcements.enabled=true
+      - value: kubeProxyReplacement=strict
+      - value: k8sServiceHost="{{api_loadbalancer_ip}}"
+      - value: k8sServicePort=6443
+      - value: ingressController.enabled=true
+      - value: ingressController.loadbalancerMode=shared
+# - name: apply config map 
+#   ansible.builtin.shell: kubectl apply -f /etc/kubernetes/manifests/l2-cm.yaml --kubeconfig="{{kubeconfig_path}}"

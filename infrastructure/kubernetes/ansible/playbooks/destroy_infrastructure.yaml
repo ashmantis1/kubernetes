@@ -8,6 +8,7 @@
       project_path: ../../terraform
       state: absent
       workspace: ashman-hl-workspace
+      complex_vars: true
       variables:
         dns_zone: "{{dns_zone}}"
         dns_key_name: "{{dns_key_name}}"
@@ -17,6 +18,9 @@
         proxmox_user: "{{proxmox_user}}"
         proxmox_password: "{{proxmox_password}}"
         cluster_name: "{{cluster_name}}"
+        api_ip: "{{api_loadbalancer_ip}}"
+        master_nodes: "{{master_nodes}}"
+        worker_nodes: "{{worker_nodes}}"
         master_count: "{{master_count}}"
         worker_count: "{{worker_count}}"
         master_cpu: "{{master_cpu}}"

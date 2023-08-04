@@ -8,8 +8,12 @@
       vars:
         interface: "{{api_loadbalancer_interface}}"
         vip: "{{api_loadbalancer_ip}}"
+    - name: Template bgp config map to /etc/kubernetes/manifests folder
+      ansible.builtin.template:
+        src: ../templates/cilium-bgp-cm.yaml.jinja2
+        dest: /etc/kubernetes/manifests/cilium-bgp-cm.yaml
     - name: Initialise cluster using kubeadm
-      ansible.builtin.shell: kubeadm init --control-plane-endpoint "{{api_loadbalancer_ip}}:6443" --upload-certs
+      ansible.builtin.shell: kubeadm init --control-plane-endpoint "{{api_loadbalancer_ip}}:6443" --upload-certs --kubernetes-version "{{kubeversion}}" --skip-phases=addon/kube-proxy
       register: kubeadm_init
     - name: Extract certificate key
       set_fact:
@@ -27,6 +31,7 @@
     - name: print join command
       debug:
         var: control_plane_join_command
+
     - name: Sleep for 60 seconds
       ansible.builtin.wait_for:
         timeout: 60

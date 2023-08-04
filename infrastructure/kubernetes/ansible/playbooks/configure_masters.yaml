@@ -4,9 +4,13 @@
   hosts: masters
   strategy: free
   become: true
-  roles: 
-    - ../roles/node_setup
+
   tasks:
+    - name: run configuration
+      include_role:
+        name: ../roles/node_setup
+      vars:
+        kubernetes_version: "{{kubeversion}}"
     - name: Set hostname to var
       ansible.builtin.command: hostname -I
       register: node_ip

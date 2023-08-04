@@ -27,6 +27,16 @@ variable "dns_server" {
     type = string 
 }
 
+variable "master_nodes" {
+    description = "List of master nodes"
+    type = list(string)
+}
+
+variable "worker_nodes" {
+    description = "List of worker nodes"
+    type = list(string)
+}
+
 variable "master_count" {
     description = "Number of master nodes"
     type = number 

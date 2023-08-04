@@ -1,4 +1,4 @@
-- name: Boostrap node for k8s cluster 
+- name: Join workers to cluster 
   hosts: workers
   become: true
   tasks:

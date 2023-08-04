@@ -1,7 +1,7 @@
 # Ansible local host runner
 - name: Run Terraform
   ansible.builtin.import_playbook: ./ansible/playbooks/create_infrastructure.yaml
-  tags: configure,k8s, masters, workers, setup
+  tags: always
 - name: Configure masters
   ansible.builtin.import_playbook: ./ansible/playbooks/configure_masters.yaml
   tags: configure
@@ -20,5 +20,6 @@
 - name: Setup cluster (cilium, etc.)
   ansible.builtin.import_playbook: ./ansible/playbooks/setup_cluster.yaml
   tags: setup
-# - name: Destroy cluster
-#   ansible.builtin.import_playbook: ./ansible/playbooks/destroy_cluster.yaml
+- name: Destroy cluster
+  ansible.builtin.import_playbook: ./ansible/playbooks/destroy_cluster.yaml
+  tags: never,destroy_cluster

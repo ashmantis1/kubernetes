@@ -24,3 +24,12 @@ resource "dns_a_record_set" "kube-workers" {
   ]
   ttl = 3600
 }
+
+resource "dns_a_record_set" "api-endpoint" {
+  zone = var.dns_zone
+  name = "api.${var.cluster_name}"
+  addresses = [
+    var.api_ip
+  ]
+  ttl = 3600
+}

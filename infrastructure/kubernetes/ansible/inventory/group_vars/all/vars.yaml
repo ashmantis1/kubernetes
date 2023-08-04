@@ -13,14 +13,19 @@ dns_server: "192.168.1.110"
 ssh_pub_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC84bHzptCGQ7rY/6DiNnnvIUDUAJRaKC/k4zw8SZzKTquaXGLzsUNyMBsbcCTnTtbAPn2hqJdU5/RNOzZ2xmKBr9t2Iv/KqJGbl67asRjcQpLFRQ0aM9ymwdoCNeTzwuF9ArPoZIm1K7DVDHB0dOnDWu1GlJAAL105fsgnLyXEFvBbuDpGyjGYq1c7C1IoVrKbv4tPQP8WMoGGR9PLHBfZVcfZWBGPeAI4iHY3foh5s9KqYlK/rxEJei5sAEVPH6T7EDmty4s6P/9EDKYv9WtZX8wcADCq+o8BqPClX9Xg+CHb5i4mp7XXpTnrgrEFjdaFotoE+WZJbXc5Un4qdhDJ1SHv4rxF/BysVtdC3yJKjK/+f/D4go1ba7joeP405vzfsvj4wDfqOApHWsCVOeRyeDD7qk2Rf0htcWvz1Q24U0j//gZhSDZB4ReUZUwv/NX+CFQKfsz0/ZmfnFuJRk/O3qLNarbGEQqPD+EyJz0RpGa1pPP9PHEhcBd6SzgWDIU=
 node_password_hash: "{{vault_node_password_hash}}"
 
+#These are the nodes that the vm's will be deployed to, in sequential order, eg. master01 will be deployed to master_nodes[0]. Use proxmox node names
+master_nodes: ["newserver", "node2", "node2"] # List of nodes to deploy the masters to must match master count (max )
+worker_nodes: ["node2", "newserver", "newserver","node2"] # List of nodes to deploy the workers to, length must be equal to worker_count and can have repeat values
+
 master_count: 3 # Must be 3 right now due. Check playbooks/deploy_masters.yaml to fix this 
-worker_count: 3
+worker_count: 4
 
 master_cpu: 4
 master_memory: 4096
 
 worker_cpu: 8
 worker_memory: 8192
+
 
 #k8s details
 cluster_name: "k8s"
@@ -32,5 +37,5 @@ ansible_user: cloud-user
 
 #Software versions
 containerd-version: 1.7.2
-
+kubeversion: 1.26.6
 #

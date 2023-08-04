@@ -40,7 +40,7 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
   description = "Control plane kubernetes node - managed by Terraform"
   tags        = ["terraform", "k8s", "master"]
 
-  node_name = "node2"
+  node_name = "${var.master_nodes[count.index]}"
   vm_id     = 1000 + count.index
 
   agent {
@@ -92,7 +92,7 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
   description = "Worker kubernetes node - managed by Terraform"
   tags        = ["terraform", "k8s", "worker"]
 
-  node_name = "newserver"
+  node_name = "${var.worker_nodes[count.index]}"
   vm_id     = 1000 + count.index+var.master_count+1
 
   agent {
