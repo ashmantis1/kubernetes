@@ -60,13 +60,13 @@ spec:
       - name: external-dns
         image: registry.k8s.io/external-dns/external-dns:v0.13.5
         #container resource limit
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-          requests:
-            memory: "64Mi"
-            cpu: "50m"
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "100m"
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "50m"
         args:
         - --registry=txt
         - --txt-prefix=external-dns-
