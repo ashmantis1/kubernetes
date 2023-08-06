@@ -26,5 +26,5 @@ spec:
     adminUser:
       create: true
       createSecret: true
-      #passwordHash: $y$j9T$AvhUPkp/7ogc3VBlX3YXJ0$.gFi8xowNrq.WFmg4DeydT/xpTPKgiHNeR0/0N0oyrD
+      passwordHash: $y$j9T$AvhUPkp/7ogc3VBlX3YXJ0$.gFi8xowNrq.WFmg4DeydT/xpTPKgiHNeR0/0N0oyrD
       username: admin
