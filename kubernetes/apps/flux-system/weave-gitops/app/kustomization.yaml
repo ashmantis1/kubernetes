@@ -5,4 +5,4 @@ namespace: flux-system
 resources:
   # Pre Flux-Kustomizations
   - ./helmrelease.yaml
-  - ./ingress.yaml
+  #- ./ingress.yaml
