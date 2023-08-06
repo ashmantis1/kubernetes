@@ -1,0 +1,21 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ww-gitops
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: weave-gitops
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ww-gitops
+  interval: 1m0s
+  values:
+    adminUser:
+      create: true
+      passwordHash: $y$j9T$WvMzfJt8vazf5nCjXJfSa0$AsQDLihLFuIFWpDuWBNlblUB9TDT7BiFbFAlYUS7D1B
+      username: admin
