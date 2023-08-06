@@ -12,7 +12,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ww-gitops
+        name: weaveworks
   interval: 1m0s
   values:
     ingress:
