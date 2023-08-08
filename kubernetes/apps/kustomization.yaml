@@ -4,6 +4,4 @@ kind: Kustomization
 #namespace: networking
 resources:
   # Pre Flux-Kustomizations
-  - ./namespace.yaml
-  - ./external-dns/application.yaml
-  #- ./external-dns/ks.yaml
+  - ./networking
