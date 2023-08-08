@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+#namespace: networking
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
-  - ./external-dns/app/deployment.yaml
+  - ./external-dns/app/kustomization.yaml
   #- ./external-dns/ks.yaml
