@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
-  - ./external-dns/ks.yaml
+  - ./external-dns/app/kustomization.yaml
+  #- ./external-dns/ks.yaml
