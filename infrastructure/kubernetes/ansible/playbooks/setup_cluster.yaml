@@ -25,3 +25,9 @@
       loop: "{{groups['workers']}}"
       loop_control: 
         extended: true
+    - name: Copy kubernetes kubeconfig to localhost 
+      ansible.builtin.fetch:
+        src: /etc/kubernetes/admin.conf
+        dest: ~/.kube/admin.conf
+        flat: yes 
+      
