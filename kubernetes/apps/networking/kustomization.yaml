@@ -15,4 +15,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/repoURL 
-        value: git@github.com:ashmandtis1/ashman-homelab-ops.git
+        value: git@github.com:ashmantis1/ashman-homelab-ops.git
