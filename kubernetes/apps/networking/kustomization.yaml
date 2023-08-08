@@ -7,3 +7,8 @@ resources:
   - ./namespace.yaml
   - ./external-dns/application.yaml
   #- ./external-dns/ks.yaml
+patches:
+  - target:
+      version: argoproj.io/v1alpha1
+      kind: Application
+    path: ./git-patch.yaml

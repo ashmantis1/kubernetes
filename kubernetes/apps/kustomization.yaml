@@ -5,8 +5,3 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./networking
-patches:
-  - target:
-      version: argoproj.io/v1alpha1
-      kind: Application
-    path: ./git-patch.yaml
