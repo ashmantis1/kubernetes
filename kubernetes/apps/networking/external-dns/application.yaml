@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
     targetRevision: HEAD
-    path: kubernetes/apps/networking/external-dns
+    path: kubernetes/apps/networking/external-dns/app
   destination:
     server: https://kubernetes.default.svc
     namespace: networking
