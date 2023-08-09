@@ -3,14 +3,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: homelab
+  name: cilium
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-    targetRevision: HEAD
-    path: kubernetes/apps
+    chart: cilium
+    repoURL: https://helm.cilium.io/
+    targetRevision: 1.14.0
+    helm:
+      releaseName: cilium
+      valueFiles: 
+      - ./values.yaml
   destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system

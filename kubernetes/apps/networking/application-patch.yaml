@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/source/repoURL 
-  value: git@github.com:ashmandtis1/ashman-homelab-ops.git

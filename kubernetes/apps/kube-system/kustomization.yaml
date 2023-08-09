@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+#namespace: networking
+resources:
+  # Pre Flux-Kustomizations
+  - ./namespace.yaml
+  - ./cilium
+  #- ./external-dns/ks.yaml
+# patches:
+#   - target:
+#       group: argoproj.io
+#       version: v1alpha1
+#       kind: Application
+#     patch: |-
+#       - op: replace
+#         path: /spec/source/repoURL 
+#         value: git@github.com:ashmantis1/ashman-homelab-ops.git
