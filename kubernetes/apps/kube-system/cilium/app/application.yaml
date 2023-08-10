@@ -22,7 +22,11 @@ spec:
         kubeProxyReplacement: true 
         ingressController:
           enabled: true 
-          loadbalancerMode: dedicated 
+          loadbalancerMode: dedicated
+          service: 
+            type: LoadBalancer
+        nodePort:
+          enabled: false 
       # valueFiles: 
       # - ./values.yaml
   destination:
