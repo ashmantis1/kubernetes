@@ -22,7 +22,7 @@ spec:
         kubeProxyReplacement: true 
         ingressController:
           enabled: true 
-          loadbalancerMode: dedicated
+          loadbalancerMode: shared
           service: 
             type: LoadBalancer
         nodePort:
