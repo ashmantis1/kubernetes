@@ -23,7 +23,7 @@
       # - value: bgp.enabled=true
       # - value: bgp.announce.loadbalancerIP=true
       - value: l2announcements.enabled=true
-      - value: kubeProxyReplacement=strict
+      - value: kubeProxyReplacement=true
       - value: k8sServiceHost="{{api_loadbalancer_ip}}"
       - value: k8sServicePort=6443
       - value: ingressController.enabled=true

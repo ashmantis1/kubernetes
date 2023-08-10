@@ -1,6 +1,0 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-    targetRevision: HEAD

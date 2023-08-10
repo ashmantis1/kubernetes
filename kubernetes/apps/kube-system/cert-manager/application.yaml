@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mickkael/argo-events/JSONschema/api/jsonschema/schema.json
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: jetstack
+    repoURL: https://charts.jetstack.io
+    targetRevision: 1.12.0
+    helm:
+      releaseName: cert-manager
+#      values: |
+
+      # valueFiles: 
+      # - ./values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
+  syncPolicy:
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).

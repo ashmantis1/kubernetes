@@ -6,6 +6,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   - ./cilium
+  - ./cert-manager
   #- ./external-dns/ks.yaml
 # patches:
 #   - target:
