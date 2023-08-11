@@ -5,6 +5,8 @@ kind: Application
 metadata:
   name: cilium
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
@@ -23,6 +25,7 @@ spec:
         ingressController:
           enabled: true 
           loadbalancerMode: dedicated
+          default: true
           service: 
             type: LoadBalancer
         nodePort:
