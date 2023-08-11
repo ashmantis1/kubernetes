@@ -26,7 +26,7 @@
       - value: kubeProxyReplacement=true
       - value: k8sServiceHost="{{api_loadbalancer_ip}}"
       - value: k8sServicePort=6443
-      - value: ingressController.enabled=true
-      - value: ingressController.loadbalancerMode=dedicated
+      # - value: ingressController.enabled=true
+      # - value: ingressController.loadbalancerMode=dedicated
 # - name: apply config map 
 #   ansible.builtin.shell: kubectl apply -f /etc/kubernetes/manifests/l2-cm.yaml --kubeconfig="{{kubeconfig_path}}"
