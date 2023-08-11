@@ -5,7 +5,7 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
-  - ./cilium
+  - ./cilium/application.yaml
   #- ./external-dns/ks.yaml
 # patches:
 #   - target:
