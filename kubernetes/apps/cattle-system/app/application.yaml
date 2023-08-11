@@ -16,8 +16,7 @@ spec:
       values: |
         hostname: rancher.ashman.world
         replicas: 3
-        ingress:
-          provider: cilium 
+        ingressClassName: nginx 
 
   destination:
     server: https://kubernetes.default.svc

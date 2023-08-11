@@ -7,4 +7,4 @@ resources:
   - ./networking
   - ./kube-system
   - ./cert-manager
-  #- ./cattle-system
+  - ./cattle-system
