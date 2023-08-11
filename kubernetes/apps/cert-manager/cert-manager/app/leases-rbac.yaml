@@ -18,10 +18,11 @@ rules:
   - update
   - delete
 --- 
+# Role binding for cert-manager-ca-injector to access leases
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: certman-leases-permissions
+  name: certman-cainjector-leases-permissions
   labels:
     app.kubernetes.io/instance: cert-manager
 subjects:
@@ -33,6 +34,7 @@ roleRef:
   name: certman-leases-role  
   apiGroup: rbac.authorization.k8s.io
 --- 
+# Role binding for cert-manager to access leases
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
