@@ -5,5 +5,5 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
-  - ./app
+  - ./rancher/application.yaml
   #- ./external-dns/ks.yaml

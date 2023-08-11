@@ -19,3 +19,4 @@ helmCharts:
       namespace: "cert-manager"
 resources:
   - ./leases-rbac.yaml
+  - ./cert-manager.crds.yaml
