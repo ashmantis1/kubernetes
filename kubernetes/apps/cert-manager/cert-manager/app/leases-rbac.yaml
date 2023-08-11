@@ -1,9 +1,8 @@
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: certman-leases-role
-  namespace: cert-manager
   labels:
     app.kubernetes.io/instance: cert-manager
 rules:
@@ -20,10 +19,9 @@ rules:
   - delete
 --- 
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: certman-leases-permissions
-  namespace: cert-manager
   labels:
     app.kubernetes.io/instance: cert-manager
 subjects:
