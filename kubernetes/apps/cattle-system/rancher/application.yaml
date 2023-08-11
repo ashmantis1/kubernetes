@@ -9,9 +9,9 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-      targetRevision: HEAD
-      path: kubernetes/apps/cattle-system/rancher/app
+    # - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+    #   targetRevision: HEAD
+    #   path: kubernetes/apps/cattle-system/rancher/app
     - chart: rancher
       repoURL: https://releases.rancher.com/server-charts/stable
       targetRevision: v2.7.5
