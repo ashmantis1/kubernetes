@@ -29,6 +29,6 @@ subjects:
   name: cert-manager-cainjector
   namespace: cert-manager
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: certman-leases-role  
   apiGroup: rbac.authorization.k8s.io
