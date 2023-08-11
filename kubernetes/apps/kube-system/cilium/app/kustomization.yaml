@@ -16,9 +16,9 @@ helmCharts:
       enabled: true
     k8sServiceHost: 10.10.10.200
     k8sServicePort: 6443
-    kubeProxyReplacement: "false" 
+    kubeProxyReplacement: "true" 
     ingressController:
-      enabled: true 
+      enabled: false 
       loadbalancerMode: dedicated
       default: true
       service: 
