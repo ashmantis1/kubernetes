@@ -6,6 +6,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   - ./external-dns/application.yaml
+  - ./ingress-nginx/application.yaml
   #- ./external-dns/ks.yaml
 patches:
   - target:
