@@ -16,7 +16,8 @@ spec:
       values: |
         hostname: rancher.ashman.world
         replicas: 3
-        ingressClassName: nginx 
+        ingress:
+          ingressClassName: nginx 
 
   destination:
     server: https://kubernetes.default.svc
