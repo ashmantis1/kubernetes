@@ -8,10 +8,29 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
-  source:
-    repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-    targetRevision: HEAD
-    path: kubernetes/apps/kube-system/cilium/app
+  sources:
+    - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+      targetRevision: HEAD
+      path: kubernetes/apps/kube-system/cilium/app
+    - chart: cilium
+      repoURL: https://helm.cilium.io/
+      targetRevision: 1.14.0
+      helm:
+        releaseName: cilium
+        values: |
+          l2announcements:
+            # -- Enable L2 announcements
+            enabled: true
+          k8sServiceHost: 10.10.10.200
+          k8sServicePort: 6443
+          kubeProxyReplacement: true 
+          ingressController:
+            enabled: true 
+            loadbalancerMode: dedicated
+            service: 
+              type: LoadBalancer
+          nodePort:
+            enabled: false 
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
