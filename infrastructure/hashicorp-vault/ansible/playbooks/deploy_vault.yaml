@@ -1,0 +1,10 @@
+- name: Boostrap node for k8s cluster 1
+  hosts: masters
+  become: true
+  tasks:
+
+    - name: Rune kube-vip configuration
+      include_role:
+        name: ../roles/vault
+
+    

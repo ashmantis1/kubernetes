@@ -1,0 +1,26 @@
+#Proxmox details
+proxmox_host: "proxmox.ashman.world"
+proxmox_user: "root@pam"
+proxmox_password: "{{vault_proxmox_password}}"
+
+# DNS details
+dns_zone: "ashman.world."
+dns_key_name: "ash."
+dns_key_secret: "{{vault_dns_key_secret}}"
+dns_server: "192.168.1.110"
+
+#Node details
+ssh_pub_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC84bHzptCGQ7rY/6DiNnnvIUDUAJRaKC/k4zw8SZzKTquaXGLzsUNyMBsbcCTnTtbAPn2hqJdU5/RNOzZ2xmKBr9t2Iv/KqJGbl67asRjcQpLFRQ0aM9ymwdoCNeTzwuF9ArPoZIm1K7DVDHB0dOnDWu1GlJAAL105fsgnLyXEFvBbuDpGyjGYq1c7C1IoVrKbv4tPQP8WMoGGR9PLHBfZVcfZWBGPeAI4iHY3foh5s9KqYlK/rxEJei5sAEVPH6T7EDmty4s6P/9EDKYv9WtZX8wcADCq+o8BqPClX9Xg+CHb5i4mp7XXpTnrgrEFjdaFotoE+WZJbXc5Un4qdhDJ1SHv4rxF/BysVtdC3yJKjK/+f/D4go1ba7joeP405vzfsvj4wDfqOApHWsCVOeRyeDD7qk2Rf0htcWvz1Q24U0j//gZhSDZB4ReUZUwv/NX+CFQKfsz0/ZmfnFuJRk/O3qLNarbGEQqPD+EyJz0RpGa1pPP9PHEhcBd6SzgWDIU=
+node_password_hash: "{{vault_node_password_hash}}"
+
+#These are the nodes that the vm's will be deployed to, in sequential order, eg. master01 will be deployed to master_nodes[0]. Use proxmox node names
+master_nodes: ["node2"] # List of nodes to deploy the masters to must match master count (max )
+
+master_count: 1 # Must be 3 right now due. Check playbooks/deploy_masters.yaml to fix this 
+
+master_cpu: 4
+master_memory: 4096
+disk_size: 20 # Disk size for root drive of VM in GB
+# User for ansible to use on the nodes
+ansible_user: cloud-user
+
