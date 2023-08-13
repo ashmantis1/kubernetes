@@ -16,7 +16,8 @@ spec:
       helm:
         releaseName: ingress-nginx
         values: |
-          kind: DaemonSet
+          controller: 
+            kind: DaemonSet
   destination:
     server: https://kubernetes.default.svc
     namespace: networking
