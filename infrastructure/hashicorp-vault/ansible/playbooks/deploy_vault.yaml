@@ -2,8 +2,7 @@
   hosts: masters
   become: true
   tasks:
-
-    - name: Rune kube-vip configuration
+install
       include_role:
         name: ../roles/vault
 

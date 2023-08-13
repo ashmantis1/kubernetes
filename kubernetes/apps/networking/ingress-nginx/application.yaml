@@ -10,9 +10,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-    targetRevision: HEAD
-    path: kubernetes/apps/networking/ingress-nginx/app
+    - chart: ingress-nginx
+      repoURL: https://kubernetes.github.io/ingress-nginx
+      targetRevision: 4.7.1
+      helm:
+        releaseName: ingress-nginx
+        values: |
+          kind: DaemonSet
   destination:
     server: https://kubernetes.default.svc
     namespace: networking
