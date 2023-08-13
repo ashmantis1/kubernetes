@@ -8,12 +8,12 @@ resources:
   - ./external-dns/application.yaml
   - ./ingress-nginx/application.yaml
   #- ./external-dns/ks.yaml
-patches:
-  - target:
-      group: argoproj.io
-      version: v1alpha1
-      kind: Application
-    patch: |-
-      - op: replace
-        path: /spec/source/repoURL 
-        value: git@github.com:ashmantis1/ashman-homelab-ops.git
+# patches:
+#   - target:
+#       group: argoproj.io
+#       version: v1alpha1
+#       kind: Application
+#     patch: |-
+#       - op: replace
+#         path: /spec/source/repoURL 
+#         value: git@github.com:ashmantis1/ashman-homelab-ops.git
