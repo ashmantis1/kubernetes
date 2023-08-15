@@ -7,4 +7,4 @@ resources:
   # Pre Flux-Kustomizations
   - ./external-secrets.yaml
   - ./deployment.yaml
-  - ./deployment-cloudflare.yaml
+  #- ./deployment-cloudflare.yaml
