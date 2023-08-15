@@ -15,6 +15,10 @@
     - name: Initialise cluster using kubeadm
       ansible.builtin.shell: kubeadm init --control-plane-endpoint "{{api_loadbalancer_ip}}:6443" --upload-certs --kubernetes-version "{{kubeversion}}" --skip-phases=addon/kube-proxy
       register: kubeadm_init
+    - name: Sleep for 30 seconds
+      ansible.builtin.wait_for:
+        timeout: 30
+ 
     - name: Extract certificate key
       set_fact:
         certificate_key: "{{ kubeadm_init.stdout | regex_search('--certificate-key (\\S+)') | regex_replace('--certificate-key ', '') }}"
@@ -32,7 +36,7 @@
       debug:
         var: control_plane_join_command
 
-    - name: Sleep for 60 seconds
+    - name: Sleep for 120 seconds
       ansible.builtin.wait_for:
-        timeout: 60
+        timeout: 120
  

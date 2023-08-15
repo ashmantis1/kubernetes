@@ -16,7 +16,7 @@
       when: "'bootstrap' not in group_names"
     - name: Sleep
       ansible.builtin.wait_for:
-        timeout: 60
+        timeout: 100
 - name: Boostrap node for k8s cluster 2
   hosts: masters[2]
   become: true

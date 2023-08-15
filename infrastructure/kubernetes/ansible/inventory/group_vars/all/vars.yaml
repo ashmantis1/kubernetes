@@ -29,13 +29,13 @@ worker_memory: 8192
 
 #k8s details
 cluster_name: "k8s"
-api_loadbalancer_ip: "10.10.10.210" #kube-vip must be in correct subnet 
+api_loadbalancer_ip: "10.10.10.205" #kube-vip must be in correct subnet 
 api_loadbalancer_interface: eth0  #kube-vip
 
 # User for ansible to use on the nodes
 ansible_user: cloud-user
 
 #Software versions
-containerd-version: 1.7.2
+containerd-version: 1.7.3
 kubeversion: 1.26.6
 #
