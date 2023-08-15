@@ -69,7 +69,6 @@ spec:
         args:
         - --domain-filter=ashman.world # (optional) limit to only example.com domains; change to match the zone created above.
         - --provider=cloudflare
-        #- --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
         - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
         - --source=ingress
         env:
@@ -81,5 +80,5 @@ spec:
         - name: CF_API_EMAIL
           valueFrom: 
             secretKeyRef:
-              name: cloudflare-email
+              name: cloudflare-api-key
               key: email
