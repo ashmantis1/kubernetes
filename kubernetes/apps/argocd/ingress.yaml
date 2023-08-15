@@ -4,7 +4,7 @@ metadata:
   name: tls-ingress
   namespace: argocd
   annotations:
-    cert-manager.io/issuer: ca-issuer
+    cert-manager.io/cluster-issuer: ca-issuer
     argocd.argoproj.io/sync-wave: "3"
 
 spec:
