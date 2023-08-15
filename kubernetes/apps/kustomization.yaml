@@ -8,3 +8,4 @@ resources:
   - ./kube-system
   - ./cert-manager
   - ./cattle-system
+  - ./argocd
