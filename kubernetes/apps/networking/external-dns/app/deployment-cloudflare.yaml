@@ -1,0 +1,85 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: external-dns-cloudflare
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - services
+  - endpoints
+  - pods
+  - nodes
+  verbs:
+  - get
+  - watch
+  - list
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: external-dns-cloudflare
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: external-dns-cloudflare-viewer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: external-dns-cloudflare
+subjects:
+- kind: ServiceAccount
+  name: external-dns-cloudflare
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-dns-cloudflare
+spec:
+  selector:
+    matchLabels:
+      app: external-dns-cloudflare
+  template:
+    metadata:
+      labels:
+        app: external-dns-cloudflare
+    spec:
+      serviceAccountName: external-dns-cloudflare
+      containers:
+      - name: external-dns-cloudflare
+        image: registry.k8s.io/external-dns-cloudflare/external-dns-cloudflare:v0.13.5
+        #container resource limit
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+        args:
+        - --domain-filter=ashman.world # (optional) limit to only example.com domains; change to match the zone created above.
+        - --provider=cloudflare
+        - --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
+        - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
+        - --source=ingress
+        env:
+        - name: CF_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: cloudflare-api-key
+              key: api-key
+        - name: CF_API_EMAIL
+          valueFrom: 
+            secretKeyRef:
+              name: cloudflare-email
+              key: email

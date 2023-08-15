@@ -5,4 +5,5 @@ kind: Kustomization
 namespace: networking
 resources:
   # Pre Flux-Kustomizations
+  - ./external-secrets.yaml
   - ./deployment.yaml
