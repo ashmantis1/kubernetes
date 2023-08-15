@@ -12,7 +12,7 @@ provider "proxmox" {
   username = "${var.proxmox_user}"
   password = "${var.proxmox_password}"
   //api_token = "${var.proxmox_api_token_id}=${var.proxmox_api_token}"
-  insecure = false
+  insecure = true
 }
 resource "proxmox_virtual_environment_file" "debian_cloud_image" {
   content_type = "iso"

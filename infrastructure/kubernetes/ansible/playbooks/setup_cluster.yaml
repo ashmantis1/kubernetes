@@ -30,4 +30,6 @@
         src: /etc/kubernetes/admin.conf
         dest: ~/.kube/admin.conf
         flat: yes 
-      
+    - name: inform user to wait for cilium to be deployed
+      ansible.builtin.debug:
+        msg: "The cluster should now be up and running. The kubeconfig file has been copied into ~/.kube/admin.conf. Please wait for cilium to be deployed before the nodes are ready."

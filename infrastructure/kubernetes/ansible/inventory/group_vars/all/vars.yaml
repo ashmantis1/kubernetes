@@ -1,5 +1,5 @@
 #Proxmox details
-proxmox_host: "proxmox.ashman.world"
+proxmox_host: "192.168.1.220:8006"
 proxmox_user: "root@pam"
 proxmox_password: "{{vault_proxmox_password}}"
 
