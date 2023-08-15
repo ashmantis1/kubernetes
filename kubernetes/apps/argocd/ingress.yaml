@@ -4,13 +4,13 @@ metadata:
   name: tls-ingress
   namespace: argocd
   annotations:
-    cert-manager.io/cluster-issuer: ca-issuer
+    cert-manager.io/issuer: ca-issuer
     argocd.argoproj.io/sync-wave: "3"
 
 spec:
   ingressClassName: nginx #cilium
   rules:
-  - host: argocd.ashman.world
+  - host: argo.ashman.world
     http:
       paths:
       - path: /
@@ -22,5 +22,5 @@ spec:
               name: http
   tls:
   - hosts:
-    - argocd.ashman.world
-    secretName: arg-secret
+    - argo.ashman.world
+    secretName: argo-secret
