@@ -12,7 +12,7 @@ provider "proxmox" {
   username = "${var.proxmox_user}"
   password = "${var.proxmox_password}"
   //api_token = "${var.proxmox_api_token_id}=${var.proxmox_api_token}"
-  insecure = false
+  insecure = true
 }
 resource "proxmox_virtual_environment_file" "debian_cloud_image" {
   content_type = "iso"
@@ -21,7 +21,7 @@ resource "proxmox_virtual_environment_file" "debian_cloud_image" {
 
   source_file {
     path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
-    file_name = "debian12-server-cloudimg.img"
+    file_name = "debian12-server-cloudimgg.img"
  
   }
 }
