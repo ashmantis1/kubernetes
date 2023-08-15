@@ -29,7 +29,7 @@ worker_memory: 8192
 
 #k8s details
 cluster_name: "k8s"
-api_loadbalancer_ip: "10.10.10.200" #kube-vip must be in correct subnet 
+api_loadbalancer_ip: "10.10.10.210" #kube-vip must be in correct subnet 
 api_loadbalancer_interface: eth0  #kube-vip
 
 # User for ansible to use on the nodes

@@ -21,7 +21,7 @@ spec:
           l2announcements:
             # -- Enable L2 announcements
             enabled: true
-          k8sServiceHost: 10.10.10.200
+          k8sServiceHost: 10.10.10.210
           k8sServicePort: 6443
           kubeProxyReplacement: true 
           ingressController:
