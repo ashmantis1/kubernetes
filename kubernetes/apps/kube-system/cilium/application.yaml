@@ -32,6 +32,8 @@ spec:
           nodePort:
             enabled: false 
           hubble: 
+            relay: 
+              enabled: true
             ui: 
               enabled: true 
               ingress:
