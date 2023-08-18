@@ -27,13 +27,18 @@
     update_cache: yes
   tags: 
     packages
-- name: Install kubeadm, kubectl
+#kubeadm=1.27.0-00
+- name: Install kubeadm
   ansible.builtin.apt:
-    name: "{{ item }}"
+    name: "{{ item }}={{kubernetes_version}}-00"
     state: present
     update_cache: yes
   tags:
     - packages
   loop:
     - kubeadm
-    - kubectl
+- name: Install kubectl 
+  ansible.builtin.shell: sudo apt install kubectl="{{kubernetes_version}}"-00 -y
+  ignore_errors: true
+  tags: 
+    - packages

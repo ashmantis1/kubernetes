@@ -21,7 +21,9 @@ spec:
           hostname: rancher.ashman.world
           replicas: 3
           ingress:
-            ingressClassName: nginx 
+            ingressClassName: nginx
+            tls:
+              source: letsencrypt-prod
             extraAnnotations:
               cert-manager.io/cluster-issuer: "letsencrypt-prod"
               
