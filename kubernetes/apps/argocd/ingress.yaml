@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx #cilium
   rules:
-  - host: argocd.ashman.world
+  - host: argocd.k8s.ashman.world
     http:
       paths:
       - path: /
@@ -23,4 +23,4 @@ spec:
   tls:
   - hosts:
     - argo.ashman.world
-    secretName: argo-secret-tls
+    secretName: argocd-secret-letsencrypt
