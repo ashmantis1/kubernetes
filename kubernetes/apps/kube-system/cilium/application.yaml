@@ -31,10 +31,23 @@ spec:
               type: LoadBalancer
           nodePort:
             enabled: false 
+          hubble: 
+            ui: 
+              enabled: true 
+              ingress:
+                enabled: true
+                annotations: {}
+                  # kubernetes.io/ingress.class: nginx
+                  # kubernetes.io/tls-acme: "true"
+                className: "nginx"
+                hosts:
+                  - hubble.k8s.ashman.world
+                labels: {}
+                tls: []
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
-
+      selfHeal: true
