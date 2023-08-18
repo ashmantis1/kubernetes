@@ -9,6 +9,9 @@ metadata:
 spec:
   project: default
   sources:
+    - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+      targetRevision: HEAD
+      path: kubernetes/apps/kube-system/external-secrets/apps
     - chart: external-secrets
       repoURL: https://charts.external-secrets.io
       targetRevision: 0.9.2
