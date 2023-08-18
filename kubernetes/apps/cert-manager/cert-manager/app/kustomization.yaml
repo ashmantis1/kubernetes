@@ -19,4 +19,5 @@ namespace: cert-manager
 #       namespace: "cert-manager"
 resources:
   - ./leases-rbac.yaml
+  - ./clusterissuer.yaml
   #- ./cert-manager.crds.yaml

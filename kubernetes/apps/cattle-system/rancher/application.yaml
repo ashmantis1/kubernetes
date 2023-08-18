@@ -22,6 +22,9 @@ spec:
           replicas: 3
           ingress:
             ingressClassName: nginx 
+            extraAnnotations:
+              cert-manager.io/cluster-issuer: "letsencrypt-prod"
+              
   destination:
     server: https://kubernetes.default.svc
     namespace: cattle-system
