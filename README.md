@@ -3,7 +3,8 @@ Provides a method to deploy and maintain my homelab while trying to follow gitop
 ## Getting started
 ### Setup Requirements 
 - Proxmox cluster
-- 
+- Vault server 
+
 ### 
 Deploying this project
 First navigate to `./infrastructure/kubernetes/ansible/inventory/group_vars/vars.yaml` and set all the necessary variables. This is important as these variables are used for both the ansible and the terraform that is being run. 
