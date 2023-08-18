@@ -22,5 +22,5 @@ spec:
               name: http
   tls:
   - hosts:
-    - argo.ashman.world
+    - argocd.k8s.ashman.world
     secretName: argocd-secret-letsencrypt
