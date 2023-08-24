@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mickkael/argo-events/JSONschema/api/jsonschema/schema.json
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: csi-driver-smb
+  namespace: kube-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  project: default
+  sources:
+    - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+      targetRevision: HEAD
+      path: kubernetes/apps/kube-system/csi-driver-smb/apps
+    - chart: csi-driver-smb
+      repoURL: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts
+      targetRevision: v1.12.0
+      helm:
+        releaseName: csi-driver-smb
+        values: | 
+          controller: 
+            runOnControlPlane: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+

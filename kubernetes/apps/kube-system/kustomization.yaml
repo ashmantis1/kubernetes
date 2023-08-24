@@ -7,6 +7,7 @@ resources:
   - ./namespace.yaml
   - ./cilium/application.yaml
   - ./external-secrets/application.yaml
+  - ./csi-driver-smb/application.yaml
   #- ./external-dns/ks.yaml
 # patches:
 #   - target:
