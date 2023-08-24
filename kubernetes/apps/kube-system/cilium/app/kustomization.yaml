@@ -2,30 +2,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kube-system
-#namespace: networking
-# helmCharts:
-# - name: cilium
-#   repo: https://helm.cilium.io/
-#   version: 1.14.0
-#   releaseName: cilium
-#   #namespace: kube-system
-#   #valuesFile: values.yaml
-#   valuesInline:
-#     l2announcements:
-#       # -- Enable L2 announcements
-#       enabled: true
-#     k8sServiceHost: 10.10.10.200
-#     k8sServicePort: 6443
-#     kubeProxyReplacement: "true" 
-#     ingressController:
-#       enabled: false 
-#       loadbalancerMode: dedicated
-#       default: true
-#       service: 
-#         type: LoadBalancer
-#     nodePort:
-#       enabled: false 
-# Extra resources to deploy alongside the chart
 resources:
   - ./rbac.yaml
   - ./l2-cm.yaml
