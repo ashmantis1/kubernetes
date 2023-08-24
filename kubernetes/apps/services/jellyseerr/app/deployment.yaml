@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyseerr-config
 spec:
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   resources:
