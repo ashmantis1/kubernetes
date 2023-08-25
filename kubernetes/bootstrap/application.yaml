@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mickkael/argo-events/JSONschema/api/jsonschema/schema.json
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homelab
+  namespace: argocd
+spec:
+  project: default
+  sources:
+   - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+     targetRevision: HEAD
+     path: kubernetes/apps
+   - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+     targetRevision: HEAD
+     path: kubernetes/argocd/argocd.yaml
+
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).  
+      selfHeal: true # Specifies if resources should be self-healed 

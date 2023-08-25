@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./storageclass.yaml
+  - ./snapshotclass.yaml

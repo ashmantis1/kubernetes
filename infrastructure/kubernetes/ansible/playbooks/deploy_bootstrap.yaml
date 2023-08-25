@@ -2,12 +2,16 @@
   hosts: bootstrap
   become: true
   tasks:
-    - name: Rune kube-vip configuration
-      include_role:
-        name: ../roles/kube_vip
-      vars:
-        interface: "{{api_loadbalancer_interface}}"
-        vip: "{{api_loadbalancer_ip}}"
+    #- name: Rune kube-vip configuration
+      # include_role:
+      #   name: ../roles/kube_vip
+      # vars:
+      #   interface: "{{api_loadbalancer_interface}}"
+      #   vip: "{{api_loadbalancer_ip}}"
+    - name: Template kube-vip to /etc/kubernetes/manifests folder
+      ansible.builtin.template:
+        src: ../templates/kube-vip.yaml.jinja2
+        dest: /etc/kubernetes/manifests/kube-vip.yaml
     - name: Template bgp config map to /etc/kubernetes/manifests folder
       ansible.builtin.template:
         src: ../templates/cilium-bgp-cm.yaml.jinja2
