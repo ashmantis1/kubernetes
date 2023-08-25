@@ -11,9 +11,7 @@ spec:
    - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
      targetRevision: HEAD
      path: kubernetes/apps
-   - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-     targetRevision: HEAD
-     path: kubernetes/argocd/argocd.yaml
+
 
 
   destination:
