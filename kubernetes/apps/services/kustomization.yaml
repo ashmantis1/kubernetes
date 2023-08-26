@@ -5,3 +5,4 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   - ./jellyseerr/application.yaml
+  - ./homepage/application.yaml

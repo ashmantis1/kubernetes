@@ -1,5 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mickkael/argo-events/JSONschema/api/jsonschema/schema.json
 
+### ArgoCD Application ### 
+# This points to kubernetes/argocd and allows for argocd to control itself. 
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:

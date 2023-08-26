@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mickkael/argo-events/JSONschema/api/jsonschema/schema.json
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homepage
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+
+spec:
+  project: default
+  sources:
+    - chart: jameswynn
+      repoURL: http://jameswynn.github.io/helm-charts
+      targetRevision: 1.2.0
+      helm:
+        releaseName: homepage
+        values: |
+          ingress:
+            main:
+              enabled: true
+              annotations:
+                cert-manager.io/cluster-issuer: "letsencrypt-prod"
+              ingressClassName: nginx
+              hosts:
+                - host: homepage.k8s.ashman.world
+                  paths:
+                    - path: / 
+                      pathType: Prefix
+              tls: 
+                - hosts:
+                  - homepage.k8s.ashman.world
+                 # secretName: homepage-tls
+         
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: services
+  syncPolicy:
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+
