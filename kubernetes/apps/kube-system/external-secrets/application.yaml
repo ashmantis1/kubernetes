@@ -14,7 +14,7 @@ spec:
       path: kubernetes/apps/kube-system/external-secrets/apps
     - chart: external-secrets
       repoURL: https://charts.external-secrets.io
-      targetRevision: 0.9.2
+      targetRevision: 0.9.4
       helm:
         releaseName: external-secrets
   destination:
