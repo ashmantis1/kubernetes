@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   sources:
-    - chart: jameswynn
+    - chart: homepage
       repoURL: http://jameswynn.github.io/helm-charts
       targetRevision: v0.6.10
       helm:
