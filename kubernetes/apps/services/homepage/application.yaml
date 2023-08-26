@@ -16,6 +16,7 @@ spec:
       helm:
         releaseName: homepage
         values: |
+          enableRbac: true
           ingress:
             main:
               enabled: true
