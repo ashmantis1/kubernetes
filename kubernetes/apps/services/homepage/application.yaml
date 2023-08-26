@@ -31,7 +31,7 @@ spec:
               tls: 
                 - hosts:
                   - homepage.k8s.ashman.world
-                 # secretName: homepage-tls
+                  secretName: homepage-tls
          
   destination:
     server: https://kubernetes.default.svc
