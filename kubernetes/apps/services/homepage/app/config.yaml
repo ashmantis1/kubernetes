@@ -12,11 +12,7 @@ data:
   #  providers:
   #    longhorn:
   #      url: https://longhorn.my.network
-  bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+  bookmarks.yaml: ''
   services.yaml: |
     - My First Group:
         - My First Service:
@@ -24,15 +20,6 @@ data:
             description: Homepage sucks
             icon: jellyseerr
 
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
-
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
   widgets.yaml: |
     - kubernetes:
         cluster:

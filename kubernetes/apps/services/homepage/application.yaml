@@ -20,7 +20,7 @@ spec:
         releaseName: homepage
         values: |
           config:
-            useExistingConfigMap: homepage-config
+            #useExistingConfigMap: homepage-config
             bookmarks: {}
             services:
               - Media:
@@ -30,6 +30,19 @@ spec:
                       icon: jellyseerr
             kubernetes: 
               mode: cluster
+            widgets: 
+            - kubernetes:
+                cluster:
+                  show: true
+                  cpu: true
+                  memory: true
+                  showLabel: true
+                  label: "cluster"
+                nodes:
+                  show: true
+                  cpu: true
+                  memory: true
+                  showLabel: true
 
           enableRbac: true
           ingress:
