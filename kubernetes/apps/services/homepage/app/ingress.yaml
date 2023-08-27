@@ -7,9 +7,9 @@ metadata:
     app.kubernetes.io/name: homepage
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    gethomepage.dev/description: Dynamically Detected Homepage
+    gethomepage.dev/description: Dashboard
     gethomepage.dev/enabled: "true"
-    gethomepage.dev/group: Cluster Management
+    gethomepage.dev/group: Management
     gethomepage.dev/icon: homepage.png
     gethomepage.dev/name: Homepage
 spec:
