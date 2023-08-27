@@ -5,3 +5,8 @@ namespace: services
 resources:
   # Pre Flux-Kustomizations
   - ./config.yaml
+  - ./deployment.yaml
+  - ./service.yaml
+  - ./ingress.yaml
+  - ./serviceaccount.yaml
+  - ./roles.yaml
