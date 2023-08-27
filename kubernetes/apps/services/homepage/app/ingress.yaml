@@ -6,6 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: homepage
   annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     gethomepage.dev/description: Dynamically Detected Homepage
     gethomepage.dev/enabled: "true"
     gethomepage.dev/group: Cluster Management
@@ -23,3 +24,7 @@ spec:
                 name: homepage
                 port:
                   number: 3000
+  tls:
+  - hosts:
+    - homepage.k8s.ashman.world
+    secretName: homepage-tls
