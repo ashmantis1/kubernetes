@@ -20,30 +20,7 @@ spec:
         releaseName: homepage
         values: |
           config:
-            #useExistingConfigMap: homepage-config
-            bookmarks: {}
-            services:
-              - Media:
-                  - Jellyseerr:
-                      href: https://request.ashman.world
-                      description: Tool for requesting TV shows and Movies
-                      icon: jellyseerr
-            kubernetes: 
-              mode: cluster
-            widgets: 
-            - kubernetes:
-                cluster:
-                  show: true
-                  cpu: true
-                  memory: true
-                  showLabel: true
-                  label: "cluster"
-                nodes:
-                  show: true
-                  cpu: true
-                  memory: true
-                  showLabel: true
-
+            useExistingConfigMap: homepage-config
           enableRbac: true
           ingress:
             main:

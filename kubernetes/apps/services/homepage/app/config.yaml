@@ -14,10 +14,10 @@ data:
   #      url: https://longhorn.my.network
   bookmarks.yaml: ''
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage sucks
+    - Media:
+        - Jellyseerr:
+            href: https://request.ashman.world
+            description: Service for requesting TV Shows and Movies
             icon: jellyseerr
 
   widgets.yaml: |
