@@ -17,6 +17,10 @@ spec:
         releaseName: homepage
         values: |
           config:
+            bookmarks:
+              - name: Gmail
+                url: https://mail.google.com/mail/u/0/#inbox
+                icon: gmail
             services:
               - Media:
                   - Jellyseerr:
