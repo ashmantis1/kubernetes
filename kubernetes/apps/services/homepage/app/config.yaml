@@ -7,11 +7,12 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
-  settings.yaml: ""
-  #settings.yaml: |
-  #  providers:
-  #    longhorn:
-  #      url: https://longhorn.my.network
+  settings.yaml: |
+    layout: 
+      Media: 
+        style: row
+        columns: 4
+
   bookmarks.yaml: ''
   services.yaml: |
     - Media:
@@ -47,7 +48,7 @@ data:
         - Hubble UI:
             href: https://hubble.k8s.ashman.world
             description: Cilium Network analyzer
-            icon: hubble
+            icon: cilium
         - ArgoCD: 
             href: https://argocd.k8s.ashman.world
             description: GitOps Continuous Delivery
