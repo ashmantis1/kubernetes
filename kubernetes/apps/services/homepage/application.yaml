@@ -17,16 +17,15 @@ spec:
         releaseName: homepage
         values: |
           config:
-            bookmarks:
-              - name: Gmail
-                url: https://mail.google.com/mail/u/0/#inbox
-                icon: gmail
+            bookmarks: {}
             services:
               - Media:
                   - Jellyseerr:
                       href: https://request.ashman.world
                       description: Tool for requesting TV shows and Movies
                       icon: jellyseerr
+            kubernetes: 
+              mode: cluster
 
           enableRbac: true
           ingress:
