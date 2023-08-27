@@ -31,7 +31,7 @@ data:
             href: https://bazarr.ashman.world
             description: Subtitle Manager
             icon: bazarr
-        - Jellyfin
+        - Jellyfin:
             href: https://jellyfin.ashman.world
             description: Media Server
             icon: jellyfin
