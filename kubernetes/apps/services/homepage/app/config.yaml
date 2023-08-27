@@ -39,6 +39,19 @@ data:
             href: https://plex.ashman.world
             description: Media Server
             icon: plex
+    - Kubernetes: 
+        - Rancher:
+            href: https://rancher.k8s.ashman.world
+            description: Kubernetes Cluster Manager
+            icon: rancher
+        - Hubble UI:
+            href: https://hubble.k8s.ashman.world
+            description: Cilium Network analyzer
+            icon: hubble
+        - ArgoCD: 
+            href: https://argocd.k8s.ashman.world
+            description: GitOps Continuous Delivery
+            icon: argocd
 
   widgets.yaml: |
     - kubernetes:
