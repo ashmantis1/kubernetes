@@ -90,6 +90,6 @@ data:
           memory: true
           showLabel: true
     - search:
-        provider: duckduckgo
+        provider: google
         target: _blank
   docker.yaml: ""
