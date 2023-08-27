@@ -16,10 +16,6 @@ data:
   bookmarks.yaml: ''
   services.yaml: |
     - Media:
-        - Jellyseerr:
-            href: https://request.ashman.world
-            description: Service for requesting TV Shows and Movies
-            icon: jellyseerr
         - Sonarr:
             href: https://sonarr.ashman.world
             description: TV Show Manager
@@ -40,7 +36,7 @@ data:
             href: https://plex.ashman.world
             description: Media Server
             icon: plex
-    - Managment: 
+    - Management: 
         - OPNsense:
             href: https://192.168.1.1
             description: router/firewall
@@ -62,18 +58,18 @@ data:
             description: Wireless Controller
             icon: omada
     - Kubernetes: 
-        - Rancher:
-            href: https://rancher.k8s.ashman.world
-            description: Kubernetes Cluster Manager
-            icon: rancher
-        - Hubble UI:
-            href: https://hubble.k8s.ashman.world
-            description: Cilium Network analyzer
-            icon: cilium
-        - ArgoCD: 
-            href: https://argocd.k8s.ashman.world
-            description: GitOps Continuous Delivery
-            icon: argocd
+        # - Rancher:
+        #     href: https://rancher.k8s.ashman.world
+        #     description: Kubernetes Cluster Manager
+        #     icon: rancher
+        # - Hubble UI:
+        #     href: https://hubble.k8s.ashman.world
+        #     description: Cilium Network analyzer
+        #     icon: cilium
+        # - ArgoCD: 
+        #     href: https://argocd.k8s.ashman.world
+        #     description: GitOps Continuous Delivery
+        #     icon: argocd
 
 
   widgets.yaml: |

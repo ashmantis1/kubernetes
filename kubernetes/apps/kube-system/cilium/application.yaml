@@ -40,6 +40,11 @@ spec:
                 enabled: true
                 annotations: 
                   cert-manager.io/cluster-issuer: "letsencrypt-prod"
+                  gethomepage.dev/description: Cilium monitoring UI
+                  gethomepage.dev/enabled: "true"
+                  gethomepage.dev/group: Kubernetes
+                  gethomepage.dev/icon: cilium
+                  gethomepage.dev/name: Hubble UI
                 className: "nginx"
                 hosts:
                   - hubble.k8s.ashman.world
