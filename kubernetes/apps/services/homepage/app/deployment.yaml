@@ -37,6 +37,13 @@ spec:
               mountPath: /app/config
             - name: logs
               mountPath: /app/config/logs
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1024Mi"
+              cpu: "1000m"
       volumes:
         - name: homepage-config
           configMap:
