@@ -12,13 +12,20 @@
       ansible.builtin.template:
         src: ../templates/kube-vip.yaml.jinja2
         dest: /etc/kubernetes/manifests/kube-vip.yaml
+    # Configure kubeadm and kubelet values in the ansible/templates/kubeadm-config.yaml.jinja2 file. Other types of configurations can be added here. 
+    - name: kubeadm and kubelet config file to /tmp folder
+      ansible.builtin.template:
+        src: ../templates/kubeadm-config.yaml.jinja2
+        dest: /tmp/kubeadm-config.yaml
     - name: Template bgp config map to /etc/kubernetes/manifests folder
       ansible.builtin.template:
         src: ../templates/cilium-bgp-cm.yaml.jinja2
         dest: /etc/kubernetes/manifests/cilium-bgp-cm.yaml
     - name: Initialise cluster using kubeadm
-      ansible.builtin.shell: kubeadm init --control-plane-endpoint "{{api_loadbalancer_ip}}:6443" --upload-certs --kubernetes-version "{{kubeversion}}" --skip-phases=addon/kube-proxy
+      # additional  flags: --control-plane-endpoint "{{api_loadbalancer_ip}}:6443" --kubernetes-version "{{kubeversion}}"
+      ansible.builtin.shell: kubeadm init  --upload-certs --skip-phases=addon/kube-proxy --config=/tmp/kubeadm-config.yaml
       register: kubeadm_init
+
     - name: Sleep for 30 seconds
       ansible.builtin.wait_for:
         timeout: 30
