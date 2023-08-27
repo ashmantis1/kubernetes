@@ -57,7 +57,7 @@ data:
             href: https://omada.ashman.world
             description: Wireless Controller
             icon: omada
-    - Kubernetes: 
+    #- Kubernetes: 
         # - Rancher:
         #     href: https://rancher.k8s.ashman.world
         #     description: Kubernetes Cluster Manager
