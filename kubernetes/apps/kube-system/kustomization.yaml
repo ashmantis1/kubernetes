@@ -9,6 +9,7 @@ resources:
   - ./external-secrets/application.yaml
   #- ./csi-driver-smb/application.yaml
   - ./csi-driver-nfs/application.yaml
+  - ./metrics-server/application.yaml
   #- ./external-dns/ks.yaml
 # patches:
 #   - target:
