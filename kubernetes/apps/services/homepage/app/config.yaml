@@ -19,6 +19,26 @@ data:
             href: https://request.ashman.world
             description: Service for requesting TV Shows and Movies
             icon: jellyseerr
+        - Sonarr:
+            href: https://sonarr.ashman.world
+            description: TV Show Manager
+            icon: sonarr
+        - Radarr:
+            href: https://radarr.ashman.world
+            description: Movie Manager
+            icon: radarr
+        - Bazarr:
+            href: https://bazarr.ashman.world
+            description: Subtitle Manager
+            icon: bazarr
+        - Jellyfin
+            href: https://jellyfin.ashman.world
+            description: Media Server
+            icon: jellyfin
+        - Plex:
+            href: https://plex.ashman.world
+            description: Media Server
+            icon: plex
 
   widgets.yaml: |
     - kubernetes:
@@ -33,11 +53,6 @@ data:
           cpu: true
           memory: true
           showLabel: true
-    - resources:
-        backend: resources
-        expanded: true
-        cpu: true
-        memory: true
     - search:
         provider: duckduckgo
         target: _blank
