@@ -40,6 +40,27 @@ data:
             href: https://plex.ashman.world
             description: Media Server
             icon: plex
+    - Managment: 
+        - OPNsense:
+            href: https://192.168.1.1
+            description: router/firewall
+            icon: opnsense
+        - Proxmox:
+            href: https://proxmox.ashman.world
+            description: Virtualization Manager
+            icon: proxmox
+        - Technitium:
+            href: https://dns.ashman.world
+            description: DNS Server
+            icon: https://avatars.githubusercontent.com/u/12230362?s=280&v=4
+        - Nginx Proxy Manager:
+            href: https://proxy.ashman.world
+            description: Reverse Proxy Manager
+            icon: nginx-proxy-manager
+        - Omada: 
+            href: https://omada.ashman.world
+            description: Wireless Controller
+            icon: omada
     - Kubernetes: 
         - Rancher:
             href: https://rancher.k8s.ashman.world
@@ -53,6 +74,7 @@ data:
             href: https://argocd.k8s.ashman.world
             description: GitOps Continuous Delivery
             icon: argocd
+
 
   widgets.yaml: |
     - kubernetes:
