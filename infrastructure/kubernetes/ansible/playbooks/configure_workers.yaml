@@ -15,5 +15,4 @@
       ansible.builtin.set_fact:
         index: "{{ (lookup('ansible.utils.index_of', data=groups['workers'], test='search', value=node_ip.stdout|trim) | int) +1 }}"
     - name: Set hostname
-      ansible.builtin.hostname: 
-        name: 'k8s-worker-{{ "%02d" | format(index|int) }}'
+      ansible.builtin.shell: sudo hostnamectl set-hostname 'worker{{ "%02d" | format(index|int) }}.{{cluster_name}}.{{dns_zone}}'

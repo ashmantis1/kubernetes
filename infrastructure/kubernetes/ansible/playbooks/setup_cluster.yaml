@@ -5,6 +5,7 @@
     - name: Approve all CSRs
       ansible.builtin.shell: kubectl --kubeconfig=/etc/kubernetes/admin.conf get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs kubectl --kubeconfig=/etc/kubernetes/admin.conf certificate approve
       #kubectl get csr | grep Pending | awk '{print $1}' | xargs kubectl certificate approve
+      ignore_errors: true
     - name: Install python k8s 
       ansible.builtin.apt:
         name: python3-kubernetes
@@ -22,7 +23,7 @@
           apiVersion: v1
           kind: Node
           metadata: 
-            name: "k8s-worker-{{'%02d' | format(ansible_loop.index)}}"
+            name: worker{{ "%02d" | format(ansible_loop.index) }}.{{cluster_name}}.{{dns_zone[:-1]}}
             labels: 
               node-role.kubernetes.io/worker: worker
       loop: "{{groups['workers']}}"

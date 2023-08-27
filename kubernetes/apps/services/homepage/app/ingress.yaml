@@ -7,11 +7,6 @@ metadata:
     app.kubernetes.io/name: homepage
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    gethomepage.dev/description: Dashboard
-    gethomepage.dev/enabled: "true"
-    gethomepage.dev/group: Management
-    gethomepage.dev/icon: homepage.png
-    gethomepage.dev/name: Homepage
 spec:
   rules:
     - host: "homepage.k8s.ashman.world"
