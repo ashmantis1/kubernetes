@@ -4,11 +4,7 @@ metadata:
   name: jellyseerr-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    gethomepage.dev/description: TV and Movie requester
-    gethomepage.dev/enabled: "true"
-    gethomepage.dev/group: Media
-    gethomepage.dev/icon: jellyseerr
-    gethomepage.dev/name: Jellyseerr
+
 spec: 
   ingressClassName: nginx
   rules:
