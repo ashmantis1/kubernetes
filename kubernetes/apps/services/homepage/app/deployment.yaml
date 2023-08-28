@@ -50,6 +50,11 @@ spec:
               secretKeyRef:
                 name: sonarr-api-key
                 key: api-key  
+          - name: HOMEPAGE_VAR_RADARR_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: radarr-api-key
+                key: api-key  
       volumes:
         - name: homepage-config
           configMap:

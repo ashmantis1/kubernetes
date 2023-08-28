@@ -36,6 +36,11 @@ data:
             href: https://radarr.ashman.world
             description: Movie Manager
             icon: radarr
+            widget: 
+                type: radarr
+                url: https://radarr.ashman.world
+                key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
+                enableQueue: true
         - Bazarr:
             href: https://bazarr.ashman.world
             description: Subtitle Manager
