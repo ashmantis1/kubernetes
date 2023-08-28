@@ -59,7 +59,7 @@ data:
                 url: https://jellyfin.ashman.world
                 key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
                 enableBlocks: true
-                enableNowPlaying: true
+                enableNowPlaying: false
         - Prowlarr:
             href: https://prowlarr.ashman.world
             description: Indexer Manager
@@ -72,6 +72,10 @@ data:
             href: https://bazarr.ashman.world
             description: Subtitle Manager
             icon: bazarr
+            widget:
+                type: bazarr
+                url: https://bazarr.ashman.world
+                key: "{{HOMEPAGE_VAR_BAZARR_API_KEY}}"
         - Plex:
             href: https://plex.ashman.world
             description: Media Server
