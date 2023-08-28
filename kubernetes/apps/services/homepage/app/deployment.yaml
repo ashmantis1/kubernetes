@@ -44,6 +44,12 @@ spec:
             limits:
               memory: "1024Mi"
               cpu: "1000m"
+          env: 
+          - name: HOMEPAGE_VAR_SONARR_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: sonarr-api-key
+                key: api-key  
       volumes:
         - name: homepage-config
           configMap:

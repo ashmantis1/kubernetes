@@ -27,6 +27,11 @@ data:
             href: https://sonarr.ashman.world
             description: TV Show Manager
             icon: sonarr
+            widget: 
+                type: sonarr
+                url: https://sonarr.ashman.world
+                key: "{{HOMEPAGE_VAR_SONARR_API_KEY}}"
+                enableQueue: true
         - Radarr:
             href: https://radarr.ashman.world
             description: Movie Manager
