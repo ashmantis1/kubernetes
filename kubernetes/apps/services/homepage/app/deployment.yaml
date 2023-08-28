@@ -54,7 +54,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: radarr-api-key
-                key: api-key  
+                key: api-key
+          - name: HOMEPAGE_VAR_JELLYSEERR_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jellyseerr-api-key
+                key: api-key
       volumes:
         - name: homepage-config
           configMap:

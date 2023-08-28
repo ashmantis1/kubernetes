@@ -23,6 +23,10 @@ data:
             href: https://request.ashman.world
             description: Media Requester
             icon: jellyseerr
+            widget: 
+                type: jellyseerr
+                url: https://request.ashman.world
+                key: "{{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}"
         - Sonarr:
             href: https://sonarr.ashman.world
             description: TV Show Manager
