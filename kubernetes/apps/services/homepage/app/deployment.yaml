@@ -70,6 +70,11 @@ spec:
               secretKeyRef:
                 name: deluge-api-key
                 key: api-key
+          - name: HOMEPAGE_VAR_PROWLARR_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: prowlarr-api-key
+                key: api-key
       volumes:
         - name: homepage-config
           configMap:

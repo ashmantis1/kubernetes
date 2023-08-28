@@ -60,6 +60,14 @@ data:
                 key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
                 enableBlocks: true
                 enableNowPlaying: true
+        - Prowlarr:
+            href: https://prowlarr.ashman.world
+            description: Indexer Manager
+            icon: prowlarr
+            widget:
+                type: prowlarr
+                url: https://prowlarr.ashman.world
+                key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
         - Bazarr:
             href: https://bazarr.ashman.world
             description: Subtitle Manager
