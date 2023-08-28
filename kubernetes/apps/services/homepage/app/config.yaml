@@ -53,6 +53,12 @@ data:
             href: https://jellyfin.ashman.world
             description: Media Server
             icon: jellyfin
+            widget:
+                type: jellyfin
+                url: https://jellyfin.ashman.world
+                key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
+                enableBlocks: true
+                enableNowPlaying: true
         - Plex:
             href: https://plex.ashman.world
             description: Media Server

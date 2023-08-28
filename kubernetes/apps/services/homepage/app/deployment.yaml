@@ -60,6 +60,11 @@ spec:
               secretKeyRef:
                 name: jellyseerr-api-key
                 key: api-key
+          - name: HOMEPAGE_VAR_JELLYFIN_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jellyfin-api-key
+                key: api-key
       volumes:
         - name: homepage-config
           configMap:
