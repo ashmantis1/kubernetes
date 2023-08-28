@@ -13,31 +13,6 @@ spec:
     repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
     targetRevision: HEAD
     path: kubernetes/apps/services/homepage/app
-    # - chart: homepage
-    #   repoURL: http://jameswynn.github.io/helm-charts
-    #   targetRevision: 1.2.1
-    #   helm:
-    #     releaseName: homepage
-    #     values: |
-    #       config:
-    #         useExistingConfigMap: homepage-config
-    #       enableRbac: true
-    #       ingress:
-    #         main:
-    #           enabled: true
-    #           annotations:
-    #             cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    #           ingressClassName: nginx
-    #           hosts:
-    #             - host: homepage.k8s.ashman.world
-    #               paths:
-    #                 - path: / 
-    #                   pathType: Prefix
-    #           tls: 
-    #             - hosts:
-    #               - homepage.k8s.ashman.world
-    #               secretName: homepage-tls
-         
   destination:
     server: https://kubernetes.default.svc
     namespace: services

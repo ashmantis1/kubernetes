@@ -12,6 +12,9 @@ data:
       Media: 
         style: row
         columns: 3
+      Kubernetes: 
+        style: row
+        columns: 2
 
   bookmarks.yaml: ''
   services.yaml: |
