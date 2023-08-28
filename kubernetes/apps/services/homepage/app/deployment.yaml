@@ -65,6 +65,11 @@ spec:
               secretKeyRef:
                 name: jellyfin-api-key
                 key: api-key
+          - name: HOMEPAGE_VAR_DELUGE_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: deluge-api-key
+                key: api-key
       volumes:
         - name: homepage-config
           configMap:

@@ -11,10 +11,7 @@ data:
     layout: 
       Media: 
         style: row
-        columns: 3
-      Kubernetes: 
-        style: row
-        columns: 2
+        columns: 4
 
   bookmarks.yaml: ''
   services.yaml: |
@@ -45,10 +42,14 @@ data:
                 url: https://radarr.ashman.world
                 key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
                 enableQueue: true
-        - Bazarr:
-            href: https://bazarr.ashman.world
-            description: Subtitle Manager
-            icon: bazarr
+        - Deluge:
+            href: https://torrent.ashman.world
+            description: Torrent Client
+            icon: deluge
+            widget:
+                type: deluge
+                url: https://torrent.ashman.world
+                password: "{{HOMEPAGE_VAR_DELUGE_API_KEY}}"
         - Jellyfin:
             href: https://jellyfin.ashman.world
             description: Media Server
@@ -59,6 +60,10 @@ data:
                 key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
                 enableBlocks: true
                 enableNowPlaying: true
+        - Bazarr:
+            href: https://bazarr.ashman.world
+            description: Subtitle Manager
+            icon: bazarr
         - Plex:
             href: https://plex.ashman.world
             description: Media Server
