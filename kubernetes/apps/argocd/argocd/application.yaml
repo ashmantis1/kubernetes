@@ -12,10 +12,10 @@ metadata:
     argocd.argoproj.io/sync-wave: "6"
 spec:
   project: default
-  sources:
-   - repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
-     targetRevision: HEAD
-     path: kubernetes/argocd
+  source:
+    repoURL: git@github.com:ashmantis1/ashman-homelab-ops.git
+    targetRevision: HEAD
+    path: kubernetes/argocd
 
   destination:
     server: https://kubernetes.default.svc

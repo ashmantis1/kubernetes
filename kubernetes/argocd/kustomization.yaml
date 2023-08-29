@@ -13,3 +13,4 @@ resources:
 patchesStrategicMerge:
   - ./config/argo-cm.yaml
   - ./config/argo-cmd-params-cm.yaml
+  - ./config/argocd-rbac-cm.yaml

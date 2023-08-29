@@ -7,12 +7,24 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   url: "https://argocd.k8s.ashman.world"
-  oidc.config: |
-    name: Authentik
-    issuer: https://auth.tools.ashman.world/application/o/argocd/
-    clientID: vnLjT8o5vUa5JiwCesgrvtpyQHOqNEsaSdvf8XNp
-    clientSecret: $oidc.authentik.clientSecret
-
+  # oidc.config: |
+  #   name: Authentik
+  #   issuer: https://auth.tools.ashman.world/application/o/argocd/
+  #   clientID: vnLjT8o5vUa5JiwCesgrvtpyQHOqNEsaSdvf8XNp
+  #   clientSecret: $oidc.authentik.clientSecret
+  dex.config: |
+      connectors:
+      - config:
+          issuer: https://auth.tools.ashman.world/application/o/argocd/
+          clientID: vnLjT8o5vUa5JiwCesgrvtpyQHOqNEsaSdvf8XNp
+          clientSecret: $dex.authentik.clientSecret
+          scopes:
+            - openid
+            - profile
+            - email
+        name: authentik
+        type: oidc
+        id: authentik
   kustomize.buildOptions: --enable-helm
   resource.exclusions: |
     - apiGroups:
