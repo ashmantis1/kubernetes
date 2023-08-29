@@ -18,6 +18,7 @@ data:
           issuer: https://auth.tools.ashman.world/application/o/argocd/
           clientID: vnLjT8o5vUa5JiwCesgrvtpyQHOqNEsaSdvf8XNp
           clientSecret: $dex.authentik.clientSecret
+          insecureEnableGroups: true
           scopes:
             - openid
             - profile
