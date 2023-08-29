@@ -8,9 +8,10 @@ resources:
 - namespace.yaml
 - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.8.2
 - ingress.yaml
-- ./config/argocd-rbac-cm.yaml
 
 
 patchesStrategicMerge:
   - ./config/argo-cm.yaml
   - ./config/argo-cmd-params-cm.yaml
+  - ./config/argo-rbac-cm.yaml
+  
