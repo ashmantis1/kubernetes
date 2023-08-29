@@ -9,7 +9,7 @@ data:
   url: "https://argocd.k8s.ashman.world"
   oidc.config: |
     name: Authentik
-    issuer: https://auth.tools.ashman.world
+    issuer: https://auth.tools.ashman.world/application/o/argocd/
     clientID: vnLjT8o5vUa5JiwCesgrvtpyQHOqNEsaSdvf8XNp
     clientSecret: $oidc.authentik.clientSecret
 
