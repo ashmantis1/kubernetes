@@ -17,7 +17,7 @@ data:
       - config:
           issuer: https://auth.tools.ashman.world/application/o/argocd/
           clientID: JbFbgfpmtQDxCEx5uFHwW2vPdPgcbfhfCuUQswlp
-          clientSecret: $authentik-secret:secret
+          clientSecret: testsecret
           insecureEnableGroups: true
           scopes:
             - openid
