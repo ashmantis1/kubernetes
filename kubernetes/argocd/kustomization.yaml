@@ -6,7 +6,7 @@ kind: Kustomization
 namespace: argocd
 resources:
 - namespace.yaml
-- https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.8.3
+- https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.8.4
 - ingress.yaml
 
 
