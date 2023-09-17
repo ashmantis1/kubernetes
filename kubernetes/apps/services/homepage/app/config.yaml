@@ -12,7 +12,8 @@ data:
       Media: 
         style: row
         columns: 4
-
+  custom.css: ''
+  custom.js: ''
   bookmarks.yaml: ''
   services.yaml: |
     - Media:
