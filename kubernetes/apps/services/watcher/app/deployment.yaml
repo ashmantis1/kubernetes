@@ -39,7 +39,7 @@ spec:
               key: api-key
               name: tmdb-api-key
         - name: POLL_INTERVAL
-          value: "5"
+          value: "600"
         - name: WATCHLIST_URL
           valueFrom: 
             secretKeyRef:
