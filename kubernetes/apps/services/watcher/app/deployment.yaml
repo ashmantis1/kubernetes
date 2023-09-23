@@ -17,7 +17,7 @@ spec:
       containers:
       - name: watcher
         image: ghcr.io/ashmantis1/watcher:latest
-
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "1024Mi"
