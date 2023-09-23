@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watcher
+  labels:
+    app: watcher
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: watcher
+  template:
+    metadata:
+      labels:
+        app: watcher
+    spec:
+      containers:
+      - name: watcher
+        image: ghcr.io/ashmantis1/watcher:latest
+
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
+        env:
+        - name: OVERSEERR_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: jellyseerr-api-key
+              key: api-key  
+        - name: OVERSEERR_API_URL
+          value: http://jellyseerr-service:5055
+        - name: TMDB_API_KEY
+          valueFrom: 
+            secretKeyRef:
+              key: api-key
+              name: tmdb-api-key
+        - name: POLL_INTERVAL
+          value: "5"
+        - name: WATCHLIST_URL
+          valueFrom: 
+            secretKeyRef:
+              key: url
+              name: watchlist-url
+        securityContext:
+          allowPrivilegeEscalation: true

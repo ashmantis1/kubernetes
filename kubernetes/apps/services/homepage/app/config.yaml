@@ -70,6 +70,7 @@ data:
                 url: https://prowlarr.ashman.world
                 key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
         - Bazarr:
+
             href: https://bazarr.ashman.world
             description: Subtitle Manager
             icon: bazarr
