@@ -29,7 +29,7 @@ spec:
         - name: OVERSEERR_API_KEY
           valueFrom:
             secretKeyRef:
-              name: jellyseerr-api-key
+              name: jellyseerr-api-key-watcher
               key: api-key  
         - name: OVERSEERR_API_URL
           value: http://jellyseerr-service:5055
