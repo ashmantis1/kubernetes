@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 namespace: external-secrets
 resources:
-  - ../../../bases/external-secrets
+  - ../../../../bases/external-secrets
   - ./config
 patches: 
   - target:

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 resources:
-  - ../../../bases/weave-gitops
+  - ../../../../bases/weave-gitops
 patches: 
   - target: 
       kind: HelmRelease
