@@ -1,5 +1,6 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: weave-gitops
@@ -8,7 +9,11 @@ spec:
   values:
     ingress: 
       enabled: true
-      hosts: "flux.k8s.ashman.world"
+      hosts: 
+        - host: "flux.k8s.ashman.world"
+          paths: 
+            - path: "/"
+              pathType: ImplementationSpecific
     adminUser:
       create: true
       username: admin
