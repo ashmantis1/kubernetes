@@ -68,7 +68,8 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
     }
     ip_config {
       ipv4 {
-        address = "dhcp"
+        address = "10.10.10.${count.index+1}/16"
+        gateway = "10.10.0.1"
       }
     }
 
@@ -120,7 +121,8 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
     }
     ip_config {
       ipv4 {
-        address = "dhcp"
+        address = "10.10.10.${var.master_count+count.index+1}/16"
+        gateway = "10.10.0.1"
       }
     }
 
