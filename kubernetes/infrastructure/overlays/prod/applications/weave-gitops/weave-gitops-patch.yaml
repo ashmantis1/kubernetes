@@ -17,6 +17,10 @@ spec:
           paths: 
             - path: "/"
               pathType: ImplementationSpecific
+      tls:
+      - hosts:
+        - flux.k8s.ashman.world
+        secretName: weave-gitops-tls
     adminUser:
       create: true
       username: admin
