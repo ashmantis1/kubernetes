@@ -9,6 +9,8 @@ spec:
   interval: 30m
   values:
     ingress: 
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
       enabled: true
       hosts: 
         - host: "flux.k8s.ashman.world"
