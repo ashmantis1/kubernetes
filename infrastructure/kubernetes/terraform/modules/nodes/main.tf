@@ -64,7 +64,7 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "${var.dns_server}"
+        server = "1.1.1.1"
     }
     ip_config {
       ipv4 {
@@ -117,7 +117,7 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "${var.dns_server}"
+        server = "1.1.1.1"
     }
     ip_config {
       ipv4 {

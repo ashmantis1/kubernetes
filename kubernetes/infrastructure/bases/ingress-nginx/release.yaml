@@ -19,3 +19,5 @@ spec:
     controller:
       service: 
         type: LoadBalancer
+      ingressClassResource:
+        default: true

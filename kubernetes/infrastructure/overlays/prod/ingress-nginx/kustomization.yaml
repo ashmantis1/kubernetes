@@ -9,6 +9,3 @@ patches:
       - op: add 
         path: /spec/values/controller/kind
         value: DaemonSet
-      # - op: add
-      #   path: /spec/values/controller/ingressClassResource/default
-      #   value: true
