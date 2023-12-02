@@ -4,13 +4,4 @@ resources:
 patches: 
   - target: 
       kind: HelmRelease
-    patch: |
-      - op: add 
-        path: /spec/values/adminUser/create
-        value: true
-      - op: add
-        path: /spec/values/adminUser/username
-        value: admin
-      - op: add
-        path: /spec/values/adminUser/passwordHash
-        value: "$2a$10$P/tHQ1DNFXdvX0zRGA8LPeSOyb0JXq9rP3fZ4W8HGTpLV7qHDlWhe"
+    path: ./weave-gitops-patch.yaml
