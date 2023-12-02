@@ -2,6 +2,7 @@
 namespace: external-secrets
 resources:
   - ../../../bases/external-secrets
+  - ./config
 patches: 
   - target:
       kind: HelmRelease
