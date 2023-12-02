@@ -1,0 +1,3 @@
+resources: 
+  - cluterissuer.yaml
+  - external-secret.yaml

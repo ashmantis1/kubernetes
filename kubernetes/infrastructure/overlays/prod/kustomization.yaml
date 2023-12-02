@@ -3,3 +3,4 @@ resources:
   - ingress-nginx.yaml
   - external-secrets.yaml
   - weave-gitops.yaml
+  - cert-manager.yaml

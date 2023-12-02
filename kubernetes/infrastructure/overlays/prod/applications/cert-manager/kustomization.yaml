@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+resources: 
+  - ./config
+  - ../../../../bases/cert-manager
+patches: 
+  - target: 
+      kind: HelmRelease
+    patch: | 
+      - op: replace
+        path: /spec/chart/spec/version
+        value: v1.13.1
