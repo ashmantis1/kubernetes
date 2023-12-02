@@ -6,6 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   values:
+    ingress: 
+      enabled: true
+      hosts: "flux.k8s.ashman.world"
     adminUser:
       create: true
       username: admin
