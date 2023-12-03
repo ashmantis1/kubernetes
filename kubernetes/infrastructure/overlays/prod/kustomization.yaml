@@ -6,3 +6,4 @@ resources:
   - weave-gitops.yaml
   - cert-manager.yaml
   - external-dns-cloudflare.yaml
+  - external-dns-rfc2136.yaml
