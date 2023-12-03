@@ -19,7 +19,7 @@ spec:
             name: jellyseer
             port: 
               number: 80
-    tls:
-    - hosts:
-      - request.ashman.world
-      secretName: jellyseer-tls
+  tls:
+  - hosts:
+    - request.ashman.world
+    secretName: jellyseer-tls
