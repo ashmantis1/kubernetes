@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyseer-ingress
+  labels:
+    name: jellyseer-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  - host: request.ashman.world
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jellyseer
+            port: 
+              number: 80
+    tls:
+    - hosts:
+      - request.ashman.world
+      secretName: jellyseer-tls

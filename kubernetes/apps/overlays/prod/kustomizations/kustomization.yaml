@@ -1,0 +1,3 @@
+resources: 
+  - repositories.yaml
+  - jellyseer.yaml
