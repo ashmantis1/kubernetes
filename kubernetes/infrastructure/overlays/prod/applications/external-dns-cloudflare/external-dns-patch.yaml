@@ -5,6 +5,10 @@ metadata:
   name: external-dns
   namespace: external-dns
 spec:
+  chart:
+    spec:
+      sourceRef:
+        namespace: external-dns-rfc2136
   values: 
     provider: cloudflare
     policy: sync
