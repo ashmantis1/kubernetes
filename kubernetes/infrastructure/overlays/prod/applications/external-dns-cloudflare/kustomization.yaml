@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: external-dns
+resources:
+  - ../../../../bases/external-dns
+  - ./secrets
+patches: 
+  - target:
+      kind: HelmRelease
+    path: ./external-dns-patch.yaml
+
