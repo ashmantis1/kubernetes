@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: weave-gitops
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./kubernetes/infrastructure/overlays/prod/applications/weave-gitops
+  prune: false
+  dependsOn: 
+    - name: ingress-nginx
+    - name: external-secrets
+    - name: cert-manager
+  sourceRef:
+    kind: "GitRepository"
+    name: "flux-system"
