@@ -11,8 +11,8 @@ spec:
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: external-dns
-        namespace: external-dns
+        name: bitnami
+        namespace: flux-system
       interval: 12h
   values: 
     sources: 
