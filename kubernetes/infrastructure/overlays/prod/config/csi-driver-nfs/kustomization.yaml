@@ -1,0 +1,3 @@
+resources: 
+  - snapshotclass.yaml
+  - storageclass.yaml

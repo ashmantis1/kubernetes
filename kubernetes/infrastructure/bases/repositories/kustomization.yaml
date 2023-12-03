@@ -8,3 +8,4 @@ resources:
 - ingress-nginx.yaml
 - jetstack.yaml
 - weaveworks.yaml
+- csi-driver-nfs.yaml

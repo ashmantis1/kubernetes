@@ -10,3 +10,4 @@ resources:
 - ingress-nginx.yaml
 - weave-gitops.yaml
 - repositories.yaml
+- csi-driver-nfs.yaml
