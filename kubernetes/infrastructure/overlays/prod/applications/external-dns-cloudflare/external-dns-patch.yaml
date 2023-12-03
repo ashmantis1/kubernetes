@@ -7,6 +7,7 @@ metadata:
 spec:
   values: 
     provider: cloudflare
+    policy: sync
     cloudflare: 
       secretName: cloudflare-api-key
       email: cloudflare+services+accounts@ashmantis.com

@@ -7,7 +7,7 @@ metadata:
 spec:
   values: 
     provider: rfc2136
-    
+    policy: sync
     rfc2136:
       host: "192.168.1.110" 
       zone: "ashman.world"
