@@ -11,3 +11,4 @@ resources:
 - weave-gitops.yaml
 - repositories.yaml
 - csi-driver-nfs.yaml
+- cilium.yaml

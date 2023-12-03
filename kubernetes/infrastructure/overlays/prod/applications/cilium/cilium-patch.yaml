@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cilium
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      version: "1.14.3"
+  values: 
+    l2announcements:
+      # -- Enable L2 announcements
+      enabled: true
+    k8sServiceHost: 10.10.10.205
+    k8sServicePort: 6443
+    kubeProxyReplacement: true 
+    ingressController:
+      enabled: false 
+      loadbalancerMode: dedicated
+      service: 
+        type: LoadBalancer
+    nodePort:
+      enabled: false 
+    hubble: 
+      relay: 
+        enabled: true
+      ui: 
+        enabled: true 
+        ingress:
+          enabled: true
+          annotations: 
+            cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          className: "nginx"
+          hosts:
+            - hubble.k8s.ashman.world
+          labels: {}
+          tls: 
+            - secretName: hubble-ui-tls
+              hosts:
+                - hubble.k8s.ashman.world
