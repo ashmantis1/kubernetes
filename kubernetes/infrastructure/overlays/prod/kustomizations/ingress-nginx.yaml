@@ -9,6 +9,9 @@ spec:
   interval: 1m0s
   path: ./kubernetes/infrastructure/overlays/prod/applications/ingress-nginx
   prune: false
+  dependsOn: 
+    - name: repositories
+    
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"

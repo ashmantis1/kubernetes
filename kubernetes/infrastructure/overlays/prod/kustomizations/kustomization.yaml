@@ -9,3 +9,4 @@ resources:
 - external-secrets.yaml
 - ingress-nginx.yaml
 - weave-gitops.yaml
+- repositories.yaml
