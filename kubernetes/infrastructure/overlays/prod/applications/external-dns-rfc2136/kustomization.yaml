@@ -13,4 +13,9 @@ patches:
       - op: replace
         path: /metadata/name
         value: external-dns-rfc2136
-
+  - target: 
+      kind: Namespace
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: external-dns-rfc2136
