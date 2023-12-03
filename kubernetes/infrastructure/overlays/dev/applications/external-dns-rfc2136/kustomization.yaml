@@ -12,4 +12,5 @@ patches:
     patch: | 
       - op: replace
         path: /metadata/name
-        value: external-dns-cloudflare
+        value: external-dns-rfc2136
+
