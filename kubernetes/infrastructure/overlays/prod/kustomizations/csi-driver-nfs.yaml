@@ -14,6 +14,7 @@ spec:
     - kind: HelmRelease
       name: csi-driver-nfs
       namespace: csi-driver-nfs
+      apiVersion: helm.toolkit.fluxcd.io/v2beta1
   prune: false
   sourceRef:
     kind: "GitRepository"
