@@ -11,7 +11,7 @@ spec:
     branch: flux
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/ashmantis1/ashman-homelab-ops.git
+  url: ssh://git@github.com/ashmantis1/ashman-homelab-ops
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
