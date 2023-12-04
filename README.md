@@ -11,7 +11,10 @@ First navigate to `./infrastructure/kubernetes/ansible/inventory/group_vars/vars
 To deploy the kubernetes cluster, navigate to the root directory and run `ansible-playbook -i ansible/inventory/inventory.ini deploy.yaml`. This will deploy all nodes specified on your Proxmox cluster. 
 To deploy the argocd application, navigate to `./kubernetes/argocd` and run `kubectl apply -k .` to run the kustomizations, then just apply the application with `kubectl apply -f application.yaml`. 
 
+#### Flux
+To deploy the flux project, run this command:  
 
+`flux bootstrap git --url='ssh://git@github.com/ashmantis1/ashman-homelab-ops.git' --branch=flux --private-key-file=/home/asher/.ssh/mainkey --path=kubernetes/clusters/prod`
 
 ## DNS Records
 DNS records are managed using RFC 2186, to automatically update and add records. This is done primarly through the Terraform DNS provider. Currently general records are found in `./infrastructure/general/dns` and other records can be found in their respective projects, such as k8s records. 

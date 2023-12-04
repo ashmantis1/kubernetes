@@ -18,7 +18,7 @@ resource "proxmox_virtual_environment_file" "debian_cloud_image" {
   content_type = "iso"
   datastore_id = "ISOs"
   node_name    = "newserver"
-
+  //20230531-1397
   source_file {
     path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
     file_name = "debian12-server-cloudimg.img"
@@ -64,7 +64,7 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "1.1.1.1"
+        server = "8.8.8.8"
     }
     ip_config {
       ipv4 {
@@ -117,7 +117,7 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "1.1.1.1"
+        server = "8.8.8.8"
     }
     ip_config {
       ipv4 {
