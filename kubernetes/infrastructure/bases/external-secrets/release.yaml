@@ -5,6 +5,12 @@ metadata:
   name: external-secrets
   namespace: external-secrets
 spec:
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
   interval: 30m
   chart:
     spec:

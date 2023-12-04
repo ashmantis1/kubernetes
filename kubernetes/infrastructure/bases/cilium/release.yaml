@@ -6,6 +6,12 @@ metadata:
   namespace: kube-system
 spec:
   interval: 30m
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
   chart:
     spec:
       chart: cilium

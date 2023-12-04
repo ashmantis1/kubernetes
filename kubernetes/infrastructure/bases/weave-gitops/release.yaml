@@ -5,6 +5,12 @@ metadata:
   name: weave-gitops
   namespace: flux-system
 spec:
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
   interval: 60m
   chart:
     spec:

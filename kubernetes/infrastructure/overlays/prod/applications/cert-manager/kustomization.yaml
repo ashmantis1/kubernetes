@@ -9,3 +9,11 @@ patches:
       - op: replace
         path: /spec/chart/spec/version
         value: v1.13.1
+  - target:
+      kind: HelmRelease 
+    patch: | 
+      - op: add 
+        path: /spec/dependsOn/-
+        value: 
+          name: external-secrets
+          namespace: external-secrets

@@ -5,6 +5,12 @@ metadata:
   name: csi-driver-nfs
   namespace: csi-driver-nfs
 spec:
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
   interval: 30m
   chart:
     spec:
