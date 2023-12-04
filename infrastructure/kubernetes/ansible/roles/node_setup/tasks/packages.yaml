@@ -16,6 +16,10 @@
     - jq
     - curl
     - gnupg
+- name: ansible make /etc/apt/keyrings
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
 - name: Add google cloud public signing key
   ansible.builtin.shell: curl -fsSL https://dl.k8s.io/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
 - name: Add kubernetes apt repository

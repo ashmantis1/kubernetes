@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "bpg/proxmox"
-      version = "0.35.1"
+      version = "0.39.0"
     }
   }
 }
@@ -20,7 +20,8 @@ resource "proxmox_virtual_environment_file" "debian_cloud_image" {
   node_name    = "newserver"
   //20230531-1397
   source_file {
-    path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
+    path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2" 
+    //"https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
     file_name = "debian12-server-cloudimg.img"
  
   }
