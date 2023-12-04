@@ -7,3 +7,4 @@ patches:
   - target: 
       kind: HelmRelease
     path: ./jellyseer-patch.yaml
+
