@@ -9,7 +9,7 @@ spec:
   interval: 1m0s
   path: ./kubernetes/infrastructure/overlays/prod/applications/csi-driver-nfs
   dependsOn: 
-    - name: repositories
+    - name: repositories-infra
   prune: false
   sourceRef:
     kind: "GitRepository"

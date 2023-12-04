@@ -9,7 +9,7 @@ spec:
   interval: 1m0s
   path: ./kubernetes/infrastructure/overlays/prod/applications/cilium
   dependsOn: 
-    - name: repositories
+    - name: repositories-infra
   prune: false
   sourceRef:
     kind: "GitRepository"

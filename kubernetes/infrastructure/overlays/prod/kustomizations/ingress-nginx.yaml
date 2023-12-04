@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/infrastructure/overlays/prod/applications/ingress-nginx
   prune: false
   dependsOn: 
-    - name: repositories
+    - name: repositories-infra
     
   sourceRef:
     kind: "GitRepository"

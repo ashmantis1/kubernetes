@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/apps/overlays/prod
   prune: false
   dependsOn: 
-    - name: infra
+    - name: infra-config
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"

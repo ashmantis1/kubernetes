@@ -9,7 +9,9 @@ spec:
   interval: 1m0s
   path: ./kubernetes/infrastructure/overlays/prod/applications/cert-manager
   dependsOn: 
+    - name: repositories-infra
     - name: external-secrets
+
   prune: false
   sourceRef:
     kind: "GitRepository"
