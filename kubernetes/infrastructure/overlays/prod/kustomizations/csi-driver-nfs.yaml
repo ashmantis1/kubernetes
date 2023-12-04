@@ -10,6 +10,10 @@ spec:
   path: ./kubernetes/infrastructure/overlays/prod/applications/csi-driver-nfs
   dependsOn: 
     - name: repositories-infra
+  healthChecks:
+    - kind: HelmRelease
+      name: csi-driver-nfs
+      namespace: csi-driver-nfs
   prune: false
   sourceRef:
     kind: "GitRepository"

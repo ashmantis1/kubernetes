@@ -11,6 +11,10 @@ spec:
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets
+  healthChecks:
+    - kind: HelmRelease
+      name: cert-manager
+      namespace: cert-manager
 
   prune: false
   sourceRef:

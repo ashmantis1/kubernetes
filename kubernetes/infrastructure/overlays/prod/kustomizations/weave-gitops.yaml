@@ -15,6 +15,10 @@ spec:
     - name: cert-manager
     - name: repositories-infra
     - name: cilium
+  healthChecks:
+    - kind: HelmRelease
+      name: weave-gitops
+      namespace: weave-gitops
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
