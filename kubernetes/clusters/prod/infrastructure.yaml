@@ -12,3 +12,8 @@ spec:
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
+  healthChecks: # Depends on infra-config being Ready first, which will allow apps to dependOn infra
+    - kind: Kustomization
+      name: infra-config
+      namespace: flux-system
+      apiVersion: kustomize.toolkit.fluxcd.io/v1

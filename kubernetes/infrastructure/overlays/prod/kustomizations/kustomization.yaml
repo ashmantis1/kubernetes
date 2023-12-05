@@ -12,3 +12,4 @@ resources:
 - repositories.yaml
 - csi-driver-nfs.yaml
 - cilium.yaml
+- csi-driver-smb.yaml

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+resources: 
+  - ../../../../bases/csi-driver-smb
+patches: 
+  - target: 
+      kind: HelmRelease
+    patch: | 
+      - op: replace
+        path: /spec/chart/spec/version
+        value: v1.13.0

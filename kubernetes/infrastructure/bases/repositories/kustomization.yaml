@@ -9,4 +9,5 @@ resources:
 - jetstack.yaml
 - weaveworks.yaml
 - csi-driver-nfs.yaml
+- csi-driver-smb.yaml
 - cilium.yaml
