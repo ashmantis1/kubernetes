@@ -13,7 +13,7 @@ spec:
     kind: "GitRepository"
     name: "flux-system"
   healthChecks:
-    - kind: HelmRelease
+    - kind: Deployment
       name: transmission
       namespace: transmission
-      apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      apiVersion: apps/v1
