@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transmission
+spec:
+  selector:
+    matchLabels:
+      app: transmission
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: transmission
+    
+    spec:
+      initContainers:
+        - name: init
+          image: busybox
+          command: ['sh', '-c', 'cp /etc/openvpn/custom/* /config/config.ovpn']
+          volumeMounts:
+            - mountPath: /etc/openvpn/custom
+              name: openvpn-config
+            - mountPath: /config
+              name: config
+      containers:
+      - name: transmission
+        image: haugene/transmission-openvpn
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+        envFrom: 
+          - secretRef:
+              name: openvpn-secret
+        env: 
+        - name: OPENVPN_PROVIDER
+          value: custom
+        - name: OPENVPN_CONFIG
+          value: config
+        - name: LOCAL_NETWORK
+          value: "10.0.0.0/8"
+        volumeMounts:
+          - mountPath: /data
+            name: data
+          - mountPath: /etc/openvpn/custom
+            name: config
+            
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: transmission-config
+        - name: data
+          emptyDir: {}
+        - name: openvpn-config
+          configMap:
+            name: openvpn-config
