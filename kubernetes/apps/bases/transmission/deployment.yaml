@@ -51,8 +51,8 @@ spec:
           - mountPath: /mnt/downloads
             name: downloads
             # subPath: downloads
-          - mountPath: /mnt/media
-            name: media
+          # - mountPath: /mnt/media
+          #   name: media
             # subPath: media
             
       volumes:
