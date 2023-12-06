@@ -1,0 +1,3 @@
+resources:
+  - downloads-persistent-volume.yaml
+  - media-persistent-volume.yaml

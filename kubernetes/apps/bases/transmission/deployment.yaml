@@ -48,6 +48,12 @@ spec:
             name: data
           - mountPath: /etc/openvpn/custom
             name: config
+          - mountPath: /mnt/downloads
+            name: downloads
+            # subPath: downloads
+          - mountPath: /mnt/media
+            name: media
+            # subPath: media
             
       volumes:
         - name: config
@@ -58,3 +64,9 @@ spec:
         - name: openvpn-config
           configMap:
             name: openvpn-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: pvc-smb-downloads
+        - name: media
+          persistentVolumeClaim:
+            claimName: pvc-smb-media

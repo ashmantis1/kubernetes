@@ -2,7 +2,8 @@
 namespace: transmission
 resources:
 - ../../../../bases/transmission
-- ./secrets/ovpn-secret.yaml
+- ./secrets
+- ./config
 
 patches:
 - patch: |
