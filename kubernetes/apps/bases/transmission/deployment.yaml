@@ -65,8 +65,16 @@ spec:
           configMap:
             name: openvpn-config
         - name: downloads
-          persistentVolumeClaim:
-            claimName: pvc-smb-downloads
-        - name: media
-          persistentVolumeClaim:
-            claimName: pvc-smb-media
+          nfs:
+            server: 192.168.1.220 # IP to our NFS server
+            path: /Torrents # The exported directory
+        # - name: media
+        #   nfs:
+        #     server: 192.168.1.220
+        #     path: /BigPool/media/TV.Shows
+              # - name: downloads
+        #   persistentVolumeClaim:
+        #     claimName: pvc-smb-downloads
+        # - name: media
+        #   persistentVolumeClaim:
+        #     claimName: pvc-smb-media

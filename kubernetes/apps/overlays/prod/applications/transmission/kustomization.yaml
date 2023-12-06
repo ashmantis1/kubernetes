@@ -3,7 +3,6 @@ namespace: transmission
 resources:
 - ../../../../bases/transmission
 - ./secrets
-- ./config
 
 patches:
 - patch: |
