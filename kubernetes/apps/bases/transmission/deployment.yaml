@@ -45,11 +45,9 @@ spec:
           value: "10.0.0.0/8"
         volumeMounts:
           - mountPath: /data
-            name: data
+            name: downloads
           - mountPath: /etc/openvpn/custom
             name: config
-          - mountPath: /mnt/downloads
-            name: downloads
             # subPath: downloads
           # - mountPath: /mnt/media
           #   name: media
@@ -59,8 +57,6 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: transmission-config
-        - name: data
-          emptyDir: {}
         - name: openvpn-config
           configMap:
             name: openvpn-config
