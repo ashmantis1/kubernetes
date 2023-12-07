@@ -14,7 +14,7 @@ patches:
 - patch: |-
     - op: add
       path: /spec/tls/0/hosts/0
-      value: downloads.ashman.world
+      value: downloads.k8s.ashman.world
   target:
     kind: Ingress
 - patch: |-
