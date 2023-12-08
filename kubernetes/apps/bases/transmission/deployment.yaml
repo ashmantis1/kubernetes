@@ -25,6 +25,7 @@ spec:
       containers:
       - name: transmission
         image: haugene/transmission-openvpn
+        dnsPolicy: ClusterFirst
         resources:
           limits:
             memory: "128Mi"
