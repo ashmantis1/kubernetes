@@ -21,7 +21,7 @@ spec:
             - mountPath: /etc/openvpn/custom
               name: openvpn-config
             - mountPath: /config
-              name: config
+              name: tmp-config
       containers:
       - name: transmission
         image: haugene/transmission-openvpn
@@ -48,13 +48,12 @@ spec:
           - mountPath: /data
             name: downloads
           - mountPath: /etc/openvpn/custom
+            name: tmp-config
+          - mountPath: /config
             name: config
-            # subPath: downloads
-          # - mountPath: /mnt/media
-          #   name: media
-            # subPath: media
-            
       volumes:
+        - name: tmp-config
+          emptyDir: {}
         - name: config
           persistentVolumeClaim:
             claimName: transmission-config
