@@ -17,7 +17,7 @@ spec:
   healthChecks:
     - kind: HelmRelease
       name: dex
-      namespace: kube-system
+      namespace: dex
       apiVersion: helm.toolkit.fluxcd.io/v2beta1
   prune: false
   sourceRef:
