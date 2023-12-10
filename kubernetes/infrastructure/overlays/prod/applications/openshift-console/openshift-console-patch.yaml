@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: openshift-console
+  namespace: openshift-console
+spec:
+  chart:
+    spec:
+      version: "0.3.6"
+  values: 
+    console: 
+      dex: 
+        host: "https://dex.ashman.world"
+      baseUrl: https://console.k8s.ashman.world
+      impersonateOpenShift: true
+      oidc: 
+        enabled: true
+        issuerUrl: https://dex.k8s.ashman.world
+        clientId: kubelogin
+        clientSecret: test
+    volumes: 
+      - name: logo 
+        mountPath: /opt/bridge/static/assets
+        config: 
+          configMap: 
+            name: logo

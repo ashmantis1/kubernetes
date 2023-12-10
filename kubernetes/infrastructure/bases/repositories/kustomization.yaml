@@ -12,3 +12,4 @@ resources:
 - csi-driver-smb.yaml
 - cilium.yaml
 - dex.yaml
+- av1o.yaml
