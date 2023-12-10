@@ -19,3 +19,4 @@ resources:
 - olm.yaml
 - operator-marketplace.yaml
 - metrics-server.yaml
+- cert-manager-csi.yaml
