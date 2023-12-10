@@ -12,6 +12,10 @@ spec:
   values: 
     https:
       enabled: true
+    web: 
+      https: 0.0.0.0:5554
+      tlsCert: "/etc/crt/tls.crt"
+      tlsKey: "/etc/crt/tls.key"
     ingress: 
       enabled: false 
       className: nginx
