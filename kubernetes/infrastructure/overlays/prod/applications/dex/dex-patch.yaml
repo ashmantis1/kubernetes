@@ -10,8 +10,8 @@ spec:
       chart: dex
       version: "0.15.3"
   values: 
-    # https:
-    #   enabled: true
+    https:
+      enabled: true
     ingress: 
       enabled: false 
       className: nginx
@@ -41,7 +41,7 @@ spec:
       - name: tls
         mountPath: /etc/crt
         readOnly: true
-        
+
     envFrom: 
       - secretRef: 
           name: dex-secret
