@@ -11,3 +11,4 @@ resources:
 - csi-driver-nfs.yaml
 - csi-driver-smb.yaml
 - cilium.yaml
+- dex.yaml
