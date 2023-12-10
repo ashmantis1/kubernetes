@@ -1,3 +1,2 @@
-namespace: marketplace
 resources: 
   - ../../../../bases/operator-marketplace
