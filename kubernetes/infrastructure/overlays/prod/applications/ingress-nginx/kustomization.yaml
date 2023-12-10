@@ -9,3 +9,6 @@ patches:
       - op: add 
         path: /spec/values/controller/kind
         value: DaemonSet
+  - target: 
+      kind: HelmRelease
+    path: ./ingress-nginx-patch.yaml
