@@ -3,3 +3,4 @@ resources:
   - external-secrets
   - csi-driver-nfs
   - cilium
+  - dex
