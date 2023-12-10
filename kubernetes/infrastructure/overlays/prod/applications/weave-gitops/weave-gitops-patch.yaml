@@ -21,12 +21,12 @@ spec:
       - hosts:
         - flux.k8s.ashman.world
         secretName: weave-gitops-tls
-    oidcSecret: 
-      create: true 
-      clientID: kubelogin
-      clientSecret: test
-      issuerURL: https://dex.k8s.ashman.world
-      redirectURL: https://flux.k8s.ashman.world
+    # oidcSecret: 
+    #   create: true 
+    #   clientID: kubelogin
+    #   clientSecret: test
+    #   issuerURL: https://dex.k8s.ashman.world
+    #   redirectURL: https://flux.k8s.ashman.world
     adminUser:
       create: true
       username: admin
