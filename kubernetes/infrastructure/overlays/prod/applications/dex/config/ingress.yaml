@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: dex.k8s.ashman.world
+  - host: test.k8s.ashman.world
     http:
       paths:
       - backend:
@@ -22,5 +22,5 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - dex.k8s.ashman.world
+    - test.k8s.ashman.world
    # secretName: dex-ingress-tls
