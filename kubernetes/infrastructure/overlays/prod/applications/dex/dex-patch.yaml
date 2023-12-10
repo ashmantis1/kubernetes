@@ -36,7 +36,6 @@ spec:
           redirectURIs: 
             - http://localhost:8000
             - http://localhost:18000
-            - http://127.0.0.1:5555/callback
             - https://console.k8s.ashman.world/auth/callback
           name: OIDC Connector
           secretEnv: KUBELOGIN_CLIENT_SECRET 
