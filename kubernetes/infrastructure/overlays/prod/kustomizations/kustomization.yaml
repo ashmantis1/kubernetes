@@ -16,4 +16,6 @@ resources:
 - dex.yaml
 - cluster-secret-store.yaml
 - openshift-console.yaml
+- olm.yaml
+- operator-marketplace.yaml
 - metrics-server.yaml
