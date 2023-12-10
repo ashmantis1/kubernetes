@@ -4,6 +4,7 @@ namespace: dex
 resources: 
   - ../../../../bases/dex
   - ./secrets
+  - ./config/ingress.yaml
 patches: 
   - path: ./dex-patch.yaml
     target: 
