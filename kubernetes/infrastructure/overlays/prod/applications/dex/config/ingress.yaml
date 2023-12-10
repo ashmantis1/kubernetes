@@ -7,10 +7,12 @@ kind: Ingress
 metadata:
   name: dex
   namespace: dex
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: test.k8s.ashman.world
+  - host: dex.k8s.ashman.world
     http:
       paths:
       - backend:
@@ -22,5 +24,5 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - test.k8s.ashman.world
+    - dex.k8s.ashman.world
    # secretName: dex-ingress-tls
