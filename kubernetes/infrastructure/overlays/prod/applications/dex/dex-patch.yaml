@@ -30,6 +30,8 @@ spec:
       - secretRef: 
           name: dex-secret
     config: 
+      oauth2: 
+        skipApprovalScreen: true
       issuer: "https://dex.k8s.ashman.world"
       staticClients: 
         - id: kubelogin
