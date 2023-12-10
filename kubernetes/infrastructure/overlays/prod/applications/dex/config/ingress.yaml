@@ -19,7 +19,7 @@ spec:
             port:
               number: 5554
         path: /
-        pathType: Prefix
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - dex.k8s.ashman.world
