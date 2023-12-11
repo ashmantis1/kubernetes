@@ -7,8 +7,27 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.3.6"
+      version: "0.3.10"
   values: 
+    ingress: 
+      enabled: true 
+      className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      hosts: 
+        - host: console.k8s.ashman.world
+          paths: 
+            - path: / 
+      tls: 
+        - secretName: console-ingress-tls
+          hosts: 
+            - console.k8s.ashman.world
+    extraEnv: 
+      - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
+        valueFrom: 
+          secretKeyRef: 
+            name: oidc-secret
+            key: KUBELOGIN_CLIENT_SECRET
     console: 
       dex: 
         host: "https://dex.ashman.world"
@@ -18,7 +37,6 @@ spec:
         enabled: true
         issuerUrl: https://dex.k8s.ashman.world
         clientId: kubelogin
-        clientSecret: test
     volumes: 
       - name: logo 
         mountPath: /opt/bridge/static/assets

@@ -13,3 +13,4 @@ resources:
 - cilium.yaml
 - dex.yaml
 - av1o.yaml
+- ashmantis1.yaml

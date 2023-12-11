@@ -3,26 +3,27 @@ namespace: openshift-console
 resources: 
   - ../../../../bases/openshift-console
   - ./config/logo-cm.yaml
+  - ./secrets
 patches: 
-  - patch: |
-      - op: replace
-        path: /spec/rules/0/host
-        value: console.k8s.ashman.world
-    target:
-      kind: Ingress
-  - patch: |-
-      - op: add
-        path: /spec/tls/0/hosts/0
-        value: console.k8s.ashman.world
-    target:
-      kind: Ingress
-  - patch: |-
-      - op: add 
-        path: /metadata/annotations
-        value:
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-    target:
-      kind: Ingress
+  # - patch: |
+  #     - op: replace
+  #       path: /spec/rules/0/host
+  #       value: console.k8s.ashman.world
+  #   target:
+  #     kind: Ingress
+  # - patch: |-
+  #     - op: add
+  #       path: /spec/tls/0/hosts/0
+  #       value: console.k8s.ashman.world
+  #   target:
+  #     kind: Ingress
+  # - patch: |-
+  #     - op: add 
+  #       path: /metadata/annotations
+  #       value:
+  #         cert-manager.io/cluster-issuer: letsencrypt-prod
+  #   target:
+  #     kind: Ingress
   - target:
       kind: HelmRelease
     path: ./openshift-console-patch.yaml

@@ -19,6 +19,6 @@ spec:
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: av1o
+        name: ashmantis1
         namespace: flux-system
       interval: 12h
