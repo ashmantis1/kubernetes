@@ -7,7 +7,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "0.3.10"
+      version: "0.3.11"
   values: 
     ingress: 
       enabled: true 
@@ -23,11 +23,11 @@ spec:
           hosts: 
             - console.k8s.ashman.world
     extraEnv: 
-      - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
-        valueFrom: 
-          secretKeyRef: 
-            name: oidc-secret
-            key: KUBELOGIN_CLIENT_SECRET
+        - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
+          valueFrom: 
+            secretKeyRef: 
+              name: oidc-secret
+              key: KUBELOGIN_CLIENT_SECRET
     console: 
       dex: 
         host: "https://dex.ashman.world"
@@ -39,7 +39,8 @@ spec:
         clientId: kubelogin
     volumes: 
       - name: logo 
-        mountPath: /opt/bridge/static/assets
+        mountPath: /opt/bridge/static/assets/okd-logo.svg
         config: 
           configMap: 
             name: logo
+            subPath: okd-logo.svg
