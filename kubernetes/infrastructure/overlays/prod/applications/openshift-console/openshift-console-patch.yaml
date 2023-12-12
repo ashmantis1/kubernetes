@@ -37,6 +37,7 @@ spec:
         enabled: true
         issuerUrl: https://dex.k8s.ashman.world
         clientId: kubelogin
+        clientSecret: test
     volumes: 
       - name: logo 
         mountPath: /opt/bridge/static/assets/okd-logo.svg
