@@ -43,4 +43,4 @@ spec:
         config: 
           configMap: 
             name: logo
-            subPath: okd-logo.svg
+        subPath: okd-logo.svg
