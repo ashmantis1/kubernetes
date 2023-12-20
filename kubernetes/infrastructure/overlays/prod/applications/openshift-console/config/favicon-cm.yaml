@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: favicon
   namespace: openshift-console
-data:
+binaryData:
   okd-favicon.png: |
     iVBORw0KGgoAAAANSUhEUgAAAIQAAACACAYAAADK1cGxAAAA0GVYSWZJSSoACAAAAAoAAAEEAAEA
     AACEAAAAAQEEAAEAAACAAAAAAgEDAAMAAACGAAAAEgEDAAEAAAABAAAAGgEFAAEAAACMAAAAGwEF
