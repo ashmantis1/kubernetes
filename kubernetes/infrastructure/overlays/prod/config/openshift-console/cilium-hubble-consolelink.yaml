@@ -3,7 +3,7 @@ kind: ConsoleLink
 metadata:
   name: cilium-hubble-link
 spec:
-  href: 'cilium.k8s.ashman.world'
+  href: 'https://cilium.k8s.ashman.world'
   location: ApplicationMenu
   text: Hubble - Cilium Network Observability Dashboard
   applicationMenu:

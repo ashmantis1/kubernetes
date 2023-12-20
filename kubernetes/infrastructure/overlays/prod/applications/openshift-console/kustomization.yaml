@@ -2,7 +2,7 @@
 namespace: openshift-console
 resources: 
   - ../../../../bases/openshift-console
-  - ./config/logo-cm.yaml
+  - ./config
   - ./secrets
 patches: 
   # - patch: |

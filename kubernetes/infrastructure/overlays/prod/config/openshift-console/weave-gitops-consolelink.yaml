@@ -3,7 +3,7 @@ kind: ConsoleLink
 metadata:
   name: weave-gitops-link
 spec:
-  href: 'flux.k8s.ashman.world'
+  href: 'https://flux.k8s.ashman.world'
   location: ApplicationMenu
   text: Weave GitOps - Flux dashboard
   applicationMenu:
