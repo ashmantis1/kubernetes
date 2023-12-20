@@ -5,7 +5,7 @@ metadata:
 spec:
   href: 'https://cilium.k8s.ashman.world'
   location: ApplicationMenu
-  text: Hubble - Cilium Network Observability Dashboard
+  text: Hubble - Cilium Observability Dashboard
   applicationMenu:
     section: Kubernetes Tools
     # image that is 24x24 in size

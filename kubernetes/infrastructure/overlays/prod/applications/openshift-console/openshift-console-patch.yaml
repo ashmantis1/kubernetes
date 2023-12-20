@@ -44,3 +44,9 @@ spec:
           configMap: 
             name: logo
         subPath: okd-logo.svg
+      - name: favicon
+        mountPath: /opt/bridge/static/assets/okd-favicon.png
+        config: 
+          configMap: 
+            name: favicon-cm.yaml
+        subPath: okd-favicon.png
