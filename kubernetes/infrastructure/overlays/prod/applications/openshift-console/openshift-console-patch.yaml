@@ -18,10 +18,14 @@ spec:
         - host: console.k8s.ashman.world
           paths: 
             - path: / 
+        - host: k8s.ashman.world
+          paths: 
+            - path: /
       tls: 
         - secretName: console-ingress-tls
           hosts: 
             - console.k8s.ashman.world
+            - k8s.ashman.world
     extraEnv: 
       - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
         valueFrom: 
