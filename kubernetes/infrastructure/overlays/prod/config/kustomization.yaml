@@ -2,6 +2,7 @@ resources:
   - cert-manager
   - external-secrets
   - csi-driver-nfs
+  - cilium
   - dex
   - openshift-console
   - metallb
