@@ -14,3 +14,4 @@ resources:
 - dex.yaml
 - av1o.yaml
 - ashmantis.yaml
+- metallb.yaml

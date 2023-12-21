@@ -3,18 +3,20 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-config
+  name: metallb
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/prod/config
-  dependsOn: 
-    - name: external-secrets
-    - name: cert-manager
-    - name: csi-driver-nfs
-    - name: cilium
-    - name: metallb
+  path: ./kubernetes/infrastructure/overlays/prod/applications/metallb
   prune: false
+  dependsOn: 
+    - name: repositories-infra
+    - name: cilium 
+  healthChecks:
+    - kind: HelmRelease
+      name: metallb
+      namespace: metallb-system
+      apiVersion: helm.toolkit.fluxcd.io/v2beta1
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"

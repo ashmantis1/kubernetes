@@ -5,3 +5,4 @@ resources:
   - cilium
   - dex
   - openshift-console
+  - metallb

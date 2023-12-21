@@ -20,3 +20,4 @@ resources:
 - operator-marketplace.yaml
 - metrics-server.yaml
 - cert-manager-csi.yaml
+- metallb.yaml

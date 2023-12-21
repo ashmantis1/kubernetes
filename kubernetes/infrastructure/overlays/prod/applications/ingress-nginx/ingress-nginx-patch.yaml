@@ -9,3 +9,5 @@ spec:
     controller: 
       extraArgs: 
         enable-ssl-passthrough: true
+      service: 
+        loadBalancerIP: "10.10.200.1"
