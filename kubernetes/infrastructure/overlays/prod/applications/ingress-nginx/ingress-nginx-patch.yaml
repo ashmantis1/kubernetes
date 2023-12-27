@@ -5,6 +5,9 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 spec:
+  chart:
+    spec:
+      version: "4.9.0"
   values:
     controller: 
       extraArgs: 

@@ -50,6 +50,7 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
 
   cpu {
     cores = var.master_cpu
+    type = "x86-64-v2-AES"
   }
   memory {
     dedicated = var.master_memory
@@ -103,6 +104,7 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
 
   cpu {
     cores = var.worker_cpu
+    type = "x86-64-v2-AES"
   }
   memory {
     dedicated = var.worker_memory
