@@ -24,6 +24,6 @@ patches:
         cert-manager.io/cluster-issuer: letsencrypt-prod
   target:
     kind: Ingress
-- path: config/mullvad-config.yaml
+- path: config/openvpn-config.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
