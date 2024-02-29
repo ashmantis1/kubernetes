@@ -1,0 +1,54 @@
+--- 
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+  name: jellyfin
+  labels: 
+    app: jellyfin 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jellyfin
+  template:
+    metadata:
+      labels: 
+        app: jellyfin
+    spec: 
+      securityContext:
+        supplementalGroups:
+          - 105
+      containers:
+        - name: jellyfin
+          image: jellyfin/jellyfin
+          volumeMounts:
+            - mountPath: /tv 
+              name: tv 
+            - mountPath: /movies 
+              name: movies 
+            - mountPath: /config
+              name: config
+            - mountPath: /cache
+              name: cache
+          resources:
+            limits:
+              gpu.intel.com/i915: 1
+              # memory: "128Mi"
+              # cpu: "500m"
+      volumes:
+        - name: tv
+          nfs:
+            path: /BigPool/media/TV.Shows
+            server: 192.168.1.220
+            readOnly: true
+        - name: movies
+          nfs: 
+            path: /BigPool/media/Movies
+            server: 192.168.1.220
+            readOnly: true
+        - name: config
+          persistentVolumeClaim:
+            claimName: jellyfin-config
+        - name: cache
+          persistentVolumeClaim:
+            claimName: jellyfin-cache

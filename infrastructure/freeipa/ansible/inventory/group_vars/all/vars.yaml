@@ -16,7 +16,7 @@ ssh_pub_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC84bHzptCGQ7rY/6DiNnnvIUDUAJR
 node_password_hash: "{{vault_node_password_hash}}"
 
 #These are the nodes that the vm's will be deployed to, in sequential order, eg. master01 will be deployed to master_nodes[0]. Use proxmox node names
-master_nodes: ["node2"] # List of nodes to deploy the masters to must match master count (max )
+master_nodes: ["newserver"] # List of nodes to deploy the masters to must match master count (max )
 
 master_count: 1 # Must be 3 right now due. Check playbooks/deploy_masters.yaml to fix this 
 vm_id: 3000

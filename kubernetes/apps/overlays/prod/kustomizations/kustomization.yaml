@@ -2,3 +2,4 @@ resources:
   - repositories.yaml
   - jellyseer.yaml
   - transmission.yaml
+  - jellyfin.yaml
