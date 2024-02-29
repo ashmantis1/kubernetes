@@ -18,4 +18,4 @@ spec:
               number: 8096
   tls:
   - hosts: []
-    secretName: transmission-tls
+    secretName: jellyfin-tls
