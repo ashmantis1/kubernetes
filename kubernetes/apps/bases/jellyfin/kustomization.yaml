@@ -1,3 +1,4 @@
+namespace: jellyfin 
 resources:
   - namespace.yaml 
   - deployment.yaml
