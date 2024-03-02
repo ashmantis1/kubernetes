@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyfin-config
 spec:
+  storageClassName: local-path
   resources:
     requests:
       storage: 5Gi
@@ -15,6 +16,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyfin-cache
 spec:
+  storageClassName: local-path
   resources:
     requests:
       storage: 10Gi

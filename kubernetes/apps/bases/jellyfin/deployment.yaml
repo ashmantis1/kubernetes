@@ -28,8 +28,8 @@ spec:
               name: movies 
             - mountPath: /config
               name: config
-            # - mountPath: /cache
-            #   name: cache
+            - mountPath: /cache
+              name: cache
           resources:
             limits:
               gpu.intel.com/i915: 1
