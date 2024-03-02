@@ -9,13 +9,13 @@ patches:
   - patch: |
       - op: replace
         path: /spec/rules/0/host
-        value: jellyfin.k8s.ashman.world
+        value: jellyfin.dev.ashman.world
     target:
       kind: Ingress
   - patch: |-
       - op: add
         path: /spec/tls/0/hosts/0
-        value: jellyfin.k8s.ashman.world
+        value: jellyfin.dev.ashman.world
     target:
       kind: Ingress
   - patch: |-
