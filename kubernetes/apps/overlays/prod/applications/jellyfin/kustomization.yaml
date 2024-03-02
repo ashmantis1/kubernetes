@@ -2,6 +2,10 @@
 resources:
   - ../../../../bases/jellyfin
 patches: 
+  # - patch: | 
+  #     - op: add 
+  #       path: /spec/template/spec/securityContext/supplementalGroups/- 
+  #       value: 105
   - patch: |
       - op: replace
         path: /spec/rules/0/host
