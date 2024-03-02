@@ -1,4 +1,3 @@
-# kubernetes/infrastructure/overlays/prod/applications/local-path-provisioner
 
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -18,7 +17,7 @@ spec:
     - kind: Deployment
       name: local-path-provisioner
       namespace: local-path-storage
-      apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      apiVersion: apps/v1
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
