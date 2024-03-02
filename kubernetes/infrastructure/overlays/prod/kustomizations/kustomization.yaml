@@ -21,3 +21,4 @@ resources:
 - metrics-server.yaml
 - cert-manager-csi.yaml
 - metallb.yaml
+- local-path-provisioner.yaml
