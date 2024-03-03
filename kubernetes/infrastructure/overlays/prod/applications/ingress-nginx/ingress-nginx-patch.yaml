@@ -11,8 +11,7 @@ spec:
   values:
     controller: 
       config: 
-        denylist-source-range: 
-          - "192.168.5.0/24"
+        denylist-source-range: "192.168.5.0/24"
       extraArgs: 
         enable-ssl-passthrough: true
       # service: 
