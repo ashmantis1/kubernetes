@@ -10,8 +10,8 @@ spec:
       version: "4.9.0"
   values:
     controller: 
-      config: 
-        whitelist-source-range: "192.168.1.0/24,10.10.0.0/16"
+      # config: 
+      #   whitelist-source-range: "192.168.1.0/24,10.10.0.0/16"
       extraArgs: 
         enable-ssl-passthrough: true
       # service: 
