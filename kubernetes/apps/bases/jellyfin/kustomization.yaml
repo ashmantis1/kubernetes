@@ -3,7 +3,8 @@
 namespace: jellyfin 
 resources:
   - namespace.yaml 
-  - deployment.yaml
-  - pvc.yaml
-  - service.yaml
-  - ingress.yaml
+  - release.yaml
+  # - deployment.yaml
+  # - pvc.yaml
+  # - service.yaml
+  # - ingress.yaml

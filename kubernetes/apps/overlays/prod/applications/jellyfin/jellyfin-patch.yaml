@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: jellyfin
+spec:
+  chart:
+    spec:
+      chart: jellyfin
+  values: 
+    persistentVolumes: 
+      enabled: true
+      storageClass: local-path
+    extraVolumes: 
+    - name: tv
+      nfs:
+        path: /BigPool/media/TV.Shows
+        server: 192.168.1.220
+        readOnly: true
+    - name: movies
+      nfs: 
+        path: /BigPool/media/Movies
+        server: 192.168.1.220
+        readOnly: true
+    volumeMounts: 
+      - mountPath: /tv 
+        name: tv 
+      - mountPath: /movies 
+        name: movies
+    ingress: 
+      enabled: true 
+      className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      hosts: 
+        - host: jellyfin.test.ashman.world
+      tls: 
+        - secretName: jellyfin-tls
+          hosts: 
+            - jellyfin.test.ashman.world
+    resources: 
+      limits:
+        gpu.intel.com/i915: 1
