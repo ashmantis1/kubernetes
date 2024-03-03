@@ -9,6 +9,8 @@ spec:
     spec:
       chart: jellyfin
   values: 
+    image: 
+      tag: latest
     persistentVolumes: 
       enabled: true
       storageClass: local-path
@@ -23,11 +25,25 @@ spec:
         path: /BigPool/media/Movies
         server: 192.168.1.220
         readOnly: true
+    - name: music
+      nfs: 
+        path: /BigPool/media/Music 
+        server: 192.168.1.220
+        readOnly: true
+    - name: audiobooks
+      nfs: 
+        path: /BigPool/media/AudioBooks 
+        server: 192.168.1.220
+        readOnly: true
     volumeMounts: 
       - mountPath: /tv 
         name: tv 
       - mountPath: /movies 
         name: movies
+      - mountPath: /music
+        name: music
+      - mountPath: /audiobooks
+        name: audiobooks
     ingress: 
       enabled: true 
       className: nginx
