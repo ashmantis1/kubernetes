@@ -13,7 +13,7 @@ spec:
     kind: "GitRepository"
     name: "flux-system"
   healthChecks:
-    - kind: Deployment
+    - kind: HelmRelease
       name: jellyfin
       namespace: jellyfin
-      apiVersion: apps/v1
+      apiVersion: helm.toolkit.fluxcd.io/v2beta1
