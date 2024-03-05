@@ -7,7 +7,7 @@ metadata:
     name: jellyseer-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.5.0/24,192.168.1.0/24
+    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.5.0/24,192.168.1.0/24,10.10.0.0/16
 spec:
   rules:
   - host: request.ashman.world
