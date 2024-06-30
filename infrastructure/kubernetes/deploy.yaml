@@ -2,12 +2,12 @@
 - name: Run Terraform
   ansible.builtin.import_playbook: ./ansible/playbooks/create_infrastructure.yaml
   tags: always
-- name: Configure masters
-  ansible.builtin.import_playbook: ./ansible/playbooks/configure_masters.yaml
+- name: Configure Nodes
+  ansible.builtin.import_playbook: ./ansible/playbooks/configure_nodes.yaml
   tags: configure
-- name: Configure workers
-  ansible.builtin.import_playbook: ./ansible/playbooks/configure_workers.yaml
-  tags: configure
+# - name: Configure workers
+#   ansible.builtin.import_playbook: ./ansible/playbooks/configure_workers.yaml
+#   tags: configure
 - name: Deploy k8s bootstrap 
   ansible.builtin.import_playbook: ./ansible/playbooks/deploy_bootstrap.yaml
   tags: k8s

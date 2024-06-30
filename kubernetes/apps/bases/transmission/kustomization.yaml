@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+namespace: transmission
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+- pvc.yaml
+- namespace.yaml
+configMapGenerator:
+- literals:
+  - openvpn.conf=PATCH
+  name: openvpn-config
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

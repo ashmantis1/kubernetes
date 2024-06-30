@@ -1,0 +1,3 @@
+resources: 
+- weave-gitops-consolelink.yaml
+- cilium-hubble-consolelink.yaml

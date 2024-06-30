@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transmission
+spec:
+  selector:
+    matchLabels:
+      app: transmission
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: transmission
+    
+    spec:
+      initContainers:
+        - name: init
+          image: busybox
+          command: ['sh', '-c', 'cp /etc/openvpn/custom/* /config/config.ovpn']
+          volumeMounts:
+            - mountPath: /etc/openvpn/custom
+              name: openvpn-config
+            - mountPath: /config
+              name: tmp-config
+      containers:
+      - name: transmission
+        image: haugene/transmission-openvpn
+        dnsPolicy: ClusterFirst
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+        envFrom: 
+          - secretRef:
+              name: openvpn-secret
+        env: 
+        - name: OPENVPN_PROVIDER
+          value: custom
+        - name: OPENVPN_CONFIG
+          value: config
+        - name: LOCAL_NETWORK
+          value: "10.0.0.0/8"
+        volumeMounts:
+          - mountPath: /data
+            name: downloads
+          - mountPath: /etc/openvpn/custom
+            name: tmp-config
+          - mountPath: /config
+            name: config
+      volumes:
+        - name: tmp-config
+          emptyDir: {}
+        - name: config
+          persistentVolumeClaim:
+            claimName: transmission-config
+        - name: openvpn-config
+          configMap:
+            name: openvpn-config
+        - name: downloads
+          nfs:
+            server: 192.168.1.220 # IP to our NFS server
+            path: /Torrents # The exported directory

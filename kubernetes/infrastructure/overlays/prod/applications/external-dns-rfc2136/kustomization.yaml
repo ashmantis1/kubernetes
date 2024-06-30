@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: external-dns-rfc2136
+resources:
+  - ../../../../bases/external-dns
+  - ./secrets
+patches: 
+  - target:
+      kind: HelmRelease
+    path: ./external-dns-patch.yaml
+  - target:
+      kind: HelmRelease
+    patch: | 
+      - op: replace
+        path: /metadata/name
+        value: external-dns-rfc2136
+  - target: 
+      kind: Namespace
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: external-dns-rfc2136

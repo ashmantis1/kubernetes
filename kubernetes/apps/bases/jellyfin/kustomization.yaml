@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+
+namespace: jellyfin 
+resources:
+  - namespace.yaml 
+  - release.yaml
+  # - deployment.yaml
+  # - pvc.yaml
+  # - service.yaml
+  # - ingress.yaml

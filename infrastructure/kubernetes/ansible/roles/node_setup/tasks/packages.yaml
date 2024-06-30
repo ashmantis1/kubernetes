@@ -16,8 +16,14 @@
     - jq
     - curl
     - gnupg
+- name: ansible make /etc/apt/keyrings
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
 - name: Add google cloud public signing key
   ansible.builtin.shell: curl -fsSL https://dl.k8s.io/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+  timeout: 30 
+  ignore_errors: true
 - name: Add kubernetes apt repository
   ansible.builtin.shell: echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 - name: Install kubelet 

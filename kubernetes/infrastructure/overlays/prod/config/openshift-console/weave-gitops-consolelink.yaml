@@ -1,0 +1,12 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: weave-gitops-link
+spec:
+  href: 'https://flux.k8s.ashman.world'
+  location: ApplicationMenu
+  text: Weave GitOps - Flux dashboard
+  applicationMenu:
+    section: Kubernetes Tools
+    # image that is 24x24 in size
+    imageURL: https://pbs.twimg.com/profile_images/1331259245585690628/i-M9zkgc_400x400.jpg

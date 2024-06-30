@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+resources: 
+  - ./kustomizations

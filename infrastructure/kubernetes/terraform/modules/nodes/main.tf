@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "bpg/proxmox"
-      version = "0.35.1"
+      version = "0.39.0"
     }
   }
 }
@@ -18,9 +18,10 @@ resource "proxmox_virtual_environment_file" "debian_cloud_image" {
   content_type = "iso"
   datastore_id = "ISOs"
   node_name    = "newserver"
-
+  //20230531-1397
   source_file {
-    path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
+    path = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2" 
+    //"https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
     file_name = "debian12-server-cloudimg.img"
  
   }
@@ -49,6 +50,7 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
 
   cpu {
     cores = var.master_cpu
+    type = "x86-64-v2-AES"
   }
   memory {
     dedicated = var.master_memory
@@ -64,11 +66,12 @@ resource "proxmox_virtual_environment_vm" "k8s-masters" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "${var.dns_server}"
+        server = "8.8.8.8"
     }
     ip_config {
       ipv4 {
-        address = "dhcp"
+        address = "10.10.10.${count.index+1}/16"
+        gateway = "10.10.0.1"
       }
     }
 
@@ -101,6 +104,7 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
 
   cpu {
     cores = var.worker_cpu
+    type = "x86-64-v2-AES"
   }
   memory {
     dedicated = var.worker_memory
@@ -116,11 +120,12 @@ resource "proxmox_virtual_environment_vm" "k8s-workers" {
   initialization {
     datastore_id = "SSD_Pool"
     dns {
-        server = "${var.dns_server}"
+        server = "8.8.8.8"
     }
     ip_config {
       ipv4 {
-        address = "dhcp"
+        address = "10.10.10.${var.master_count+count.index+1}/16"
+        gateway = "10.10.0.1"
       }
     }
 
