@@ -25,7 +25,7 @@ spec:
           enabled: true
           annotations: 
             cert-manager.io/cluster-issuer: "letsencrypt-prod"
-          className: "nginx"
+          className: "cilium"
           hosts:
             - cilium.k8s.edge.ashman.world
           labels: {}
