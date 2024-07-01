@@ -9,6 +9,7 @@ spec:
     spec:
       version: "1.15.6"
   values: 
+    kubeProxyReplacement: true
     ingressController:
       enabled: true 
       loadbalancerMode: dedicated
