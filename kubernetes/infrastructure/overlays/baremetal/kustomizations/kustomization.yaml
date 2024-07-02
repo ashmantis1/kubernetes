@@ -3,9 +3,11 @@ kind: Kustomization
 resources:
 - cilium.yaml
 - repositories.yaml
+- dex.yaml
 - metallb.yaml
 - config.yaml
 - ingress-nginx.yaml
 - external-dns-cloudflare.yaml
 - external-secrets.yaml
 - cert-manager.yaml
+- cert-manager-csi.yaml
