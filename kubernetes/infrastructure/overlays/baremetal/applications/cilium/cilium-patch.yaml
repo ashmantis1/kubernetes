@@ -19,20 +19,20 @@ spec:
     #        type: LoadBalancer
     #    nodePort:
     #      enabled: false 
-    #    hubble: 
-    #      relay: 
-    #        enabled: true
-    #      ui: 
-    #        enabled: true 
-    #        ingress:
-    #          enabled: true
-    #          annotations: 
-    #            cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    #          className: "cilium"
-    #          hosts:
-    #            - cilium.k8s.edge.ashman.world
-    #          labels: {}
-    #          tls: 
-    #            - secretName: hubble-ui-tls
-    #              hosts:
-    #                - cilium.k8s.edge.ashman.world
+    hubble: 
+      relay: 
+        enabled: true
+      ui: 
+        enabled: true 
+        ingress:
+          enabled: true
+          annotations: 
+            cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          className: "cilium"
+          hosts:
+            - cilium.k8s.edge.ashman.world
+          labels: {}
+          tls: 
+            - secretName: hubble-ui-tls
+              hosts:
+                - cilium.k8s.edge.ashman.world
