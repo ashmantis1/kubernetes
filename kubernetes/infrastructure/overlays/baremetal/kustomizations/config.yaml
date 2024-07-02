@@ -10,6 +10,8 @@ spec:
   path: ./kubernetes/infrastructure/overlays/baremetal/config
   dependsOn: 
     - name: metallb
+    - name: external-secrets
+    - name: cert-manager
   prune: false
   sourceRef:
     kind: "GitRepository"
