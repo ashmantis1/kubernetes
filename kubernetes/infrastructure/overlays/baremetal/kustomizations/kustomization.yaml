@@ -5,3 +5,4 @@ resources:
 - repositories.yaml
 - metallb.yaml
 - config.yaml
+- ingress-nginx.yaml

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  chart:
+    spec:
+      version: "4.9.0"
+  values:
+    controller: 
+      kind: DaemonSet
+      service: 
+        externalTrafficPolicy: "Local"
+      config: 
+      #whitelist-source-range: "10.30.0.0/24"
+        use-proxy-protocol: "true" 
+      extraArgs: 
+        enable-ssl-passthrough: true
+      # service: 
+      #   loadBalancerIP: "10.10.200.1"
