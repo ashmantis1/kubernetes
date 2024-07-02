@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: openshift-console
+  namespace: openshift-console
+spec:
+  chart:
+    spec:
+      version: "0.3.17"
+  values: 
+    ingress: 
+      enabled: true 
+      className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      hosts: 
+        - host: console.k8s.edge.ashman.world
+          paths: 
+            - path: / 
+        - host: k8s.edge.ashman.world
+          paths: 
+            - path: /
+      tls: 
+        - secretName: console-ingress-tls
+          hosts: 
+            - console.k8s.edge.ashman.world
+            - k8s.edge.ashman.world
+    extraEnv: 
+      - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
+        valueFrom: 
+          secretKeyRef: 
+            name: oidc-secret
+            key: KUBELOGIN_CLIENT_SECRET
+      - name: BRIDGE_CUSTOM_LOGO_FILE
+        value: /opt/bridge/static/assets/k8s-logo.png
+    console: 
+      dex: 
+        host: "https://dex.k8s.edge.ashman.world"
+      baseUrl: https://console.k8s.edge.ashman.world
+      impersonateOpenShift: true
+      oidc: 
+        enabled: true
+        issuerUrl: https://dex.k8s.edge.ashman.world
+        clientId: kubelogin
+    volumes: 
+      - name: logo 
+        mountPath: /opt/bridge/static/assets/k8s-logo.png
+        config: 
+          configMap: 
+            name: logo
+        subPath: k8s-logo.png
+      - name: favicon
+        mountPath: /opt/bridge/static/assets/okd-favicon.png
+        config: 
+          configMap: 
+            name: favicon
+        subPath: okd-favicon.png
