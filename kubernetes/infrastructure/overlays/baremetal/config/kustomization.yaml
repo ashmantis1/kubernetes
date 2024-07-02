@@ -4,3 +4,4 @@ resources:
   - ./metallb
   - ./external-secrets
   - ./cert-manager
+  - ./dex
