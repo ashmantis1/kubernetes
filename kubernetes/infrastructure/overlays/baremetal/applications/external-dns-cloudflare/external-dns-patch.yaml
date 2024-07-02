@@ -9,6 +9,6 @@ spec:
     provider: cloudflare
     policy: sync
     cloudflare: 
-      secretName: cloudflare-api-key
+      secretName: cloudflare-api-token
       email: cloudflare+services+accounts@ashmantis.com
       proxied: false
