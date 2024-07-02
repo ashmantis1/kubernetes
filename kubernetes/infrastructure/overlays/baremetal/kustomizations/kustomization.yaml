@@ -6,3 +6,5 @@ resources:
 - metallb.yaml
 - config.yaml
 - ingress-nginx.yaml
+- external-dns-cloudflare.yaml
+- external-secrets.yaml
