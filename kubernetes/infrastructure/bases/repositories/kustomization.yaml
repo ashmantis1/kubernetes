@@ -15,3 +15,4 @@ resources:
 - av1o.yaml
 - ashmantis.yaml
 - metallb.yaml
+- longhorn.yaml

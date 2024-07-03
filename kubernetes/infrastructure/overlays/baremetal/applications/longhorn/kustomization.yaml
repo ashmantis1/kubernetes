@@ -1,0 +1,8 @@
+namespace: longhorn-system
+resources: 
+- namespace.yaml
+- ../../../../bases/longhorn
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: ./longhorn-patch.yaml
