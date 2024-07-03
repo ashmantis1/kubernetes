@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+namespace: transmission
+resources:
+- ../../../../bases/transmission
+- ./secrets
+
+patches:
+- patch: |
+    - op: replace
+      path: /spec/rules/0/host
+      value: downloads.k8s.ashman.world
+  target:
+    kind: Ingress
+- patch: |-
+    - op: add
+      path: /spec/tls/0/hosts/0
+      value: downloads.k8s.ashman.world
+  target:
+    kind: Ingress
+- patch: |-
+    - op: add 
+      path: /metadata/annotations
+      value:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+  target:
+    kind: Ingress
+- path: config/openvpn-config.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
