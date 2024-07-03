@@ -17,7 +17,7 @@ spec:
     extraVolumes: 
     - name: tv
       nfs:
-        path: /volume1/TV.Shows
+        path: /volume1/TV
         server: 10.10.1.12
         readOnly: true
     - name: movies
