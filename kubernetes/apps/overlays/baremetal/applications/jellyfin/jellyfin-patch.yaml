@@ -45,6 +45,6 @@ spec:
         - secretName: jellyfin-tls
           hosts: 
             - jellyfin.ashman.world
-            #resources: 
-            #  limits:
-            #    gpu.intel.com/i915: 1
+    resources: 
+      limits:
+        gpu.intel.com/i915: 1
