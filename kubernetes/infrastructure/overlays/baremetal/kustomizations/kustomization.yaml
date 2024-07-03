@@ -14,3 +14,4 @@ resources:
 - openshift-console.yaml
 - olm.yaml
 - operator-marketplace.yaml
+- longhorn.yaml
