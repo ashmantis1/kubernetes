@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   #- cilium.yaml
 - calico.yaml
+- intel-gpu.yaml
 - repositories.yaml
 - dex.yaml
 - metallb.yaml
