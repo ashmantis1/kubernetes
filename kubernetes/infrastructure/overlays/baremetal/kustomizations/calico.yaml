@@ -13,7 +13,7 @@ spec:
   healthChecks:
     - kind: HelmRelease
       name: calico
-      namespace: kube-system
+      namespace: tigera-operator
       apiVersion: helm.toolkit.fluxcd.io/v2beta1
   prune: false
   sourceRef:
