@@ -20,3 +20,4 @@ resources:
 - metallb-config.yaml
 - external-secrets-config.yaml
 - cert-manager-config.yaml
+- nfd.yaml
