@@ -16,3 +16,4 @@ resources:
 - ashmantis.yaml
 - metallb.yaml
 - longhorn.yaml
+- calico.yaml
