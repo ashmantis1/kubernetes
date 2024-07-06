@@ -17,3 +17,5 @@ resources:
 - operator-marketplace.yaml
 - longhorn.yaml
 - metallb-config.yaml
+- external-secrets-config.yaml
+- cert-manager-config.yaml
