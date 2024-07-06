@@ -4,5 +4,6 @@ resources:
   #  - ./metallb
   #  - ./external-secrets
   #  - ./cert-manager
+  - ./longhorn
   - ./dex
   - ./openshift-console
