@@ -10,7 +10,7 @@ spec:
   prune: true
   dependsOn: 
     - name: repositories-infra
-    - name: metallb
+    - name: metallb-config
   healthChecks:
     - kind: HelmRelease
       name: ingress-nginx
