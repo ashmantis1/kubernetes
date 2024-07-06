@@ -11,7 +11,6 @@ spec:
   prune: false
   dependsOn: 
     - name: repositories-infra
-    - name: ingress-nginx
     - name: dex
   healthChecks:
     - kind: HelmRelease
