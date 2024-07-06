@@ -10,7 +10,6 @@ spec:
   prune: true
   dependsOn: 
     - name: repositories-infra
-    - name: cilium 
     - name: metallb
   healthChecks:
     - kind: HelmRelease
