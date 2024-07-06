@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/infrastructure/overlays/baremetal/applications/intel-gpu
   prune: false
   dependsOn:
-    - node-feature-discovery
+    - name: node-feature-discovery
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
