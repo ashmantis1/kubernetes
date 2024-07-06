@@ -13,7 +13,7 @@ spec:
       retries: -1
   chart:
     spec:
-      chart: calico
+      chart: tigera-operator
       version: "*"
       sourceRef:
         kind: HelmRepository
