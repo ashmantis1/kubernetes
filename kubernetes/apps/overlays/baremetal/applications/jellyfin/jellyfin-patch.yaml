@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: jellyfin
+      version: 0.1.10
   values: 
     image: 
       tag: latest
