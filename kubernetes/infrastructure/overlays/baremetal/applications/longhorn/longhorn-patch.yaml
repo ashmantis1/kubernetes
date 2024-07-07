@@ -6,6 +6,9 @@ metadata:
   namespace: longhorn
 spec:
   values: 
+    defaultSettings: 
+      backupTarget: s3://longhorn-backup@edge-lab/
+      backupTargetCredentialSecret: longhorn-s3-credentials
     ingress:
       enabled: true
       host: longhorn.k8s.edge.ashman.world
