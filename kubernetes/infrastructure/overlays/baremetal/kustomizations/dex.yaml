@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/infrastructure/overlays/baremetal/applications/dex
   dependsOn: 
     - name: repositories-infra
-    - name: external-secrets
+    - name: external-secrets-config
     - name: ingress-nginx
     #    - name: cluster-secret-store-config
 

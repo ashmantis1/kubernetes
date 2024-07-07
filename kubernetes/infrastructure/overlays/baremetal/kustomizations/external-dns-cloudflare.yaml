@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/infrastructure/overlays/baremetal/applications/external-dns-cloudflare
   prune: false
   dependsOn: 
-    - name: external-secrets
+    - name: external-secrets-config
     - name: repositories-infra
   healthChecks:
     - kind: HelmRelease

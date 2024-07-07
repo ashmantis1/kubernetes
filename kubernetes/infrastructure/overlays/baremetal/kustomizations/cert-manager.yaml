@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/infrastructure/overlays/baremetal/applications/cert-manager
   dependsOn: 
     - name: repositories-infra
-    - name: external-secrets
+    - name: external-secrets-config
   healthChecks:
     - kind: HelmRelease
       name: cert-manager
