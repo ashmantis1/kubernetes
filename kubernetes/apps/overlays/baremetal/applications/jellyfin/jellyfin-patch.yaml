@@ -14,7 +14,7 @@ spec:
     persistentVolumes: 
       enabled: true
       storageClass: longhorn
-      cacheSize: 10Gi
+      cache: false
     extraVolumes: 
     - name: tv
       nfs:
