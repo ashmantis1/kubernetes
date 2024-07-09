@@ -43,6 +43,7 @@ spec:
         - id: oauth2-proxy
           redirectURIs: 
             - https://oauth-proxy.k8s.edge.ashman.world
+            - https://oauth-proxy.k8s.edge.ashman.world/oauth2/callback
           name: OAuth2 Proxy
           secretEnv: OAUTH2_PROXY_SECRET
         - id: kubelogin
