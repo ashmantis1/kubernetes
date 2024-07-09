@@ -17,3 +17,4 @@ resources:
 - metallb.yaml
 - longhorn.yaml
 - calico.yaml
+- oauth2-proxy.yaml

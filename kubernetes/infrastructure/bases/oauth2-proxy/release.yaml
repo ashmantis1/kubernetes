@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: oauth2-proxy
+spec:
+  interval: 30m
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
+  chart:
+    spec:
+      chart: oauth2-proxy
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: oauth2-proxy
+        namespace: flux-system
+      interval: 12h
