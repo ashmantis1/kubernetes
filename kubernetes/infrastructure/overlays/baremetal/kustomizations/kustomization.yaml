@@ -21,3 +21,4 @@ resources:
 - external-secrets-config.yaml
 - cert-manager-config.yaml
 - nfd.yaml
+- oauth2-proxy.yaml

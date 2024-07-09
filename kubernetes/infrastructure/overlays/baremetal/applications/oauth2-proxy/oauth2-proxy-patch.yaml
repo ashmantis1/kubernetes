@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: oauth2-proxy
+  namespace: oauth2-proxy
+spec:
+  chart:
+    spec:
+      version: "7.7.8"
+  values: 
+    config: 
+      existingSecret: oauth2-proxy-secret
+    extraArgs:
+
+      provider: oidc
+      provider-display-name: "K8S Dex"
+      oidc-issuer-url: "https://dex.k8s.edge.ashman.world"
+      redirect-url: "https://oauth-proxy.k8s.edge.ashman.world/oauth2/callback"
+      cookie-secure: false
+      scope: openid profile email groups
+      cookie-domain: ".k8s.edge.ashman.world"
+      email-domain: "ashmantis.com"
+      ##
+      #      skip-provider-button: 'true'
+      #      force-https: 'false'
+      #      pass-authorization-header: 'true'
+      #      pass-basic-auth: 'false'
+      #      skip-jwt-bearer-tokens: 'true'
+      #allowed-group: "ashmantis1:ashmantis1"
+      whitelist-domain: ".k8s.edge.ashman.world"
+    ingress: 
+      enabled: true 
+      path: /oauth2
+      hosts: 
+        - oauth-proxy.k8s.edge.ashman.world
+      annotations: 
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      tls:
+        - secretName: oauth2-proxy-tls-cert
+          hosts: 
+            - oauth-proxy.k8s.edge.ashman.world
