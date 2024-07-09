@@ -40,6 +40,11 @@ spec:
         skipApprovalScreen: true
       issuer: "https://dex.k8s.edge.ashman.world"
       staticClients: 
+        - id: oauth2-proxy
+          redirectURIs: 
+            - https://oauth-proxy.k8s.edge.ashman.world
+          name: OAuth2 Proxy
+          secretEnv: OAUTH2_PROXY_SECRET
         - id: kubelogin
           redirectURIs: 
             - http://localhost:8000
