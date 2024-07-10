@@ -40,6 +40,11 @@ spec:
         skipApprovalScreen: true
       issuer: "https://dex.k8s.edge.ashman.world"
       staticClients: 
+        - id: grafana
+          redirectURIs: 
+            - https://grafana.k8s.edge.ashman.world/login/generic_oauth
+          name: K8S Grafana
+          secretEnv: GRAFANA_CLIENT_SECRET
         - id: oauth2-proxy
           redirectURIs: 
             - https://oauth-proxy.k8s.edge.ashman.world
