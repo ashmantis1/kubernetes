@@ -9,7 +9,22 @@ spec:
     spec:
       version: "61.3.0"
   values: 
+    alertmanager:
+      enabled: true
+    prometheus:
+      prometheusSpec:
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: longhorn
+              resources:
+                requests:
+                  storage: 20Gi
     grafana:
+      persistence:
+        enabled: true
+        size: 10Gi
+        storageClassName: longhorn
       ingress:
         enabled: true
         hosts:
