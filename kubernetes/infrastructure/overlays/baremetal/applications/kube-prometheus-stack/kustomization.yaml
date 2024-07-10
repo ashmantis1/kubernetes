@@ -4,6 +4,7 @@ namespace: monitoring
 resources:
   - namespace.yaml
   - ../../../../bases/kube-prometheus-stack
+  - ./secrets
 patches:
 - target: 
     kind: HelmRelease

@@ -21,6 +21,16 @@ spec:
                 requests:
                   storage: 20Gi
     grafana:
+      envFromSecret: grafana-secret
+      grafana.ini:
+        auth.generic_oauth: 
+          enabled: true
+          client_id: grafana
+          client_secret: ${GRAFANA_CLIENT_SECRET}
+          scopes: openid profile email groups
+          auth_url: "https://dex.k8s.edge.ashman.world/auth"
+          token_url: "https://dex.k8s.edge.ashman.world/token"
+          api_url: "https://dex.k8s.edge.ashman.world/userinfo"
       persistence:
         enabled: true
         size: 10Gi
