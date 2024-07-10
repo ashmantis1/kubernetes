@@ -18,3 +18,4 @@ resources:
 - longhorn.yaml
 - calico.yaml
 - oauth2-proxy.yaml
+- prometheus-community.yaml

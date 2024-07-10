@@ -22,3 +22,4 @@ resources:
 - cert-manager-config.yaml
 - nfd.yaml
 - oauth2-proxy.yaml
+- kube-prometheus-stack.yaml
