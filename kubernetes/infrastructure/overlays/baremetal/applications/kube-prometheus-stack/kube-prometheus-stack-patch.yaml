@@ -38,7 +38,7 @@ spec:
         size: 10Gi
         storageClassName: longhorn
         accessModes:
-          - readWriteMany
+          - ReadWriteMany
       ingress:
         enabled: true
         hosts:
