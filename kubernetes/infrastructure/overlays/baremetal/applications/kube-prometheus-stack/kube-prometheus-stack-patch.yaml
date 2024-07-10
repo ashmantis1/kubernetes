@@ -13,6 +13,18 @@ spec:
       enabled: true
     prometheus:
       prometheusSpec:
+        podMonitorNamespaceSelector:
+          any: true
+        podMonitorSelector: {}
+        podMonitorSelectorNilUsesHelmValues: false
+        ruleNamespaceSelector:
+          any: true
+        ruleSelector: {}
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorNamespaceSelector:
+          any: true
+        serviceMonitorSelector: {}
+        serviceMonitorSelectorNilUsesHelmValues: false
         storageSpec:
           volumeClaimTemplate:
             spec:
@@ -21,6 +33,7 @@ spec:
                 requests:
                   storage: 20Gi
     grafana:
+      defaultDashboardsEditable: true
       envFromSecret: grafana-secret
       grafana.ini:
         server:
@@ -29,6 +42,7 @@ spec:
           enabled: true
           client_id: grafana
           client_secret: ${GRAFANA_CLIENT_SECRET}
+          role_attribute_path: 
           scopes: openid profile email groups
           auth_url: "https://dex.k8s.edge.ashman.world/auth"
           token_url: "https://dex.k8s.edge.ashman.world/token"
