@@ -59,6 +59,20 @@ spec:
           name: OIDC Connector
           secretEnv: KUBELOGIN_CLIENT_SECRET 
       connectors: 
+        - type: oidc
+          id: keycloak
+          name: keycloak
+          config:
+            issuer: "https://auth.k8s.edge.ashman.world/auth/realms/master"
+            clientID: dex
+            clientSecret: PqYIsG7llBfj9n1VUR8YpVZZm9OzVtY8
+            redirectURI: "https://dex.k8s.edge.ashman.world/callback"
+            scopes: 
+              - openid
+              - profile
+              - email
+              - groups
+            insecureSkipEmailVerified: true
         - type: github
           id: github
           name: GitHub
