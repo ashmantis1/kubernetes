@@ -5,6 +5,7 @@ resources:
   - ../../../../bases/dex
   - ./secrets
   - ./config/ingress.yaml
+  - certificate.yaml
 patches: 
   - path: ./dex-patch.yaml
     target: 
