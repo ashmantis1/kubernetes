@@ -15,11 +15,11 @@ spec:
 
       provider: oidc
       provider-display-name: "K8S Dex"
-      oidc-issuer-url: "https://dex.k8s.edge.ashman.world"
-      redirect-url: "https://oauth-proxy.k8s.edge.ashman.world/oauth2/callback"
+      oidc-issuer-url: "https://dex.k8s.ashman.world"
+      redirect-url: "https://oauth-proxy.k8s.ashman.world/oauth2/callback"
       cookie-secure: false
       scope: openid profile email groups
-      cookie-domain: ".k8s.edge.ashman.world"
+      cookie-domain: ".k8s.ashman.world"
       email-domain: "ashmantis.com"
       ##
       #      skip-provider-button: 'true'
@@ -28,15 +28,15 @@ spec:
       #      pass-basic-auth: 'false'
       #      skip-jwt-bearer-tokens: 'true'
       #allowed-group: "ashmantis1:ashmantis1"
-      whitelist-domain: ".k8s.edge.ashman.world"
+      whitelist-domain: ".k8s.ashman.world"
     ingress: 
       enabled: true 
       path: /oauth2
       hosts: 
-        - oauth-proxy.k8s.edge.ashman.world
+        - oauth-proxy.k8s.ashman.world
       annotations: 
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
       tls:
         - secretName: oauth2-proxy-tls-cert
           hosts: 
-            - oauth-proxy.k8s.edge.ashman.world
+            - oauth-proxy.k8s.ashman.world

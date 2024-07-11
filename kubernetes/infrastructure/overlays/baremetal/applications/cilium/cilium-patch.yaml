@@ -30,9 +30,9 @@ spec:
             cert-manager.io/cluster-issuer: "letsencrypt-prod"
           className: "nginx"
           hosts:
-            - cilium.k8s.edge.ashman.world
+            - cilium.k8s.ashman.world
           labels: {}
           tls: 
             - secretName: hubble-ui-tls
               hosts:
-                - cilium.k8s.edge.ashman.world
+                - cilium.k8s.ashman.world

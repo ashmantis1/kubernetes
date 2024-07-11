@@ -11,7 +11,7 @@ spec:
       backupTargetCredentialSecret: longhorn-s3-credentials
     ingress:
       enabled: false
-      host: longhorn.k8s.edge.ashman.world
+      host: longhorn.k8s.ashman.world
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
       tls: true

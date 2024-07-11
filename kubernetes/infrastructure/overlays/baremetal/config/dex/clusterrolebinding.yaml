@@ -8,8 +8,11 @@ roleRef:
   name: cluster-admin
 subjects:
 - apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: github+services+accounts@ashmantis.com
+  kind: Group
+  name: kubernetes-admin
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: ashmantis1
+  name: github+services+accounts@ashmantis.com
+  #- apiGroup: rbac.authorization.k8s.io
+  #  kind: User
+  #  name: asher.lee@ashmantis.com

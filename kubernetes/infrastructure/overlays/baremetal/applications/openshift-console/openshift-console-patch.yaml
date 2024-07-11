@@ -15,17 +15,17 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
       hosts: 
-        - host: console.k8s.edge.ashman.world
+        - host: console.k8s.ashman.world
           paths: 
             - path: / 
-        - host: k8s.edge.ashman.world
+        - host: k8s.ashman.world
           paths: 
             - path: /
       tls: 
         - secretName: console-ingress-tls
           hosts: 
-            - console.k8s.edge.ashman.world
-            - k8s.edge.ashman.world
+            - console.k8s.ashman.world
+            - k8s.ashman.world
     extraEnv: 
       - name: BRIDGE_USER_AUTH_OIDC_CLIENT_SECRET
         valueFrom: 
@@ -36,12 +36,12 @@ spec:
         value: /opt/bridge/static/assets/k8s-logo.png
     console: 
       dex: 
-        host: "https://dex.k8s.edge.ashman.world"
-      baseUrl: https://console.k8s.edge.ashman.world
+        host: "https://dex.k8s.ashman.world"
+      baseUrl: https://console.k8s.ashman.world
       impersonateOpenShift: true
       oidc: 
         enabled: true
-        issuerUrl: https://dex.k8s.edge.ashman.world
+        issuerUrl: https://dex.k8s.ashman.world
         clientId: kubelogin
     volumes: 
       - name: logo 

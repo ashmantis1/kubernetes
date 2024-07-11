@@ -20,7 +20,7 @@ spec:
           volumeAttributes: 
             csi.cert-manager.io/issuer-name: "letsencrypt-prod"
             csi.cert-manager.io/issuer-kind: "ClusterIssuer"
-            csi.cert-manager.io/dns-names: "*.k8s.edge.ashman.world" #dex.k8s.ashman.world,dex.ashman.world"
+            csi.cert-manager.io/dns-names: "dex.k8s.ashman.world" #dex.k8s.ashman.world,dex.ashman.world"
             csi.cert-manager.io/certificate-file: "tls.crt"
             csi.cert-manager.io/privatekey-file: "tls.key"
     volumeMounts: 
@@ -38,24 +38,24 @@ spec:
         tlsKey: "/etc/crt/tls.key"
       oauth2: 
         skipApprovalScreen: true
-      issuer: "https://dex.k8s.edge.ashman.world"
+      issuer: "https://dex.k8s.ashman.world"
       staticClients: 
         - id: grafana
           redirectURIs: 
-            - https://grafana.k8s.edge.ashman.world/login/generic_oauth
+            - https://grafana.k8s.ashman.world/login/generic_oauth
           name: K8S Grafana
           secretEnv: GRAFANA_CLIENT_SECRET
         - id: oauth2-proxy
           redirectURIs: 
-            - https://oauth-proxy.k8s.edge.ashman.world
-            - https://oauth-proxy.k8s.edge.ashman.world/oauth2/callback
+            - https://oauth-proxy.k8s.ashman.world
+            - https://oauth-proxy.k8s.ashman.world/oauth2/callback
           name: OAuth2 Proxy
           secretEnv: OAUTH2_PROXY_SECRET
         - id: kubelogin
           redirectURIs: 
             - http://localhost:8000
             - http://localhost:18000
-            - https://console.k8s.edge.ashman.world/auth/callback
+            - https://console.k8s.ashman.world/auth/callback
           name: OIDC Connector
           secretEnv: KUBELOGIN_CLIENT_SECRET 
       connectors: 
@@ -63,21 +63,22 @@ spec:
           id: keycloak
           name: keycloak
           config:
-            issuer: "https://auth.k8s.edge.ashman.world/auth/realms/master"
+            issuer: "https://auth.k8s.ashman.world/realms/master"
             clientID: dex
             clientSecret: PqYIsG7llBfj9n1VUR8YpVZZm9OzVtY8
-            redirectURI: "https://dex.k8s.edge.ashman.world/callback"
+            redirectURI: "https://dex.k8s.ashman.world/callback"
             scopes: 
               - openid
               - profile
               - email
               - groups
             insecureSkipEmailVerified: true
+            insecureEnableGroups: true
         - type: github
           id: github
           name: GitHub
           config: 
             clientId: $GITHUB_CLIENT_ID
             clientSecret: $GITHUB_CLIENT_SECRET
-            redirectURI: "https://dex.k8s.edge.ashman.world/callback"
+            redirectURI: "https://dex.k8s.ashman.world/callback"
       

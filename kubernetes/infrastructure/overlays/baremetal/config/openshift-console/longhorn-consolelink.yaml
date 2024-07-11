@@ -3,7 +3,7 @@ kind: ConsoleLink
 metadata:
   name: longhorn-link
 spec:
-  href: 'https://longhorn.k8s.edge.ashman.world'
+  href: 'https://longhorn.k8s.ashman.world'
   location: ApplicationMenu
   text: Longhorn UI - Longhorn storage management console
   applicationMenu:

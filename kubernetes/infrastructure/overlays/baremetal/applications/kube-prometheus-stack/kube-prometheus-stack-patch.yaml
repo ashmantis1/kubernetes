@@ -37,16 +37,16 @@ spec:
       envFromSecret: grafana-secret
       grafana.ini:
         server:
-          root_url: "https://grafana.k8s.edge.ashman.world"
+          root_url: "https://grafana.k8s.ashman.world"
         auth.generic_oauth: 
           enabled: true
           client_id: grafana
           client_secret: ${GRAFANA_CLIENT_SECRET}
           role_attribute_path: 
           scopes: openid profile email groups
-          auth_url: "https://dex.k8s.edge.ashman.world/auth"
-          token_url: "https://dex.k8s.edge.ashman.world/token"
-          api_url: "https://dex.k8s.edge.ashman.world/userinfo"
+          auth_url: "https://dex.k8s.ashman.world/auth"
+          token_url: "https://dex.k8s.ashman.world/token"
+          api_url: "https://dex.k8s.ashman.world/userinfo"
       persistence:
         enabled: true
         size: 10Gi
@@ -56,10 +56,10 @@ spec:
       ingress:
         enabled: true
         hosts:
-          - grafana.k8s.edge.ashman.world
+          - grafana.k8s.ashman.world
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-prod"
         tls:
         - secretName: grafana-general-tls
           hosts:
-          - grafana.k8s.edge.ashman.world 
+          - grafana.k8s.ashman.world 
