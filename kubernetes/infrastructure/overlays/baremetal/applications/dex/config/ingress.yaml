@@ -22,7 +22,7 @@ spec:
           service:
             name: dex
             port:
-              number: 5554
+              number: 5556
         path: /
         pathType: ImplementationSpecific
   tls:
