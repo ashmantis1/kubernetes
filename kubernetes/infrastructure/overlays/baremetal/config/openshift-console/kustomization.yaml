@@ -1,3 +1,4 @@
 resources: 
-- cilium-hubble-consolelink.yaml
+#- cilium-hubble-consolelink.yaml
+- grafana-consolelink.yaml
 - longhorn-consolelink.yaml
