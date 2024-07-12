@@ -37,7 +37,7 @@ spec:
       envFromSecret: grafana-secret
       grafana.ini:
         security:
-           admin_user: asher
+          disable_initial_admin_creation: true
         server:
           root_url: "https://grafana.k8s.ashman.world"
         auth.generic_oauth: 
