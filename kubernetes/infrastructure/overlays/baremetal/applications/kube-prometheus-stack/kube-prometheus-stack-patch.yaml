@@ -42,7 +42,7 @@ spec:
           root_url: "https://grafana.k8s.ashman.world"
         auth.generic_oauth: 
           enabled: true
-          auto_login: true
+          #          auto_login: true
           client_id: grafana
           client_secret: ${GRAFANA_CLIENT_SECRET}
           role_attribute_path: "contains(groups[*], 'grafana-admins') && 'Admin' || contains(groups[*], 'grafana-editors') && 'Editor' || 'Viewer'"
