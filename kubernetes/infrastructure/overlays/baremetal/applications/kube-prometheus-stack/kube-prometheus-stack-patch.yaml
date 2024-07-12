@@ -42,7 +42,7 @@ spec:
           enabled: true
           client_id: grafana
           client_secret: ${GRAFANA_CLIENT_SECRET}
-          role_attribute_path: 
+          role_attribute_path: "contains(groups[*], 'grafana-admins') && 'Admin' || contains(groups[*], 'grafana-editors') && 'Editor' || 'Viewer'"
           scopes: openid profile email groups
           auth_url: "https://dex.k8s.ashman.world/auth"
           token_url: "https://dex.k8s.ashman.world/token"
