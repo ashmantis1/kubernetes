@@ -67,7 +67,7 @@ spec:
           id: keycloak
           name: keycloak
           config:
-            issuer: "https://auth.k8s.ashman.world/realms/master"
+            issuer: "https://sso.infra.ashman.world/realms/master"
             clientID: dex
             clientSecret: $KEYCLOAK_CONNECTOR_SECRET
             redirectURI: "https://dex.k8s.ashman.world/callback"
