@@ -16,17 +16,6 @@ spec:
       - name: tls
         secret:
           secretName: dex-server-tls
-    #  - name: tls 
-    #    csi: 
-    #      driver: "csi.cert-manager.io"
-    #      readOnly: true
-    #      volumeAttributes: 
-    #        csi.cert-manager.io/issuer-name: "selfsigned-cluster-issuer"
-    #        cert-manager.io/private-key-secret-name: "dex-private-key-tls"
-    #        csi.cert-manager.io/issuer-kind: "ClusterIssuer"
-    #        csi.cert-manager.io/dns-names: "dex.k8s.ashman.world" #dex.k8s.ashman.world,dex.ashman.world"
-    #        csi.cert-manager.io/certificate-file: "tls.crt"
-    #        csi.cert-manager.io/privatekey-file: "tls.key"
     volumeMounts: 
       - name: tls
         mountPath: /etc/crt
@@ -78,11 +67,11 @@ spec:
               - groups
             insecureSkipEmailVerified: true
             insecureEnableGroups: true
-        - type: github
-          id: github
-          name: GitHub
-          config: 
-            clientId: $GITHUB_CLIENT_ID
-            clientSecret: $GITHUB_CLIENT_SECRET
-            redirectURI: "https://dex.k8s.ashman.world/callback"
-      
+            #        - type: github
+            #          id: github
+            #          name: GitHub
+            #          config: 
+            #            clientId: $GITHUB_CLIENT_ID
+            #            clientSecret: $GITHUB_CLIENT_SECRET
+            #            redirectURI: "https://dex.k8s.ashman.world/callback"
+            #      
