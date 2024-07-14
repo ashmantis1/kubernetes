@@ -19,7 +19,9 @@ spec:
       redirect-url: "https://oauth-proxy.k8s.ashman.world/oauth2/callback"
       cookie-secure: false
       scope: openid profile email groups
-      cookie-domain: ".k8s.ashman.world"
+      cookie-domain: 
+      - ".k8s.ashman.world"
+      - ".ashman.world"
       email-domain: "ashmantis.com"
       ##
       #      skip-provider-button: 'true'
