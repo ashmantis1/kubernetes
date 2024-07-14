@@ -4,3 +4,4 @@ resources:
   - jellyfin.yaml
   - sonarr.yaml
   - radarr.yaml
+  - prowlarr.yaml

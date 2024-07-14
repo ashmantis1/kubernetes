@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+
+namespace: prowlarr
+resources:
+  - ../../../../bases/prowlarr
+  - namespace.yaml
+patches: 
+- target: 
+    kind: HelmRelease
+  path: ./prowlarr-patch.yaml
+

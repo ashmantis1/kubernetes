@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: prowlarr
+spec:
+  values: 
+    ingress:
+      app: 
+        className: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.k8s.ashman.world/oauth2/start"
+          nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=media-admins"
+        tls: 
+          - hosts:
+              - prowlarr.ashman.world
+            secretName: prowlarr-tls-secret
+        hosts:
+          - host: prowlarr.ashman.world
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: app
+                  port: 9696
+
+
