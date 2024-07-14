@@ -28,7 +28,9 @@ spec:
       #      pass-basic-auth: 'false'
       #      skip-jwt-bearer-tokens: 'true'
       #allowed-group: "ashmantis1:ashmantis1"
-      whitelist-domain: ".k8s.ashman.world"
+      whitelist-domain: 
+      - ".k8s.ashman.world"
+      - ".ashman.world"
     ingress: 
       enabled: true 
       path: /oauth2
