@@ -20,7 +20,7 @@ spec:
       cookie-secure: false
       scope: openid profile email groups
       cookie-domain: ".ashman.world"
-      email-domain: "ashmantis.com"
+      email-domain: "*"
       ##
       skip-provider-button: 'true'
       #      force-https: 'false'
