@@ -18,6 +18,18 @@ spec:
     controllers:
       prowlarr:
         containers:
+          flaresolverr:
+            image: 
+              repository: ghcr.io/flaresolverr/flaresolverr
+              tag: latest
+            env: 
+              LOG_LEVEL: info
+            resources:
+              limits:
+                memory: 500Mi
+              requests:
+                cpu: 10m
+                memory: 200Mi
           app:
             env:
               PROWLARR__APP__INSTANCENAME: prowlarr
