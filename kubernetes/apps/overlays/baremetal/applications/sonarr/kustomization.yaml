@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+
+namespace: sonarr
+resources:
+  - ../../../../bases/sonarr
+  - namespace.yaml
+patches: 
+- target: 
+    kind: HelmRelease
+  path: ./sonarr-patch.yaml
+
