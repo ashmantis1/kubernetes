@@ -19,20 +19,16 @@ spec:
       redirect-url: "https://oauth-proxy.k8s.ashman.world/oauth2/callback"
       cookie-secure: false
       scope: openid profile email groups
-      cookie-domain: 
-      - ".k8s.ashman.world"
-      - ".ashman.world"
+      cookie-domain: ".ashman.world"
       email-domain: "ashmantis.com"
       ##
-      #      skip-provider-button: 'true'
+      skip-provider-button: 'true'
       #      force-https: 'false'
       #      pass-authorization-header: 'true'
       #      pass-basic-auth: 'false'
       #      skip-jwt-bearer-tokens: 'true'
       #allowed-group: "ashmantis1:ashmantis1"
-      whitelist-domain: 
-      - ".k8s.ashman.world"
-      - ".ashman.world"
+      whitelist-domain: "*.ashman.world"
     ingress: 
       enabled: true 
       path: /oauth2
