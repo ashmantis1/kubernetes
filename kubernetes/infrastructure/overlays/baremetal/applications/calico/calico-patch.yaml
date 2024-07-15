@@ -11,6 +11,5 @@ spec:
         bgp: Disabled
         ipPools:
         - cidr: 192.168.0.0/18
-          ipipMode: CrossSubnet
-          natOutgoing: Enabled
-        #encapsulation: VXLAN
+          encapsulation: VXLAN
+          vxlanMode: CrossSubnet
