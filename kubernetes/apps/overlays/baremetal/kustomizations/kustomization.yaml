@@ -5,3 +5,4 @@ resources:
   - sonarr.yaml
   - radarr.yaml
   - prowlarr.yaml
+  - qbittorrent-gluetun.yaml
