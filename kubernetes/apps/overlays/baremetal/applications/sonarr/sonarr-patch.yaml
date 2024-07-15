@@ -9,7 +9,7 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        path: /volume1/downloads
+        path: /volume1/torrents
         server: 10.10.1.12
         globalMounts:
           - path: /downloads
