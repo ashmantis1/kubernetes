@@ -1,0 +1,74 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: qbittorrent-gluetun
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: app-template
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+      version: "*"
+  values:
+    controllers:
+      qbittorrent:
+        containers:
+          gluetun:
+            image: 
+              repository: docker.io/qmcgaw/gluetun
+              tag: latest
+            env: 
+              FIREWALL_DEBUG: "on"
+              FIREWALL_INPUT_PORTS: "8080"
+            securityContext:
+              privileged: true
+              capabilities: 
+                add:
+                - NET_ADMIN
+          app:
+            env:
+              QBITTORRENT__PORT: 8080
+            securityContext:
+              privileged: true
+              runAsUser: 1000
+              runAsGroup: 1000
+            image:
+              repository: ghcr.io/onedr0p/qbittorrent 
+              tag: 4.6.5
+            resources:
+              limits:
+                memory: 3Gi
+              requests:
+                cpu: 49m
+                memory: 1222Mi
+    persistence: 
+      config:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        advancedMounts:
+          qbittorrent:
+            app:
+              - path: /config
+    # Configure an emptyDir to share the port-forwarding location between containers
+      gluetun-data:
+        type: emptyDir
+        advancedMounts:
+          qbittorrent:
+            gluetun:
+              - path: /tmp/gluetun
+            port-forward:
+              - path: /tmp/gluetun
+                readOnly: true
+    service:
+      qbittorrent:
+        controller: qbittorrent
+        ports:
+          http:
+            port: 8080
+
