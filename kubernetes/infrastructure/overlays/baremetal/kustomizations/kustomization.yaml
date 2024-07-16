@@ -24,4 +24,4 @@ resources:
 - oauth2-proxy.yaml
 - kube-prometheus-stack.yaml
 - cloudnative-pg.yaml
-- keycloak.yaml
+#- keycloak.yaml
