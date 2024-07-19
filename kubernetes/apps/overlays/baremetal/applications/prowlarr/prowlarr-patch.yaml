@@ -5,6 +5,13 @@ metadata:
   name: prowlarr
 spec:
   values: 
+    controllers:
+      prowlarr:
+        containers:
+          app:
+            resources:
+              requests:
+                cpu: 1000m
     ingress:
       app: 
         className: nginx
