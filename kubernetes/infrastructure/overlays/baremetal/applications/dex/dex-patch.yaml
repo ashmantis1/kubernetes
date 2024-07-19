@@ -33,6 +33,11 @@ spec:
         skipApprovalScreen: true
       issuer: "https://dex.k8s.ashman.world"
       staticClients: 
+        - id: jellyfin
+          redirectURIs: 
+            - https://jellyfin.ashman.world/sso/OID/redirect/dex
+          name: Jellyfin
+          secretEnv: JELLYFIN_CLIENT_SECRET
         - id: grafana
           redirectURIs: 
             - https://grafana.k8s.ashman.world/login/generic_oauth
