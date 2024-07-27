@@ -5,6 +5,12 @@ metadata:
   name: sonarr
 spec:
   values: 
+    controllers:
+      sonarr:
+        containers:
+          app:
+            image:
+              tag: 4.0.8
     persistence:
       downloads:
         enabled: true
