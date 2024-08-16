@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "argocd": {
+  "flux": {
     "fileMatch": ["\\.yaml$"]
   },
   "kubernetes": {
