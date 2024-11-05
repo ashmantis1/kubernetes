@@ -8,6 +8,9 @@ spec:
     controllers:
       qbittorrent:
         containers:
+          app:
+            image:
+              tag: 5.0.1
           gluetun:
             env:
               VPN_SERVICE_PROVIDER: "mullvad"
