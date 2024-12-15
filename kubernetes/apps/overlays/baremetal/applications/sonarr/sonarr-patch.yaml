@@ -15,14 +15,14 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        path: /volume1/torrents
+        path: /volume2/torrents
         server: 10.10.1.12
         globalMounts:
           - path: /downloads
       tv:
         enabled: true
         type: nfs
-        path: /volume1/TV
+        path: /volume2/TV
         server: 10.10.1.12
         globalMounts:
           - path: /tv

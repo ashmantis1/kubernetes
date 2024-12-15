@@ -10,6 +10,7 @@ spec:
         containers:
           app:
             image:
+              repository: ghcr.io/onedr0p/qbittorrent 
               tag: 5.0.1
           gluetun:
             env:
@@ -26,7 +27,7 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        path: /volume1/torrents
+        path: /volume2/torrents
         server: 10.10.1.12
         globalMounts:
           - path: /downloads
