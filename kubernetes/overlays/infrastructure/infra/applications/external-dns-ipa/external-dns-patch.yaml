@@ -5,9 +5,6 @@ metadata:
   name: external-dns
   namespace: external-dns
 spec:
-  chart:
-    spec:
-      version: "8.7.2"
   values: 
     provider: rfc2136
     policy: sync

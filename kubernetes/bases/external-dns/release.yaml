@@ -17,8 +17,8 @@ spec:
       chart: external-dns
       version: "*"
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
+        kind: OCIRepository
+        name: external-dns
         namespace: flux-system
       interval: 12h
   values: 
