@@ -2,8 +2,9 @@
 namespace: cert-manager
 resources: 
   - ../../../../../bases/cert-manager
-  - ./configmaps
   #- ./secrets
+components:
+  - ../../../../../components/ca-certs/
 patches: 
   - target: 
       kind: HelmRelease

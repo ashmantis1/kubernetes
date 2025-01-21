@@ -13,7 +13,7 @@ spec:
     volumes:
       - name: ca-bundle
         configMap:
-          name: ipa-ca-bundle
+          name: ipa-ca
     volumeMounts:
       - name: ca-bundle
         mountPath: /etc/ssl/certs/ca.crt
