@@ -5,7 +5,7 @@ metadata:
   name: rke2-cilium
   namespace: kube-system
 spec:
-  valuesContent: |-
+  valuesContent: |
     kubeProxyReplacement: true
     k8sServiceHost: 10.110.0.150
     k8sServicePort: 6443
