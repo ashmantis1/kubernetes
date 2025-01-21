@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/applications/ingress-nginx
+  path: ./kubernetes/overlays/infrastructure/infra/applications/ingress-nginx
   prune: true
   dependsOn: 
     - name: repositories-infra
