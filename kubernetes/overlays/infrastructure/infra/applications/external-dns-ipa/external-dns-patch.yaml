@@ -14,7 +14,7 @@ spec:
     rfc2136:
       host: "10.110.0.10"
       secretName: "ipa-tsig-secret"
-      #tsigKeyname: acme-update
+      tsigKeyname: acme-update
       tsigSecretAlg: hmac-sha512
       zones:
         - "k8s.ashman.world"
