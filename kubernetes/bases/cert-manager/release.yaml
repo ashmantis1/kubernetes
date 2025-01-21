@@ -23,6 +23,3 @@ spec:
         namespace: flux-system
       interval: 12h
   values:
-    startupapicheck:
-      timeout: 5m
-    installCRDs: true
