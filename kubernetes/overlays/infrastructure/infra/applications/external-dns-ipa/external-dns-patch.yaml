@@ -16,3 +16,5 @@ spec:
       secretName: "ipa-tsig-secret"
       #tsigKeyname: acme-update
       tsigSecretAlg: hmac-sha512
+      zones:
+        - "k8s.ashman.world"
