@@ -10,6 +10,14 @@ spec:
     privateKeySecretRef:
       name: ipaissuer
     solvers:
-      - http01:
-          ingress:
-            class: nginx
+      - dns01:
+          rfc2136:
+            nameserver: 10.110.0.10
+            tsigKeyName: acme-update
+            tsigAlgorithm: HMACSHA512
+            tsigSecretSecretRef:
+              name: ipa-tsig-secret
+              key: tsig-secret-key
+          selector:
+            dnsZones:
+              - "k8s.ashman.world"
