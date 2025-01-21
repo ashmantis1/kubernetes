@@ -1,3 +1,23 @@
-resources: 
-  - bjw-s.yaml
-  - jellyseer.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- angelnu.yaml
+- ashmantis.yaml
+- av1o.yaml
+- bitnami.yaml
+- bjw-s.yaml
+- calico.yaml
+- cilium.yaml
+- cloudnative-pg.yaml
+- csi-driver-nfs.yaml
+- csi-driver-smb.yaml
+- dex.yaml
+- external-secrets.yaml
+- ingress-nginx.yaml
+- jellyseer.yaml
+- jetstack.yaml
+- longhorn.yaml
+- metallb.yaml
+- oauth2-proxy.yaml
+- prometheus-community.yaml
+- weaveworks.yaml
