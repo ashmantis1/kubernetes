@@ -8,11 +8,11 @@ resources:
 - ingress-nginx.yaml
 #- external-dns-cloudflare.yaml
 #- external-secrets.yaml
-#- cert-manager.yaml
+- cert-manager.yaml
+- cert-manager-config.yaml
 #- cert-manager-csi.yaml
 #- longhorn.yaml
 #- external-secrets-config.yaml
-#- cert-manager-config.yaml
 #- kube-prometheus-stack.yaml
 #- cloudnative-pg.yaml
 #- keycloak.yaml

@@ -1,3 +1,4 @@
 resources: 
-  - clusterissuer.yaml
-  - selfsignedissuer.yaml
+#- clusterissuer.yaml
+#- selfsignedissuer.yaml
+  - ipa-issuer.yaml

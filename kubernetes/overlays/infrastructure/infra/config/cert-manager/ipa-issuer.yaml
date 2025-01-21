@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: ipa
+  namespace: cert-manager
+spec:
+  acme:
+    email: admin@infra.ashman.world
+    server: https://ipa01.infra.ashman.world/acme/directory
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
