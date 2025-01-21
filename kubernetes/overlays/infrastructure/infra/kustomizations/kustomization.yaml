@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - cilium.yaml
 - repositories.yaml
+- external-dns-ipa.yaml
 #- dex.yaml
 #- config.yaml
 - ingress-nginx.yaml
