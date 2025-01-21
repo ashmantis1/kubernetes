@@ -3,6 +3,6 @@ kind: Component
 configMapGenerator:
   - name: ipa-ca
     files: 
-    - ipa-ca.crt 
+    - ca-certificates.crt
 generatorOptions:
   disableNameSuffixHash: true
