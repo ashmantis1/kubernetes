@@ -4,7 +4,7 @@ resources:
 - angelnu.yaml
 - ashmantis.yaml
 - av1o.yaml
-- bitnami.yaml
+#- bitnami.yaml
 - bjw-s.yaml
 - calico.yaml
 - cilium.yaml
@@ -21,3 +21,4 @@ resources:
 - oauth2-proxy.yaml
 - prometheus-community.yaml
 - weaveworks.yaml
+- bitnami.yaml
