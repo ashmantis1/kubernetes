@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  chart:
+    spec:
+      version: "8.7.2"
+  values: 
+    provider: rfc2136
+    policy: sync
+    rfc2136:
+      host: "10.110.0.10"
+      secretName: "ipa-tsig-secret"
+      #tsigKeyname: acme-update
+      tsigSecretAlg: hmac-sha512
