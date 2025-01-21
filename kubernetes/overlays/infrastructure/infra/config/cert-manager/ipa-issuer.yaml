@@ -7,6 +7,8 @@ spec:
   acme:
     email: admin@infra.ashman.world
     server: https://ipa01.infra.ashman.world/acme/directory
+    privateKeySecretRef:
+      name: ipaissuer
     solvers:
       - http01:
           ingress:
