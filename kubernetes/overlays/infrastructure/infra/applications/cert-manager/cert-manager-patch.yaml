@@ -16,6 +16,6 @@ spec:
           name: ipa-ca-bundle
     volumeMounts:
       - name: ca-bundle
-        mountPath: /etc/ssl/certs/ca-certificates.crt
-        subPath: ca-certificates.crt
+        mountPath: /etc/ssl/certs/ca.crt
+        subPath: ca.crt
         readOnly: false
