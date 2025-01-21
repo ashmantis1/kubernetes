@@ -1,7 +1,0 @@
-# Ansible local host runner
-- name: Run Terraform
-  ansible.builtin.import_playbook: ./ansible/playbooks/create_infrastructure.yaml
-  tags: always
-- name: Deploy vault
-  ansible.builtin.import_playbook: ./ansible/playbooks/deploy_vault.yaml
-  tags: vault 

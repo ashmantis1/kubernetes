@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: external-secrets
+resources:
+  - ../../../../bases/external-secrets
+patches: 
+  - target:
+      kind: HelmRelease
+    patch: |
+      - op: replace 
+        path: /spec/chart/spec/version
+        value: 0.9.19

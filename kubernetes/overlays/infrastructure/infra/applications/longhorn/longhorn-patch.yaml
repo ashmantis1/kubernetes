@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: longhorn
+  namespace: longhorn
+spec:
+  values: 
+    defaultSettings: 
+      backupTarget: s3://longhorn-backup@edge-lab/
+      backupTargetCredentialSecret: longhorn-s3-credentials
+    ingress:
+      enabled: false
+      host: longhorn.k8s.ashman.world
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      tls: true

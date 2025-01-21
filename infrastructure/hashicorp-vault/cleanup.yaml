@@ -1,4 +1,0 @@
-# Ansible local host runner
-- name: Run Terraform
-  ansible.builtin.import_playbook: ./ansible/playbooks/destroy_infrastructure.yaml
-  tags: always
