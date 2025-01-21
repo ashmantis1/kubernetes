@@ -1,6 +1,0 @@
-resources: 
-- ../../../../bases/metallb
-patches: 
-  - target: 
-      kind: HelmRelease
-    path: ./metallb-patch.yaml

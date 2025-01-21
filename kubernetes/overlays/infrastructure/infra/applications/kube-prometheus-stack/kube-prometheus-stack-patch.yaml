@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: monitoring
+spec:
+  chart:
+    spec:
+      version: "61.3.0"
+  values: 
+    alertmanager:
+      enabled: true
+    prometheus:
+      prometheusSpec:
+        podMonitorNamespaceSelector:
+          any: true
+        podMonitorSelector: {}
+        podMonitorSelectorNilUsesHelmValues: false
+        ruleNamespaceSelector:
+          any: true
+        ruleSelector: {}
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorNamespaceSelector:
+          any: true
+        serviceMonitorSelector: {}
+        serviceMonitorSelectorNilUsesHelmValues: false
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: longhorn
+              resources:
+                requests:
+                  storage: 20Gi
+    grafana:
+      defaultDashboardsEditable: true
+      envFromSecret: grafana-secret
+      grafana.ini:
+        security:
+          disable_initial_admin_creation: true
+        server:
+          root_url: "https://grafana.k8s.ashman.world"
+        auth.generic_oauth: 
+          enabled: true
+          auto_login: true
+          client_id: grafana
+          client_secret: ${GRAFANA_CLIENT_SECRET}
+          role_attribute_path: "contains(groups[*], 'grafana-admins') && 'Admin' || contains(groups[*], 'grafana-editors') && 'Editor' || 'Viewer'"
+          scopes: openid profile email groups
+          auth_url: "https://dex.k8s.ashman.world/auth"
+          token_url: "https://dex.k8s.ashman.world/token"
+          api_url: "https://dex.k8s.ashman.world/userinfo"
+      persistence:
+        enabled: true
+        size: 10Gi
+        storageClassName: longhorn
+        accessModes:
+          - ReadWriteMany
+      ingress:
+        enabled: true
+        hosts:
+          - grafana.k8s.ashman.world
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        tls:
+        - secretName: grafana-general-tls
+          hosts:
+          - grafana.k8s.ashman.world 

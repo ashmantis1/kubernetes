@@ -1,9 +1,0 @@
-- name: destroy k8s cluster 
-  hosts: all
-  become: true
-  tasks: 
-    - name: destroy k8s cluster
-      shell: kubeadm reset -f
-      ignore_errors: yes
-    - name: remove cni configuration
-      file: path=/etc/cni/net.d state=absent

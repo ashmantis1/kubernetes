@@ -1,8 +1,0 @@
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
-kind: Kustomization
-resources:
-- cert-manager.yaml
-- config.yaml
-- external-dns-cloudflare.yaml
-- external-secrets.yaml
-- weave-gitops.yaml

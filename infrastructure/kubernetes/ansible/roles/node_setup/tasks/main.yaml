@@ -1,7 +1,0 @@
-
-- name: Install requisite packages
-  import_tasks: packages.yaml
-  
-- name: Install and configure container runtime
-  import_tasks: container_runtime.yaml
-

@@ -1,7 +1,0 @@
-- name: Setup Hosts
-  hosts: ipaserver 
-  become: yes 
-  gather_facts: yes
-  roles: 
-  - role: freeipa.ansible_freeipa.ipaserver
-    state: present
