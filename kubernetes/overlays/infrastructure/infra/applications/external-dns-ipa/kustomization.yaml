@@ -2,7 +2,7 @@
 namespace: external-dns-ipa
 resources:
   - ../../../../../bases/external-dns
-  #  - ./secrets
+  - ./secrets
 patches: 
   - target:
       kind: HelmRelease
