@@ -10,6 +10,7 @@ spec:
   path: ./kubernetes/overlays/infrastructure/infra/applications/cloudnative-pg
   dependsOn: 
     - name: repositories-infra
+    - name: longhorn
   healthChecks:
     - kind: HelmRelease
       name: cloudnative-pg

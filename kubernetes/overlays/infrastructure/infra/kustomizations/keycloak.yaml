@@ -7,10 +7,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/applications/keycloak
+  path: ./kubernetes/overlays/infrastructure/infra/applications/keycloak
   dependsOn: 
     - name: repositories-infra
     - name: ingress-nginx
+    - name: cloudnative-pg
     - name: cert-manager-config
   healthChecks:
     - kind: HelmRelease

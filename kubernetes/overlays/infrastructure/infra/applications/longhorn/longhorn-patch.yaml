@@ -7,11 +7,11 @@ metadata:
 spec:
   values: 
     defaultSettings: 
-      backupTarget: s3://longhorn-backup@edge-lab/
-      backupTargetCredentialSecret: longhorn-s3-credentials
+    #backupTarget: s3://longhorn-backup@edge-lab/
+    #backupTargetCredentialSecret: longhorn-s3-credentials
     ingress:
-      enabled: false
-      host: longhorn.k8s.ashman.world
+      enabled: true
+      host: longhorn.infra.k8s.ashman.world
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        cert-manager.io/cluster-issuer: "ipa"
       tls: true

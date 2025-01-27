@@ -7,11 +7,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/applications/longhorn
+  path: ./kubernetes/overlays/infrastructure/infra/applications/longhorn
   prune: true
   dependsOn: 
     - name: repositories-infra
-    - name: external-secrets-config
   healthChecks:
     - kind: HelmRelease
       name: longhorn
