@@ -4,6 +4,7 @@ resources:
 - cilium.yaml
 - repositories.yaml
 - external-dns-ipa.yaml
+- sealed-secrets.yaml
 #- dex.yaml
 #- config.yaml
 - ingress-nginx.yaml
