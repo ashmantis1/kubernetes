@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/applications/cloudnative-pg
+  path: ./kubernetes/overlays/infrastructure/infra/applications/cloudnative-pg
   dependsOn: 
     - name: repositories-infra
   healthChecks:

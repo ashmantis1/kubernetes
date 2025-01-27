@@ -3,18 +3,15 @@ Provides a method to deploy and maintain my homelab while trying to follow gitop
 ## Getting started
 ### Setup Requirements 
 - Proxmox cluster
-- Vault server 
 
-### 
-Deploying this project
-First navigate to `./infrastructure/kubernetes/ansible/inventory/group_vars/vars.yaml` and set all the necessary variables. This is important as these variables are used for both the ansible and the terraform that is being run. 
-To deploy the kubernetes cluster, navigate to the root directory and run `ansible-playbook -i ansible/inventory/inventory.ini deploy.yaml`. This will deploy all nodes specified on your Proxmox cluster. 
-To deploy the argocd application, navigate to `./kubernetes/argocd` and run `kubectl apply -k .` to run the kustomizations, then just apply the application with `kubectl apply -f application.yaml`. 
+### Kubernetes
+#### Sealed Secrets
+For the initial bootstrap of the infrastructure cluster, deploy the sealed secrets secret. E.g:
+
+`bw get notes kubeseal-secret | kubectl apply -f -`
 
 #### Flux
 To deploy the flux project, run this command:  
 
-`flux bootstrap git --url='ssh://git@github.com/ashmantis1/ashman-homelab-ops.git' --branch=flux --private-key-file=/home/asher/.ssh/mainkey --path=kubernetes/clusters/prod`
+`flux bootstrap git --url='ssh://git@github.com/ashmantis1/kubernetes.git' --private-key-file=/home/asher/.ssh/id_ed25519 --path=kubernetes/clusters/infra`
 
-## DNS Records
-DNS records are managed using RFC 2186, to automatically update and add records. This is done primarly through the Terraform DNS provider. Currently general records are found in `./infrastructure/general/dns` and other records can be found in their respective projects, such as k8s records. 
