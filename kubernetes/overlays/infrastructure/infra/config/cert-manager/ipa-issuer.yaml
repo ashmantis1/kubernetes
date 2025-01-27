@@ -17,4 +17,4 @@ spec:
             tsigAlgorithm: HMACSHA512
             tsigSecretSecretRef:
               name: ipa-tsig-secret
-              key: rfc2136_tsig_secret  
+              key: tsig-secret-key
