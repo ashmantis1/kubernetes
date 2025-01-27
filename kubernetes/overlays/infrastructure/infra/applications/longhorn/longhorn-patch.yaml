@@ -11,6 +11,7 @@ spec:
     #backupTargetCredentialSecret: longhorn-s3-credentials
     ingress:
       enabled: true
+      ingressClassName: nginx
       host: longhorn.infra.k8s.ashman.world
       annotations:
         cert-manager.io/cluster-issuer: "ipa"
