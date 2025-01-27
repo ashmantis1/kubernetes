@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "21.6.0"
+      version: "24.4.6"
   values: 
     production: true
     proxy: passthrough
@@ -28,7 +28,7 @@ spec:
       servicePort: https
       hostname: auth.k8s.ashman.world
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        cert-manager.io/cluster-issuer: "ipa"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
       tls: true
