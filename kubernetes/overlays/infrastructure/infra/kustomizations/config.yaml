@@ -15,7 +15,7 @@ spec:
     - name: external-dns-ipa
     - name: ingress-nginx
     - name: longhorn
-    - name: repositories
+    - name: repositories-infra
     - name: sealed-secrets
   prune: false
   sourceRef:
