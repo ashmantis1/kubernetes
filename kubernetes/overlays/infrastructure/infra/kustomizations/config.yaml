@@ -7,12 +7,16 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/config
+  path: ./kubernetes/overlays/infrastructure/infra/config
   dependsOn: 
-    - name: metallb
-    - name: external-secrets
     - name: cert-manager
-    - name: openshift-console
+    - name: cilium
+    - name: cloudnative-pg
+    - name: external-dns-ipa
+    - name: ingress-nginx
+    - name: longhorn
+    - name: repositories
+    - name: sealed-secrets
   prune: false
   sourceRef:
     kind: "GitRepository"

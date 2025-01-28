@@ -10,7 +10,8 @@ resources:
 - cert-manager.yaml
 - cert-manager-config.yaml
 - longhorn.yaml
-- keycloak.yaml
+- config.yaml
+#- keycloak.yaml
 #- config.yaml
 #- external-dns-cloudflare.yaml
 #- external-secrets.yaml
