@@ -7,8 +7,8 @@ metadata:
 spec:
   values: 
     defaultSettings: 
-    #backupTarget: s3://longhorn-backup@edge-lab/
-    #backupTargetCredentialSecret: longhorn-s3-credentials
+      backupTarget: s3://longhorn-backups@eu-west-1/
+      backupTargetCredentialSecret: s3-secret
     ingress:
       enabled: true
       ingressClassName: nginx

@@ -1,7 +1,7 @@
 namespace: longhorn-system
 resources: 
 - namespace.yaml
-#- ./secrets
+- ./secrets
 - ../../../../../bases/longhorn
 
 patches: 
