@@ -1,7 +1,7 @@
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
-  name: macvlan-conf
+  name: svcnet-macvlan
   namespace: kube-system
 spec:
   config: '{
@@ -10,12 +10,10 @@ spec:
       "master": "ens19",
       "mode": "bridge",
       "ipam": {
-        "type": "host-local",
+        "type": "static",
         "subnet": "10.140.0.0/22",
-        "rangeStart": "10.140.3.0",
-        "rangeEnd": "10.140.3.254",
         "routes": [
-          { "dst": "0.0.0.0/0" }
+          { "dst": "10.140.0.0/22" }
         ],
         "gateway": "10.140.0.1"
       }
