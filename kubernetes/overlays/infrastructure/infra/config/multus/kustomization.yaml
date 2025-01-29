@@ -2,4 +2,3 @@ namespace: multus-networks
 resources:
   - namespace.yaml
   - svcnet-macvlan.yaml
-  - svcnet-ipvlan.yaml
