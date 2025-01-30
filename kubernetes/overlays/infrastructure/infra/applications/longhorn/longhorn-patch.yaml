@@ -5,6 +5,9 @@ metadata:
   name: longhorn
   namespace: longhorn
 spec:
+  chart:
+    spec:
+      version: "1.8.0"
   values: 
     defaultBackupStore: 
       backupTarget: s3://longhorn-backups@eu-west-1/
