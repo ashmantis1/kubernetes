@@ -10,7 +10,7 @@ spec:
       backupTarget: s3://longhorn-backups@eu-west-1/
       backupTargetCredentialSecret: s3-secret
     ingress:
-      enabled: true
+      enabled: false
       ingressClassName: nginx
       host: longhorn.infra.k8s.ashman.world
       annotations:
