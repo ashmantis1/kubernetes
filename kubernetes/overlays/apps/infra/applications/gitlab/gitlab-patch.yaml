@@ -22,8 +22,8 @@ spec:
         domain: "infra.k8s.ashman.world"
       ingress:
         enabled: true
+        class: nginx
         configureCertmanager: false
-        provider: nginx
         tls:
           enabled: true
           secretName: gitlab-tls
