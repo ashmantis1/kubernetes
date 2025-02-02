@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gitlab
+spec:
+  chart:
+    spec:
+      version: "8.8.1"
+  values: 
+    global:
+      edition: ce
+      hosts:
+        domain: "infra.k8s.ashman.world"
+      ingress:
+        enabled: true
+        configureCertManager: false
+        provider: nginx
+        tls:
+          enabled: true
+          secretName: gitlab-tls
+        annotations:
+          cert-manager.io/cluster-issuer: "ipa"
+      certificates:
+        customCAs:
+          - secret: ipa-ca
+      psql:
+        host: gitlab-db-rw
+        password:
+          secret: gitlab-db-app
+          key: password
+        username: app
+        database: app
+      appConfig:
+        object_store:
+          enabled: true
+          connection:
+            secret: object-store-config
+            key: config
+        lfs:
+          enabled: true
+          bucket: git-lfs
+        artifacts:
+          enabled: true
+          bucket: gitlab-artifacts
+        uploads:
+          enabled: true
+          bucket: gitlab-uploads
+        packages:
+          enabled: true
+          bucket: gitlab-packages
+        backups:
+          bucket: gitlab-backups
+          tmpBucket: gitlab-tmp
+      minio:
+        enabled: false
+      cert-manager:
+        install: false
+        installCRDs: false
+      postgresql:
+        install: false
+      nginx-ingress:
+        enabled: false
+

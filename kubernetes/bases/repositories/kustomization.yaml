@@ -4,7 +4,6 @@ resources:
 - angelnu.yaml
 - ashmantis.yaml
 - av1o.yaml
-#- bitnami.yaml
 - bjw-s.yaml
 - calico.yaml
 - cilium.yaml
@@ -23,3 +22,4 @@ resources:
 - weaveworks.yaml
 - bitnami.yaml
 - sealed-secrets.yaml
+- gitlab.yaml
