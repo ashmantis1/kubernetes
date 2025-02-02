@@ -29,6 +29,7 @@ spec:
           secretName: gitlab-tls
         annotations:
           cert-manager.io/cluster-issuer: "ipa"
+          kubernetes.io/ingress.class: "nginx"
       certificates:
         customCAs:
           - secret: ipa-ca
