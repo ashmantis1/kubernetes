@@ -60,13 +60,13 @@ spec:
         backups:
           bucket: gitlab-backups
           tmpBucket: gitlab-tmp
-      minio:
-        enabled: false
-      cert-manager:
-        install: false
-        installCRDs: false
-      postgresql:
-        install: false
-      nginx-ingress:
-        enabled: false
+    minio:
+      enabled: false
+    cert-manager:
+      install: false
+      installCRDs: false
+    postgresql:
+      install: false
+    nginx-ingress:
+      enabled: false
 
