@@ -8,10 +8,17 @@ spec:
     spec:
       version: "8.8.1"
   values: 
+    registry:
+      ingress:
+        tls:
+          secretName: gitlab-registry-tls
     gitlab:
       sidekiq:
         concurrency: 10
       webservice:
+        ingress:
+          tls:
+            secretName: gitlab-webservice-tls
         puma:
           threads:
             min: 1
@@ -20,14 +27,24 @@ spec:
       edition: ce
       hosts:
         domain: "infra.k8s.ashman.world"
+        gitlab:
+          name: "gitlab.infra.k8s.ashman.world"
+          https: true
+        registry:
+          name: gitlab-registry.infra.k8s.ashman.world
+          https: true
+        ssh: ssh.gitlab.infra.k8s.ashman.world
+        kas:
+          name: gitlab-kas.infra.k8s.ashman.world
+
       ingress:
         enabled: true
         class: "nginx"
-        configureCertmanager: true
+        configureCertmanager: false
         tls:
           enabled: true
         annotations:
-          #cert-manager.io/cluster-issuer: "ipa"
+          cert-manager.io/cluster-issuer: "ipa"
           #kubernetes.io/ingress.class: "nginx"
       certificates:
         customCAs:
