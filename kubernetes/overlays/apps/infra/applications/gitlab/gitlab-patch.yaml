@@ -85,4 +85,11 @@ spec:
       install: false
     nginx-ingress:
       enabled: false
-
+    gitlab-runner:
+      config: |
+        [[runners]]
+          [runners.kubernetes]
+            image = "ubuntu:22.04"
+          [[runners.kubernetes.volumes.configMap]]
+            name = "ipa-ca"
+            mount_path = "/etc/gitlab-runner/certs/"
