@@ -62,7 +62,7 @@ spec:
           tmpBucket: gitlab-tmp
     minio:
       enabled: false
-    cert-manager:
+    certmanager:
       install: false
       installCRDs: false
     postgresql:
