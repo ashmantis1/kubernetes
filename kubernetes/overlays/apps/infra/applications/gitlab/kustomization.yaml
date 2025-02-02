@@ -4,6 +4,7 @@ namespace: gitlab
 resources:
 - ../../../../../bases/gitlab
 - postgres.yaml
+- ./secrets
 #- namespace.yaml
 components:
 - ../../../../../components/ca-certs
