@@ -34,9 +34,8 @@ spec:
           name: gitlab-registry.infra.k8s.ashman.world
           https: true
         ssh: ssh.gitlab.infra.k8s.ashman.world
-        kas:
-          name: gitlab-kas.infra.k8s.ashman.world
-
+      kas:
+        enabled: false
       ingress:
         enabled: true
         class: "nginx"
