@@ -8,13 +8,21 @@ spec:
     spec:
       version: "8.8.1"
   values: 
+    gitlab:
+      sidekiq:
+        concurrency: 10
+      webservice:
+        puma:
+          threads:
+            min: 1
+            max: 2
     global:
       edition: ce
       hosts:
         domain: "infra.k8s.ashman.world"
       ingress:
         enabled: true
-        configureCertManager: false
+        configureCertmanager: false
         provider: nginx
         tls:
           enabled: true
