@@ -22,7 +22,7 @@ spec:
         domain: "infra.k8s.ashman.world"
       ingress:
         enabled: true
-        class: nginx
+        class: ""
         configureCertmanager: false
         tls:
           enabled: true
