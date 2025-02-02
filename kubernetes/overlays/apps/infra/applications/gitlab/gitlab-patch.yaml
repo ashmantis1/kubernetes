@@ -23,13 +23,12 @@ spec:
       ingress:
         enabled: true
         class: "nginx"
-        configureCertmanager: false
+        configureCertmanager: true
         tls:
           enabled: true
-          secretName: gitlab-tls
         annotations:
-          cert-manager.io/cluster-issuer: "ipa"
-          kubernetes.io/ingress.class: "nginx"
+          #cert-manager.io/cluster-issuer: "ipa"
+          #kubernetes.io/ingress.class: "nginx"
       certificates:
         customCAs:
           - configMap: ipa-ca
