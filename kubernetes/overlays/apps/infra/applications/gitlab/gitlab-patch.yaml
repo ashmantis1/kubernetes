@@ -60,8 +60,8 @@ spec:
         backups:
           bucket: gitlab-backups
           tmpBucket: gitlab-tmp
-    minio:
-      enabled: false
+      minio:
+        enabled: false
     certmanager:
       install: false
       installCRDs: false
