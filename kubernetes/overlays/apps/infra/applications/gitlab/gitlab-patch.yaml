@@ -64,7 +64,7 @@ spec:
         enabled: false
     certmanager:
       install: false
-      installCRDs: false
+      installCRDs: true
     postgresql:
       install: false
     nginx-ingress:
