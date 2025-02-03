@@ -13,12 +13,12 @@ spec:
         tls:
           secretName: gitlab-registry-tls
     gitlab:
-      #toolbox:
-      #  backups:
-      #    objectStorage:
-      #      config:
-      #        secret: object-store-config
-      #        key: config
+      toolbox:
+        backups:
+          objectStorage:
+            config:
+              secret: object-store-config
+              key: config
       sidekiq:
         concurrency: 10
       webservice:
@@ -62,23 +62,35 @@ spec:
         username: app
         database: app
       appConfig:
-        object_store:
-          enabled: true
-          connection:
-            secret: object-store-config
-            key: config
+        #object_store:
+        #  enabled: true
+        #  connection:
+        #    secret: object-store-config
+        #    key: config
         lfs:
           enabled: true
           bucket: git-lfs
+          connection:
+            secret: object-store-config
+            key: config
         artifacts:
           enabled: true
           bucket: gitlab-artifacts
+          connection:
+            secret: object-store-config
+            key: config
         uploads:
           enabled: true
           bucket: gitlab-uploads
+          connection:
+            secret: object-store-config
+            key: config
         packages:
           enabled: true
           bucket: gitlab-packages
+          connection:
+            secret: object-store-config
+            key: config
         backups:
           bucket: gitlab-backups
           tmpBucket: gitlab-tmp
