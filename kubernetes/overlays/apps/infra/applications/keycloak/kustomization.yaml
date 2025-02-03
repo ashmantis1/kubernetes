@@ -4,11 +4,17 @@ namespace: keycloak
 resources:
 - ../../../../../bases/keycloak
 - secrets/
-- configmaps/
 - postgres.yaml
 - namespace.yaml
 patches:
 - target:
     kind: HelmRelease
   path: keycloak-patch.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+  - name: keycloak-config
+    files:
+    - keycloak-config/infra-realm.yaml
 
