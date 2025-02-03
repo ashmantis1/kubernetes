@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 namespace: external-dns-cloudflare
 resources:
-  - ../../../../bases/external-dns
+  - ../../../../../bases/external-dns
   - ./secrets
 patches: 
   - target:

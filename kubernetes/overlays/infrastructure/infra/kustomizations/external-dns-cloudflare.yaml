@@ -7,10 +7,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal/applications/external-dns-cloudflare
+  path: ./kubernetes/overlays/infrastructure/infra/applications/external-dns-cloudflare
   prune: false
   dependsOn: 
-    - name: external-secrets-config
+    - name: sealed-secrets
     - name: repositories-infra
   healthChecks:
     - kind: HelmRelease
