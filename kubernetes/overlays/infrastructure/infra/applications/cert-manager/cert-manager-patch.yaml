@@ -8,7 +8,7 @@ spec:
     spec:
       version: "1.16.3"
   values: 
-    dns01RecursiveNameservers: "1.1.1.1,10.10.10.10"
+    dns01RecursiveNameservers: "1.1.1.1:53,10.10.10.10:53"
     crds:
       enabled: true
     volumes:
