@@ -2,3 +2,4 @@ resources:
 #- clusterissuer.yaml
 #- selfsignedissuer.yaml
   - ipa-issuer.yaml
+  - letsencrypt-issuer.yaml
