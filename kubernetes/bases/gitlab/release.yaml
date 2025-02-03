@@ -21,6 +21,61 @@ spec:
         namespace: flux-system
       interval: 12h
   values:
-    global:
-      edition: ce
-
+    gitlab:
+      license:
+        secret: gitlab-license
+        key: license
+      toolbox:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub
+      migrations:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub
+      webservice:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub
+      sidekiq:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub
+      gitaly:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub
+      gitlab-shell:
+        extraVolumes: |
+          - name: gitlab-license-crack-key
+            configMap:
+              name: crack-cert-gitlab
+        extraVolumeMounts: |
+          - name: gitlab-license-crack-key
+            mountPath: /srv/gitlab/.license_encryption_key.pub
+            subPath: .license_encryption_key.pub

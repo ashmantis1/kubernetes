@@ -2,3 +2,4 @@ namespace: gitlab
 resources:
   - namespace.yaml
   - release.yaml
+  - secrets/

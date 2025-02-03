@@ -34,7 +34,7 @@ spec:
             min: 1
             max: 2
     global:
-      edition: ce
+      edition: ee
       hosts:
         domain: apps.ashman.world
         gitlab:
