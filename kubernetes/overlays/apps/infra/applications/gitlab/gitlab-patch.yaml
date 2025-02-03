@@ -43,7 +43,7 @@ spec:
         registry:
           name: gitlab-registry.apps.ashman.world
           https: true
-        ssh: gitlab-ssh.apps.ashman.world
+        ssh: gitlab.apps.ashman.world
       kas:
         enabled: false
       ingress:
