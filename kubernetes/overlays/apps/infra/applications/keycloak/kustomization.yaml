@@ -16,5 +16,5 @@ generatorOptions:
 configMapGenerator:
   - name: keycloak-config
     files:
-    - keycloak-config/infra-realm.yaml
+    - keycloak-config/apps-realm.yaml
 
