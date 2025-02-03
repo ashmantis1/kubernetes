@@ -39,4 +39,13 @@ spec:
     keycloakConfigCli:
       enabled: true
       existingConfigmap: keycloak-config
+    extraVolumes:
+      - name: ipa-ca
+        configMap:
+          name: ipa-ca
+    extraVolumeMounts:
+      - name: ipa-ca
+        mountPath: "/etc/ssl/certs/ca-certificates.crt"
+        subPath: ca-certificates.crt
+        readOnly: true
 
