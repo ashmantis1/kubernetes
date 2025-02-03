@@ -18,3 +18,4 @@ spec:
       tsigSecretAlg: hmac-sha512
       zones:
         - "k8s.ashman.world"
+        - "apps.ashman.world"
