@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: keycloak
 resources:
 - ../../../../../bases/keycloak
+- secrets/
 - postgres.yaml
 - namespace.yaml
 patches:

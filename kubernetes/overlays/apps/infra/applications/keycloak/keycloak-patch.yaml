@@ -34,5 +34,6 @@ spec:
       tls: true
     auth: 
       adminUser: admin
-      adminPassword: test
+      existingSecret: keycloak-tmp-admin
+      passwordSecretKey: password
 
