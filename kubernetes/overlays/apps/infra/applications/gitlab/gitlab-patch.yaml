@@ -13,6 +13,12 @@ spec:
         tls:
           secretName: gitlab-registry-tls
     gitlab:
+      toolbox:
+        backups:
+          objectStorage:
+            config:
+              secret: object-store-config
+              key: config
       sidekiq:
         concurrency: 10
       webservice:
