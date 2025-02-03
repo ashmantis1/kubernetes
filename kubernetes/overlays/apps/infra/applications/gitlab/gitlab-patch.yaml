@@ -26,14 +26,14 @@ spec:
     global:
       edition: ce
       hosts:
-        domain: "infra.k8s.ashman.world"
+        domain: apps.ashman.world
         gitlab:
-          name: "gitlab.infra.k8s.ashman.world"
+          name: gitlab.apps.ashman.world
           https: true
         registry:
-          name: gitlab-registry.infra.k8s.ashman.world
+          name: gitlab-registry.apps.ashman.world
           https: true
-        ssh: ssh.gitlab.infra.k8s.ashman.world
+        ssh: gitlab-ssh.apps.ashman.world
       kas:
         enabled: false
       ingress:
@@ -43,7 +43,7 @@ spec:
         tls:
           enabled: true
         annotations:
-          cert-manager.io/cluster-issuer: "ipa"
+          cert-manager.io/cluster-issuer: "letsencrypt-issuer"
           #kubernetes.io/ingress.class: "nginx"
       certificates:
         customCAs:
@@ -85,11 +85,3 @@ spec:
       install: false
     nginx-ingress:
       enabled: false
-    gitlab-runner:
-      config: |
-        [[runners]]
-          [runners.kubernetes]
-            image = "ubuntu:22.04"
-          [[runners.kubernetes.volumes.configMap]]
-            name = "ipa-ca"
-            mount_path = "/etc/gitlab-runner/certs/"
