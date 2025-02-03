@@ -26,9 +26,9 @@ spec:
       enabled: true
       ingressClassName: nginx
       servicePort: https
-      hostname: auth.k8s.ashman.world
+      hostname: auth.apps.ashman.world
       annotations:
-        cert-manager.io/cluster-issuer: "ipa"
+        cert-manager.io/cluster-issuer: "letsencrypt-issuer"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
       tls: true
