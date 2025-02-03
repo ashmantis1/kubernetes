@@ -4,6 +4,7 @@ namespace: keycloak
 resources:
 - ../../../../../bases/keycloak
 - secrets/
+- configmaps/
 - postgres.yaml
 - namespace.yaml
 patches:

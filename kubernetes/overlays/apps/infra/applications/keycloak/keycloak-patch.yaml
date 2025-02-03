@@ -36,4 +36,7 @@ spec:
       adminUser: admin
       existingSecret: keycloak-tmp-admin
       passwordSecretKey: password
+    keycloakConfigCli:
+      enabled: true
+      existingConfigmap: keycloak-config
 
