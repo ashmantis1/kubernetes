@@ -12,6 +12,8 @@ spec:
       storage:
         secret: registry-storage-config
         key: config
+        redirect:
+          disable: true
       ingress:
         tls:
           secretName: gitlab-registry-tls
