@@ -6,8 +6,8 @@ resources:
 - secrets/
 - postgres.yaml
 - namespace.yaml
-components:
-- ../../../../../components/ca-certs
+#components:
+#- ../../../../../components/ca-certs
 patches:
 - target:
     kind: HelmRelease
@@ -19,4 +19,7 @@ configMapGenerator:
   - name: keycloak-config
     files:
     - keycloak-config/apps-realm.yaml
+  - name: ipa-ca
+    files:
+    - keycloak-config/ca.truststore
 

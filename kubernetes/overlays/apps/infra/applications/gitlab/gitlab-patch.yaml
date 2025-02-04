@@ -71,6 +71,18 @@ spec:
         #  connection:
         #    secret: object-store-config
         #    key: config
+        omniauth:
+          enabled: true
+          autoSignInWithProvider: "openid_connect"
+          allowSingleSignOn: ["openid_connect"]
+          blockAutoCreatedUsers: false
+          autoLinkUser: ["openid_connect"]
+          syncProfileAttributes: ["name", "email"]
+          syncProfileFromProvider: ["openid_connect"]
+          allowBypassTwoFactor: true
+          providers:
+            - secret: gitlab-oauth-secret
+              key: config
         lfs:
           enabled: true
           bucket: git-lfs
