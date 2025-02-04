@@ -9,6 +9,9 @@ spec:
       version: "8.8.1"
   values: 
     registry:
+      storage:
+        secret: registry-storage-config
+        key: config
       ingress:
         tls:
           secretName: gitlab-registry-tls
@@ -38,6 +41,8 @@ spec:
             max: 2
     global:
       edition: ee
+      registry:
+        bucket: gitlab-registry
       hosts:
         domain: apps.ashman.world
         gitlab:
