@@ -12,11 +12,14 @@ spec:
       ingress:
         tls:
           secretName: gitlab-registry-tls
+    gitlab-runner:
+      runners:
+        config: |
+          [[runners]]
+            [runners.kubernetes]
+              image = "ubuntu:22.04"
+              privileged = true
     gitlab:
-      #gitlab-shell:
-      #  service:
-      #    type: LoadBalancer
-      #    loadBalancerIP: 10.110.0.201
       toolbox:
         backups:
           objectStorage:
