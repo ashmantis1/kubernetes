@@ -83,7 +83,7 @@ spec:
         #    key: config
         omniauth:
           enabled: true
-          #autoSignInWithProvider: "openid_connect"
+          autoSignInWithProvider: "openid_connect"
           allowSingleSignOn: ["openid_connect"]
           blockAutoCreatedUsers: false
           autoLinkUser: ["openid_connect"]
