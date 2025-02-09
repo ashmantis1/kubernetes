@@ -35,15 +35,15 @@ spec:
             secretKeyRef:
               name: s3-creds
               key: ACCESS_SECRET_KEY
-          extraEnv:
-            AWS_DEFAULT_REGION: eu-west-1
+        extraEnv:
+          AWS_DEFAULT_REGION: eu-west-1
         backups:
           objectStorage:
             config:
               secret: object-store-config
               key: config
           cron:
-            enabled: false
+            enabled: true
             schedule: "@daily"
             extraArgs: "--s3tool awscli --aws-s3-endpoint-url https://minio01.infra.ashman.world"
       sidekiq:
