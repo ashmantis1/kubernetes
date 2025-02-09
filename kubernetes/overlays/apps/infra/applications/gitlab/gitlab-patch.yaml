@@ -26,11 +26,22 @@ spec:
               privileged = true
     gitlab:
       toolbox:
+        extraEnvFrom:
+          AWS_ACCESS_KEY_ID:
+          secretKeyRef:
+            name: s3-creds
+            key: ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY:
+            secretKeyRef:
+              name: s3-creds
+              key: ACCESS_SECRET_KEY 
+          extraEnv:
+            AWS_DEFAULT_REGION: eu-west-1
         backups:
-          objectStorage:
-            config:
-              secret: object-store-config
-              key: config
+          cron:
+            enabled: true
+            schedule: "@daily"
+            extraArgs: "--s3tool awscli --aws-s3-endpoint-url https://minio01.infra.ashman.world"
       sidekiq:
         concurrency: 10
       webservice:
