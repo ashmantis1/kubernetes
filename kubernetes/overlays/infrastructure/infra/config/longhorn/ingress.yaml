@@ -2,7 +2,7 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   annotations:
-    cert-manager.io/cluster-issuer: ipa
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
   name: longhorn-ingress
   namespace: longhorn-system

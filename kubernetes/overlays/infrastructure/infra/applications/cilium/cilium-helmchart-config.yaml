@@ -24,7 +24,7 @@ spec:
         ingress:
           enabled: true
           annotations: 
-            cert-manager.io/cluster-issuer: "ipa"
+            cert-manager.io/cluster-issuer: "letsencrypt-issuer"
           className: "nginx"
           hosts:
             - cilium.infra.k8s.ashman.world
