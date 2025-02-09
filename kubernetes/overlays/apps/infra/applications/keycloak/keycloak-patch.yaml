@@ -42,7 +42,7 @@ spec:
     extraVolumes:
       - name: ipa-ca
         configMap:
-          name: ipa-ca
+          name: ipa-ca-truststore
     extraVolumeMounts:
       - name: ipa-ca
         mountPath: "/etc/ssl/certs/ca.truststore"

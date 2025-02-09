@@ -19,7 +19,7 @@ configMapGenerator:
   - name: keycloak-config
     files:
     - keycloak-config/apps-realm.yaml
-  - name: ipa-ca
+  - name: ipa-ca-truststore
     files:
     - keycloak-config/ca.truststore
 
