@@ -38,6 +38,10 @@ spec:
           extraEnv:
             AWS_DEFAULT_REGION: eu-west-1
         backups:
+          objectStorage:
+            config:
+              secret: object-store-config
+              key: config
           cron:
             enabled: true
             schedule: "@daily"
