@@ -25,7 +25,7 @@ spec:
             key: ACCESS_SECRET_KEY
   backup:
     barmanObjectStore:
-      serverName: keycloak-postgres-backup-01
+      serverName: keycloak-postgres-backup-02
       destinationPath: "s3://cloudnative-pg-backups"
       endpointURL: "https://minio01.infra.ashman.world:443"
       endpointCA:
