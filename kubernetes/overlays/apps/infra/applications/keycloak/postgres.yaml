@@ -6,7 +6,7 @@ spec:
   instances: 1
   backup:
     barmanObjectStore:
-      destinationPath: "cloudnative-pg-backups/"
+      destinationPath: "s3://cloudnative-pg-backups"
       endpointURL: "minio01.infra.ashman.world"
       endpointCA:
         name: ipa-ca
