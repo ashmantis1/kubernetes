@@ -7,7 +7,7 @@ spec:
   backup:
     barmanObjectStore:
       destinationPath: "s3://cloudnative-pg-backups"
-      endpointURL: "minio01.infra.ashman.world"
+      endpointURL: "minio01.infra.ashman.world:443"
       endpointCA:
         name: ipa-ca
         key: ca-certificates.crt
