@@ -37,6 +37,7 @@ spec:
               key: ACCESS_SECRET_KEY
         extraEnv:
           AWS_DEFAULT_REGION: eu-west-1
+          AWS_CA_BUNDLE: "/etc/ssl/certs/ca-certificates.crt"
         backups:
           objectStorage:
             config:
