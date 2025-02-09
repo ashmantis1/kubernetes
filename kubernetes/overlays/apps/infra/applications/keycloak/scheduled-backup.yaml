@@ -3,7 +3,7 @@ kind: ScheduledBackup
 metadata:
   name: keycloak-backup
 spec:
-  schedule: "0 0 0 * * *"
+  schedule: "@daily"
   backupOwnerReference: self
   cluster:
     name: keycloak-postgres
