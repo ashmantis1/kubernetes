@@ -6,8 +6,8 @@ resources:
 - secrets/
 - postgres.yaml
 - namespace.yaml
-#components:
-#- ../../../../../components/ca-certs
+components:
+- ../../../../../components/ca-certs
 patches:
 - target:
     kind: HelmRelease
