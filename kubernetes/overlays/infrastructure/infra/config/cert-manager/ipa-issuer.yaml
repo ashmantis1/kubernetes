@@ -18,6 +18,6 @@ spec:
             tsigSecretSecretRef:
               name: ipa-tsig-secret
               key: tsig-secret-key
-            selector:
-              dnsZones:
-                - 'k8s.ashman.world'
+        selector:
+          dnsZones:
+            - 'k8s.ashman.world'
