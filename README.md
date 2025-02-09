@@ -23,3 +23,6 @@ To restore gitlab, first create the gitlab rails secret (delete pre-existing sec
 
 Then run the backup restore command:
 `kubectl exec -it deploy/gitlab-toolbox -- backup-utility --restore -t 1739087156_2025_02_09_17.8.1-ee --s3tool awscli --aws-s3-endpoint-url https://minio01.infra.ashman.world`
+
+##### Keycloak
+To restore keycloak (and other cloudnative pg) backups, simply uncomment the `spec.bootstrap` field in the cluster resource, and update the external cluster to match the latest backup, and update the backup target to a newcluster name.
