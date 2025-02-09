@@ -5,6 +5,7 @@ resources:
 - ../../../../../bases/keycloak
 - secrets/
 - postgres.yaml
+- scheduled-backup.yaml
 - namespace.yaml
 components:
 - ../../../../../components/ca-certs
