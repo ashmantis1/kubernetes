@@ -4,8 +4,24 @@ metadata:
   name: keycloak-postgres
 spec:
   instances: 1
+  externalClusters:
+    - name: keycloak-postgres
+      barmanObjectStore:
+        destinationPath: "s3://cloudnative-pg-backups"
+        endpointURL: "https://minio01.infra.ashman.world:443"
+        endpointCA:
+          name: ipa-ca
+          key: ca-certificates.crt
+        s3Credentials:
+          accessKeyId: 
+            name: s3-creds
+            key: ACCESS_KEY_ID
+          secretAccessKey: 
+            name: s3-creds
+            key: ACCESS_SECRET_KEY
   backup:
     barmanObjectStore:
+      serverName: keycloak-postgres-backup-01
       destinationPath: "s3://cloudnative-pg-backups"
       endpointURL: "https://minio01.infra.ashman.world:443"
       endpointCA:
