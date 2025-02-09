@@ -28,9 +28,9 @@ spec:
       toolbox:
         extraEnvFrom:
           AWS_ACCESS_KEY_ID:
-          secretKeyRef:
-            name: s3-creds
-            key: ACCESS_KEY_ID
+            secretKeyRef:
+              name: s3-creds
+              key: ACCESS_KEY_ID
           AWS_SECRET_ACCESS_KEY:
             secretKeyRef:
               name: s3-creds
