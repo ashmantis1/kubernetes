@@ -10,6 +10,7 @@ spec:
   path: ./kubernetes/overlays/infrastructure/infra/applications/longhorn
   prune: true
   dependsOn: 
+    - name: external-secrets-config
     - name: repositories-infra
   healthChecks:
     - kind: HelmRelease
