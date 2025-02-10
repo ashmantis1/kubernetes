@@ -10,8 +10,7 @@ spec:
   path: ./kubernetes/overlays/infrastructure/infra/applications/cert-manager
   dependsOn: 
     - name: repositories-infra
-    - name: sealed-secrets
-    #    - name: external-secrets-config
+    - name: external-secrets-config
   healthChecks:
     - kind: HelmRelease
       name: cert-manager

@@ -10,7 +10,7 @@ spec:
   path: ./kubernetes/overlays/infrastructure/infra/applications/external-dns-ipa
   prune: false
   dependsOn: 
-    - name: sealed-secrets
+    - name: external-secrets-config
     - name: repositories-infra
   healthChecks:
     - kind: HelmRelease
