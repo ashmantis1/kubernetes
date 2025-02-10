@@ -5,10 +5,14 @@ Provides a method to deploy and maintain my homelab while trying to follow gitop
 - Proxmox cluster
 
 ### Kubernetes
-#### Sealed Secrets
-For the initial bootstrap of the infrastructure cluster, deploy the sealed secrets secret. E.g:
+#### External Secrets
+For the initial bootstrap of the infrastructure cluster, deploy the external secrets secret. E.g:
 
-`bw get notes kubeseal-secret | kubectl apply -f -`
+##### Infra
+`bw get notes infra-vault-secret | kubectl apply -f -`
+
+##### Baremetal/SVC
+`bw get notes svc-vault-secret | kubectl apply -f -`
 
 #### Flux
 To deploy the flux project, run this command:  
