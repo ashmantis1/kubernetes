@@ -1,3 +1,0 @@
-namespace: flux-system
-resources: 
-  - ../../../../../bases/sealed-secrets
