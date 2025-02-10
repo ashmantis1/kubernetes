@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: external-secrets
+resources:
+  - ../../../../../bases/external-secrets
+patches: 
+  - target:
+      kind: HelmRelease
+    path: external-secrets-patch.yaml
