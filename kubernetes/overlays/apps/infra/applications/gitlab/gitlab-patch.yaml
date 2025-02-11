@@ -141,6 +141,9 @@ spec:
           tmpBucket: gitlab-tmp
       minio:
         enabled: false
+    registry:
+      ingress:
+        proxyBodySize: 4096m
     certmanager:
       install: false
       installCRDs: true
