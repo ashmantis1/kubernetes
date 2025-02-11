@@ -7,7 +7,7 @@ spec:
     {
       "cniVersion": "0.3.1",
       "type": "ipvlan",
-      "master": "ens19",
+      "master": "eth0",
       "ipam": {
         "type": "static",
         "routes": [

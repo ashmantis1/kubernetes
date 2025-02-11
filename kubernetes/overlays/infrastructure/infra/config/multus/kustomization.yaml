@@ -1,4 +1,4 @@
 namespace: multus-networks
 resources:
   - namespace.yaml
-  #  - svcnet-ipvlan.yaml
+  - svcnet-ipvlan.yaml
