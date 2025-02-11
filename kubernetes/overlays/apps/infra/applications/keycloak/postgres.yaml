@@ -4,13 +4,13 @@ metadata:
   name: keycloak-postgres
 spec:
   instances: 1
-  bootstrap:
-    recovery:
-      source: keycloak-postgres-backup
+  #bootstrap:
+  #  recovery:
+  #    source: keycloak-postgres-backup
   externalClusters:
     - name: keycloak-postgres-backup
       barmanObjectStore:
-        serverName: keycloak-postgres-backup-02
+        serverName: keycloak-postgres-backup-03
         destinationPath: "s3://cloudnative-pg-backups"
         endpointURL: "https://minio01.infra.ashman.world:443"
         endpointCA:
