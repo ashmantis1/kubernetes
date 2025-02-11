@@ -15,6 +15,7 @@ spec:
         redirect:
           disable: true
       ingress:
+        proxyBodySize: 4096m
         tls:
           secretName: gitlab-registry-tls
     gitlab-runner:
@@ -141,9 +142,6 @@ spec:
           tmpBucket: gitlab-tmp
       minio:
         enabled: false
-    registry:
-      ingress:
-        proxyBodySize: 4096m
     certmanager:
       install: false
       installCRDs: true
