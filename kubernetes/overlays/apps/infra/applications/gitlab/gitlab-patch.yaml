@@ -52,6 +52,7 @@ spec:
         concurrency: 10
       webservice:
         ingress:
+          proxyBodySize: 4096m
           tls:
             secretName: gitlab-webservice-tls
         puma:
@@ -81,7 +82,6 @@ spec:
           enabled: true
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-issuer"
-          nginx.ingress.kubernetes.io/proxy-body-size: 4096m
           #kubernetes.io/ingress.class: "nginx"
       certificates:
         customCAs:
