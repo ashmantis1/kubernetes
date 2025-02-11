@@ -16,7 +16,7 @@ spec:
     - name: ingress-nginx
     - name: longhorn
     - name: repositories-infra
-    - name: sealed-secrets
+    - name: external-secrets
   prune: false
   sourceRef:
     kind: "GitRepository"
