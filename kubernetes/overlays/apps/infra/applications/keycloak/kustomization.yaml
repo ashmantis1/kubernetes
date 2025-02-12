@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: keycloak
 resources:
 - ../../../../../bases/keycloak
+- network-policies/
 - secrets/
 - postgres.yaml
 - scheduled-backup.yaml
