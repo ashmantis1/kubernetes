@@ -3,7 +3,7 @@ namespace: external-secrets
 resources:
   - ../../../../../bases/external-secrets
   - ./network-policies
-  #components:
+components:
   - ../../../../../components/network-policies
 patches: 
   - target:
