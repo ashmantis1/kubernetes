@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metal3
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./kubernetes/overlays/apps/infra/applications/metal3
+  healthChecks:
+    - kind: Deployment
+      name: ironic
+      namespace: baremetal-operator-system
+      apiVersion: apps/v1
+    - kind: Deployment
+      name: baremetal-operator-controller-manager
+      namespace: baremetal-operator-system
+      apiVersion: apps/v1
+  prune: false
+  sourceRef:
+    kind: "GitRepository"
+    name: "flux-system"

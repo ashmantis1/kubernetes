@@ -1,0 +1,60 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: baremetal-operator-system
+resources:
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/base?ref=v0.9.0
+- service.yaml
+- secrets/
+components:
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/basic-auth?ref=v0.9.0
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/tls?ref=v0.9.0
+images:
+- name: quay.io/metal3-io/ironic
+  newTag: v27.0.0
+configMapGenerator:
+- envs:
+  - ./config/ironic_bmo.env
+  name: ironic-bmo-configmap
+  behavior: create
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/template/spec/hostNetwork
+      value: false
+  target:
+    kind: Deployment
+    name: ironic
+- patch: |-
+    - op: add
+      path: /spec/template/metadata/annotations
+      value:
+        k8s.v1.cni.cncf.io/networks: |
+          [{
+            "name": "svcnet-ipvlan",
+            "namespace": "multus-networks",
+            "ips": ["10.140.3.100/22"]
+          }]
+  target:
+    kind: Deployment
+    name: ironic
+- patch: |-
+    - op: add
+      path: /spec/dnsNames
+      value:
+      - ironic
+  target:
+    kind: Certificate
+    name: ironic-cert
+- patch: |-
+    - op: replace
+      path: /spec/ipAddresses/0
+      value: 10.140.3.100
+  target:
+    kind: Certificate
+    name: ironic-cert|ironic-inspector-cert
+- patch: |-
+    - op: remove
+      path: /spec/ipAddresses
+  target:
+    kind: Certificate
+    name: ironic-cacert
