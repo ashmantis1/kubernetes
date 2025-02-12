@@ -4,7 +4,8 @@ resources:
 - ./network-policies
 - ./secrets
 - ../../../../../bases/longhorn
-
+components:
+- ../../../../../components/network-policies
 patches: 
   - target: 
       kind: HelmRelease
