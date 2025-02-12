@@ -24,7 +24,7 @@ spec:
           [[runners]]
             [runners.kubernetes]
               image = "ubuntu:22.04"
-              privileged = true
+              privileged = false
     gitlab:
       toolbox:
         extraEnvFrom:

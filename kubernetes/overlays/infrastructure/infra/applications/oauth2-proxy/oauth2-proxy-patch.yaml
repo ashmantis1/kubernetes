@@ -21,13 +21,7 @@ spec:
       scope: openid profile email groups
       cookie-domain: ".ashman.world"
       email-domain: "*"
-      ##
       skip-provider-button: 'true'
-      #      force-https: 'false'
-      #      pass-authorization-header: 'true'
-      #      pass-basic-auth: 'false'
-      #      skip-jwt-bearer-tokens: 'true'
-      #allowed-group: "ashmantis1:ashmantis1"
       whitelist-domain: "*.ashman.world"
     ingress: 
       enabled: true 
