@@ -14,4 +14,10 @@ patches:
 - target:
     kind: HelmRelease
   path: gitlab-patch.yaml
-
+- target:
+    kind: Namespace
+  patch: |
+    - op: add
+      path: /metadata/labels
+      value:
+        app: gitlab
