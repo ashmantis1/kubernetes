@@ -11,7 +11,6 @@ spec:
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets-config
-    - name: ironic
   healthChecks:
     - kind: Deployment
       name: baremetal-operator-controller-manager

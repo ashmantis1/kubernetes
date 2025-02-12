@@ -12,6 +12,7 @@ spec:
     - name: repositories-infra
     - name: external-secrets-config
     - name: multus-config
+    - name: baremetal-operator
   healthChecks:
     - kind: Deployment
       name: ironic
