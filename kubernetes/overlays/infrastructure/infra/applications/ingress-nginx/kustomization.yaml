@@ -10,6 +10,6 @@ patches:
       kind: Namespace
     patch: |
       - op: add
-        path: /metadata/labels/-
+        path: /metadata/labels
         value:
           role: ingress-controller
