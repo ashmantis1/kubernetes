@@ -3,8 +3,8 @@ namespace: external-secrets
 resources:
   - ../../../../../bases/external-secrets
   - ./network-policies
-components:
-  - ../../../../../components/network-policies
+  #components:
+  #  - ../../../../../components/network-policies
 patches: 
   - target:
       kind: HelmRelease
