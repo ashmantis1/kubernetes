@@ -3,11 +3,13 @@ kind: Kustomization
 namespace: gitlab
 resources:
 - ../../../../../bases/gitlab
+- ./network-policies
 - postgres.yaml
 - ./secrets
 #- namespace.yaml
 components:
 - ../../../../../components/ca-certs
+- ../../../../../components/network-policies
 patches:
 - target:
     kind: HelmRelease

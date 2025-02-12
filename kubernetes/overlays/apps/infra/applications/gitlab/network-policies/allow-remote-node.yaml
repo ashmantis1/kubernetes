@@ -2,9 +2,11 @@ kind: CiliumNetworkPolicy
 apiVersion: cilium.io/v2
 metadata:
   name: remote-node-allow
+  namespace: external-secrets
 spec:
   endpointSelector:
-    matchLabels: {}
+    matchLabels:
+      app: gitlab 
   ingress:
   - fromEntities:
     - remote-node
