@@ -3,16 +3,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: metal3
+  name: baremetal-operator
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/apps/infra/applications/metal3
+  path: ./kubernetes/overlays/apps/infra/applications/ironic
+  dependsOn: 
+    - name: repositories-infra
+    - name: external-secrets-config
+    - name: ironic
   healthChecks:
-    - kind: Deployment
-      name: ironic
-      namespace: baremetal-operator-system
-      apiVersion: apps/v1
     - kind: Deployment
       name: baremetal-operator-controller-manager
       namespace: baremetal-operator-system

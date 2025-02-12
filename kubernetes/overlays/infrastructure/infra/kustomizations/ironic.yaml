@@ -3,23 +3,20 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-config
+  name: ironic
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/infra/config
+  path: ./kubernetes/overlays/apps/infra/applications/ironic
   dependsOn: 
-    - name: cert-manager-config
-    - name: cilium
-    - name: cloudnative-pg
-    - name: external-dns-ipa
-    - name: ingress-nginx
-    - name: longhorn
     - name: repositories-infra
     - name: external-secrets-config
-    - name: ironic
-    - name: baremetal-operator
     - name: multus-config
+  healthChecks:
+    - kind: Deployment
+      name: ironic
+      namespace: baremetal-operator-system
+      apiVersion: apps/v1
   prune: false
   sourceRef:
     kind: "GitRepository"
