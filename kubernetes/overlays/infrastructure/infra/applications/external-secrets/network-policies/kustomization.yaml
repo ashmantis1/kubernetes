@@ -1,5 +1,5 @@
 resources:
   - allow-webhook.yaml
   - allow-internal-ingress.yaml
-  # - allow-remote-node.yaml
+  - allow-remote-node.yaml
   
