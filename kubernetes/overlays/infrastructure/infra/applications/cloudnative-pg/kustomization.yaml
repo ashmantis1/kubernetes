@@ -3,6 +3,8 @@ namespace: cloudnative-pg
 resources: 
   - ../../../../../bases/cloudnative-pg
   - namespace.yaml
+components:
+  - ../../../../../components/network-policies
 patches: 
   - target: 
       kind: HelmRelease

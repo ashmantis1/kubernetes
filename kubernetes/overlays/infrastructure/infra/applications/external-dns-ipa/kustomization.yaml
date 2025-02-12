@@ -3,6 +3,8 @@ namespace: external-dns-ipa
 resources:
   - ../../../../../bases/external-dns
   - ./secrets
+components:
+  - ../../../../../components/network-policies
 patches: 
   - target:
       kind: HelmRelease
@@ -19,3 +21,7 @@ patches:
       - op: replace
         path: /metadata/name
         value: external-dns-ipa
+      - op: add
+        path: /metadata/labels
+        value: 
+          app: external-dns-ipa

@@ -2,6 +2,8 @@
 namespace: external-secrets
 resources:
   - ../../../../../bases/external-secrets
+components:
+  - ../../../../../components/network-policies
 patches: 
   - target:
       kind: HelmRelease

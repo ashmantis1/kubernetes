@@ -1,0 +1,6 @@
+resources:
+  - default-deny-ingress.yaml
+  - allow-internal-ingress.yaml
+  - allow-ingress-controller.yaml
+
+  

@@ -4,7 +4,10 @@ namespace: oauth2-proxy
 resources:
 - namespace.yaml
 - ../../../../../bases/oauth2-proxy
+- ./network-policies
 - ./secrets
+components:
+  - ../../../../../components/network-policies
 patches:
 - target:
     kind: HelmRelease
