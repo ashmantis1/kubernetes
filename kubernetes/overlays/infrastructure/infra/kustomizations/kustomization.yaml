@@ -12,6 +12,7 @@ resources:
 - config.yaml
 - external-secrets.yaml
 - external-secrets-config.yaml
+- oauth2-proxy.yaml
 #- external-dns-cloudflare.yaml
 #- keycloak.yaml
 #- config.yaml
