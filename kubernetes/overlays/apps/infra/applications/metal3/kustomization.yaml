@@ -2,6 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 namespace: baremetal-operator-system
 kind: Kustomization
 resources: 
-  - namespace.yaml
   - ./baremetal-operator
   - ./ironic
