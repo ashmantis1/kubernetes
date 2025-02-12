@@ -6,3 +6,10 @@ patches:
   - target: 
       kind: HelmRelease
     path: ./ingress-nginx-patch.yaml
+  - target:
+      kind: Namespace
+    patch: |
+      - op: add
+        path: /metadata/labels/-
+        value:
+          role: ingress-controller

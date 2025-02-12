@@ -1,0 +1,4 @@
+namespace: kube-system
+resources:
+  - allow-dns-ingress.yaml
+  - default-deny-ingress.yaml
