@@ -35,7 +35,7 @@ spec:
       hosts: 
         - oauth-proxy.infra.k8s.ashman.world
       annotations: 
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        cert-manager.io/cluster-issuer: "letsencrypt-issuer"
       tls:
         - secretName: oauth2-proxy-tls-cert
           hosts: 
