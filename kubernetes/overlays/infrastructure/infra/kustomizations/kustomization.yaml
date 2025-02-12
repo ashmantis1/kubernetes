@@ -14,8 +14,7 @@ resources:
 - external-secrets-config.yaml
 - oauth2-proxy.yaml
 - multus-config.yaml
-- ironic.yaml
-- baremetal-operator.yaml
+- metal3.yaml
 #- external-dns-cloudflare.yaml
 #- keycloak.yaml
 #- config.yaml
