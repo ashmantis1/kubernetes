@@ -9,7 +9,7 @@ spec:
       version: "24.4.6"
   values: 
     production: true
-    replicas: 3
+    replicaCount: 3
     proxy: passthrough
     tls: 
       enabled: true
