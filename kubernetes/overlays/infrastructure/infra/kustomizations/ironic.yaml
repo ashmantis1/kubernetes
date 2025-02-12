@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/apps/infra/applications/ironic
+  path: ./kubernetes/overlays/infrastructure/infra/applications/ironic
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets-config
