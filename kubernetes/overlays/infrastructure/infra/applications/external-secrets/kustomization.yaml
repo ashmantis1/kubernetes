@@ -4,8 +4,15 @@ resources:
   - ../../../../../bases/external-secrets
   - ./network-policies
   #components:
-  #  - ../../../../../components/network-policies
+  - ../../../../../components/network-policies
 patches: 
   - target:
       kind: HelmRelease
     path: external-secrets-patch.yaml
+  - target:
+      kind: Namespace
+    patch: |
+      - op: add
+        path: /metadata/labels
+        value:
+          app: external-secrets

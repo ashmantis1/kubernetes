@@ -1,3 +1,4 @@
 resources:
   - allow-webhook.yaml
+  - allow-internal-ingress.yaml
   
