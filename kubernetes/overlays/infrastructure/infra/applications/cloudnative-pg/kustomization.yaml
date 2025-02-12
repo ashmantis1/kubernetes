@@ -2,7 +2,7 @@
 namespace: cloudnative-pg
 resources: 
   - ../../../../../bases/cloudnative-pg
-  #  - ./network-policies
+  - ./network-policies
   - namespace.yaml
 components:
   - ../../../../../components/network-policies
