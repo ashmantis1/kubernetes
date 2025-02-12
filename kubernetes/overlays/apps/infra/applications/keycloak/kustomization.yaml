@@ -9,6 +9,7 @@ resources:
 - namespace.yaml
 components:
 - ../../../../../components/ca-certs
+- ../../../../../components/network-policies
 patches:
 - target:
     kind: HelmRelease
