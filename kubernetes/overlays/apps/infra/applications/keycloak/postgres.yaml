@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: keycloak-postgres
 spec:
-  instances: 3
+  instances: 1
   #bootstrap:
   #  recovery:
   #    source: keycloak-postgres-backup
