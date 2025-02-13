@@ -1,6 +1,7 @@
 resources:
   - allow-internal-ingress.yaml
   - allow-ingress-controller.yaml
+  - allow-cnpg.yaml
   - allow-remote-node.yaml
 
   
