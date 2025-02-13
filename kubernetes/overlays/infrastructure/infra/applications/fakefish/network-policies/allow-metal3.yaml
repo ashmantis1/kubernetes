@@ -12,7 +12,7 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          role: metal3
+          kustomize.toolkit.fluxcd.io/name: metal3
       ports:
       - protocol: TCP
         port: 9000
