@@ -1,3 +1,14 @@
 resources:
   - baremetal-operator
   - ironic
+  - network-policies/
+components:
+  - ../../../../../components/network-policies
+patches:
+- target: 
+    kind: Namespace
+  patch: |
+    - op: add
+      path: /metadata/labels
+      value: 
+        app: metal3
