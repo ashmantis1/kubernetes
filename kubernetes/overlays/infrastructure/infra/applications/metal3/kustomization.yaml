@@ -1,3 +1,4 @@
+namespace: baremetal-operator-system
 resources:
   - baremetal-operator
   - ironic
