@@ -17,8 +17,7 @@ spec:
     - name: longhorn
     - name: repositories-infra
     - name: external-secrets-config
-    - name: ironic
-    - name: baremetal-operator
+    - name: metal3
     - name: multus-config
   prune: false
   sourceRef:
