@@ -5,7 +5,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      cnpg.io/instanceRole: replica
+      cnpg.io/podRole: instance
   policyTypes:
   - Ingress
   ingress:
