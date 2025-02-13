@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: fakefish
+spec:
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
+  interval: 30m
+  chart:
+    spec:
+      chart: fakefish
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: ashmantis
+        namespace: flux-system
+      interval: 12h

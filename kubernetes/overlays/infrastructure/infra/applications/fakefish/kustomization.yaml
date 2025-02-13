@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: fakefish
+resources:
+  - ../../../../../bases/fakefish
+  - ./network-policies
+components:
+  - ../../../../../components/network-policies
+patches: 
+  - target:
+      kind: HelmRelease
+    path: fakefish-patch.yaml
