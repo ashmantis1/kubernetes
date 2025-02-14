@@ -9,7 +9,7 @@ spec:
   interval: 1m0s
   path: ./kubernetes/overlays/infrastructure/svc/config
   dependsOn: 
-    - name: metallb
+    - name: cilium
     - name: external-secrets
     - name: cert-manager
     - name: openshift-console
