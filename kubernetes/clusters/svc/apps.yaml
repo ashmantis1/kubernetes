@@ -3,17 +3,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra
+  name: apps
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/infrastructure/overlays/baremetal
+  path: ./kubernetes/overlays/apps/svc
   prune: false
+  dependsOn: 
+    - name: infra
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
-  healthChecks: # Depends on infra-config being Ready first, which will allow apps to dependOn infra
-    - kind: Kustomization
-      name: infra-config
-      namespace: flux-system
-      apiVersion: kustomize.toolkit.fluxcd.io/v1
