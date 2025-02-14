@@ -6,6 +6,7 @@ metadata:
 spec:
   chart:
     spec:
+      chart: fakefish
       version: "0.1.0"
       sourceRef:
         kind: HelmRepository

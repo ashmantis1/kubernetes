@@ -6,6 +6,7 @@ metadata:
 spec:
   chart:
     spec:
+      chart: cluster-api-operator
       version: "0.16.0"
       sourceRef:
         kind: HelmRepository
