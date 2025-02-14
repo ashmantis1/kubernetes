@@ -7,6 +7,10 @@ spec:
   chart:
     spec:
       version: "1.16.3"
+      sourceRef:
+        kind: HelmRepository
+        name: jetstack
+        namespace: flux-system
   values: 
     dns01RecursiveNameserversOnly: false
     dns01RecursiveNameservers: "1.1.1.1:53,10.10.10.10:53"

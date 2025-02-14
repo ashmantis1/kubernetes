@@ -4,6 +4,13 @@ kind: HelmRelease
 metadata:
   name: fakefish
 spec:
+  chart:
+    spec:
+      version: "0.1.0"
+      sourceRef:
+        kind: HelmRepository
+        name: ashmantis
+        namespace: flux-system
   values:
     fakefish_hosts:
       - "10.140.3.200"
