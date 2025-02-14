@@ -1,5 +1,6 @@
 {
-  "fileMatch": [
-    "\\.ya?ml$"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "flux": {
+    "fileMatch": ["kubernetes/.+\\.ya?ml$"]
+  }
 }
