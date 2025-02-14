@@ -7,6 +7,11 @@ spec:
   chart:
     spec:
       version: "0.1.1"
+      chart: kubeadm-capi-cluster
+      sourceRef:
+        kind: HelmRepository
+        name: ashmantis
+        namespace: flux-system
   values: 
     namespace: 
       name: clusters
