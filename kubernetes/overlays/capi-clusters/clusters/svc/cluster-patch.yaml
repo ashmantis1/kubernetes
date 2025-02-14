@@ -38,6 +38,22 @@ spec:
           - device: /dev/sda
             filesystem: ext4
             label: longhorn
+      postKubeadmCommands:
+        - /tmp/updateKubeapi.sh 
+      files:
+        - path: /tmp/updateKubeapi.sh
+          permissions: "0755"
+          content: |
+              #!/bin/bash
+              export VERSION=v4.44.2
+              export BINARY=yq_linux_amd64
+              wget https://github.com/mikefarah/yq/releases/download/$VERSION/$BINARY.tar.gz -O /tmp/yq.tar.gz
+              tar xvf /tmp/yq.tar.gz -C /tmp
+              mv /tmp/$BINARY /tmp/yq
+              /tmp/yq -i '.spec.containers[0].command += "--oidc-client-id=kubelogin"' /etc/kubernetes/manifests/kube-apiserver.yaml
+              /tmp/yq -i '.spec.containers[0].command += "--oidc-groups-claim=groups"' /etc/kubernetes/manifests/kube-apiserver.yaml
+              /tmp/yq -i '.spec.containers[0].command += "--oidc-issuer-url=https://dex.svc.k8s.ashman.world"' /etc/kubernetes/manifests/kube-apiserver.yaml
+              /tmp/yq -i '.spec.containers[0].command += "--oidc-username-claim=email"' /etc/kubernetes/manifests/kube-apiserver.yaml
     machines:
       image:
         checksum: 
