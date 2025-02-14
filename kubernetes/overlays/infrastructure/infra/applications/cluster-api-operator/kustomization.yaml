@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: capi-operator-system
+resources: 
+  - ../../../../../bases/cluster-api-operator
+  - namespace.yaml
+  #components:
+  #  - ../../../../../components/ca-certs/
+  #  - ../../../../../components/network-policies
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: capi-operator-patch.yaml

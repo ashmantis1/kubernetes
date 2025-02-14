@@ -24,3 +24,4 @@ resources:
 - bitnami.yaml
 - sealed-secrets.yaml
 - gitlab.yaml
+- cluster-api-operator.yaml
