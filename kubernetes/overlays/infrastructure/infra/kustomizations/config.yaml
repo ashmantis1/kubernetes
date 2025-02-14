@@ -19,6 +19,7 @@ spec:
     - name: external-secrets-config
     - name: metal3
     - name: multus-config
+    - name: cluster-api-operator
   prune: false
   sourceRef:
     kind: "GitRepository"
