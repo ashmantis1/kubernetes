@@ -1,3 +1,4 @@
+namespace: external-secrets
 resources: 
   - clustersecretstore.yaml
 components:
