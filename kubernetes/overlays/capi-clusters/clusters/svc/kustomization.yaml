@@ -1,0 +1,12 @@
+resources:
+  - ../../../../bases/kubeadm-capi-cluster
+patches:
+  - target:
+      kind: HelmRelease
+    patch: | 
+      - op: replace
+        path: /metadata/name
+        value: svc-cluster
+  - target:
+      kind: HelmRelease
+    path: cluster-patch.yaml

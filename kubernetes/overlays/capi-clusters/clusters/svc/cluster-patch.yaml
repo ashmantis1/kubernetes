@@ -1,0 +1,49 @@
+
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: svc-cluster
+spec:
+  chart:
+    spec:
+      version: "0.1.1"
+  values: 
+    namespace: 
+      name: clusters
+    cluster:
+      name: svc
+      labels:
+        cni: cilium
+    kubernetes:
+      version: 1.32.2
+    controlPlane:
+      skipKubeProxy: true
+      schedulable: true
+      scaleIn: true
+      endpoint:
+        host: 10.140.2.100
+        port: 6443
+        interface: eno1
+      replicas: 3
+      mounts:
+        - - LABEL=longhorn
+          - /var/lib/longhorn
+      diskSetup:
+        filesystems:
+          - device: /dev/sda
+            filesystem: ext4
+            label: longhorn
+    machines:
+      image:
+        checksum: 
+          url: "https://gitlab.apps.ashman.world/api/v4/projects/3/packages/generic/release/${version}/SHA256SUM"
+          type: sha256
+        format: qcow2
+        url: "https://gitlab.apps.ashman.world/api/v4/projects/3/packages/generic/release/${version}/kube-node-image.qcow2"
+    # Global cloudInit values (will be applied to both control plane and worker nodes)
+    cloudInit:
+      users:
+      - name: cloud-user
+        sshAuthorizedKeys:
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF6leLiXjd46rW2/bKTyFtEBXv8A47Ti0kd49CcexgLy
+        sudo: ALL=(ALL) NOPASSWD:ALL

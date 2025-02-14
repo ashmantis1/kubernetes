@@ -1,0 +1,5 @@
+namespace: clusters
+resources:
+  - namespace.yaml
+  - clusters/
+  - addons/
