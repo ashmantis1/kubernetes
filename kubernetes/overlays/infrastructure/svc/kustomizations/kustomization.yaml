@@ -20,3 +20,4 @@ resources:
 - oauth2-proxy.yaml
 #- kube-prometheus-stack.yaml
 - cloudnative-pg.yaml
+- external-dns-ipa.yaml
