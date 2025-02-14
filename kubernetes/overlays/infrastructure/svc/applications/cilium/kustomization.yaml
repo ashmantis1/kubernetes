@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+namespace: kube-system
+resources: 
+  - ../../../../../bases/cilium
+  - config/
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: ./cilium-patch.yaml

@@ -1,0 +1,27 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.svc.k8s.ashman.world/oauth2/sign_in"
+    nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=k8s-admins"
+  name: longhorn-ingress
+  namespace: longhorn-system
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - longhorn.svc.k8s.ashman.world
+      secretName: longhorn-ingress-tls
+  rules:
+    - host: longhorn.svc.k8s.ashman.world
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: longhorn-frontend
+                port:
+                  number: 80

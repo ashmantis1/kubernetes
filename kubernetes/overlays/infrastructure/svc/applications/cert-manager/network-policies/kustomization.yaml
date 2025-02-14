@@ -1,0 +1,4 @@
+resources:
+  - allow-internal-ingress.yaml
+
+  

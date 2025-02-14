@@ -1,0 +1,12 @@
+namespace: longhorn-system
+resources: 
+- namespace.yaml
+- ./network-policies
+- ./secrets
+- ../../../../../bases/longhorn
+components:
+- ../../../../../components/network-policies
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: ./longhorn-patch.yaml
