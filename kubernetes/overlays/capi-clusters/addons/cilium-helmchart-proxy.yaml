@@ -13,6 +13,7 @@ spec:
   repoURL: https://helm.cilium.io/
   chartName: cilium
   namespace: kube-system
+  reconcileStrategy: InstallOnce
   valuesTemplate: |
     kubeProxyReplacement: true
     k8sServiceHost: {{ .Cluster.spec.controlPlaneEndpoint.host }}
