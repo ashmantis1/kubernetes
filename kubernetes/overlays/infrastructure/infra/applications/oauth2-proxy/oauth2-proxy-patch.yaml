@@ -36,6 +36,7 @@ spec:
       annotations: 
         cert-manager.io/cluster-issuer: "letsencrypt-issuer"
         nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+        nginx.ingress.kubernetes.io/whitelist-source-range: 10.110.0.0/24,10.140.0.0/22
       tls:
         - secretName: oauth2-proxy-tls-cert
           hosts: 
