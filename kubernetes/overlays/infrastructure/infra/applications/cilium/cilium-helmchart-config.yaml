@@ -12,6 +12,9 @@ spec:
     tunnelProtocol: geneve
     bpf:
       masquerade: true
+    loadBalancer:                     # New
+      mode: dsr                       # New
+      dsrDispatch: geneve             # New
     l2announcements:
       enabled: true
     cni:
