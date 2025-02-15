@@ -24,6 +24,6 @@ spec:
         use-proxy-protocol: "true" 
         whitelist-source-range: "10.110.0.0/24"
       extraArgs: 
-        enable-ssl-passthrough: true
+        enable-ssl-passthrough: false
       # service: 
       #   loadBalancerIP: "10.10.200.1"
