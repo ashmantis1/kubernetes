@@ -1,4 +1,5 @@
 resources:
   - allow-internal-ingress.yaml
+  - allow-remote-node.yaml
 
   

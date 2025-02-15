@@ -1,0 +1,12 @@
+kind: CiliumNetworkPolicy
+apiVersion: cilium.io/v2
+metadata:
+  name: cilium-webhook
+  namespace: cert-manager
+spec:
+  endpointSelector:
+    matchLabels: 
+      app: webhook
+  ingress:
+  - fromEntities:
+    - remote-node
