@@ -4,5 +4,5 @@ metadata:
   name: "svcnet"
 spec:
   blocks:
-  - start: "10.140.2.100"
+  - start: "10.140.2.101"
     stop: "10.140.2.200"
