@@ -3,17 +3,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: sonarr
+  name: prowlarr
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/apps/overlays/baremetal/applications/sonarr
+  path: ./kubernetes/overlays/apps/svc/applications/prowlarr
   prune: false
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
   healthChecks:
     - kind: HelmRelease
-      name: sonarr
-      namespace: sonarr
+      name: prowlarr
+      namespace: prowlarr
       apiVersion: helm.toolkit.fluxcd.io/v2

@@ -7,12 +7,14 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/svc/applications/dex
+  path: ./kubernetes/overlays/infrastructure/infra/applications/dex
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets-config
     - name: ingress-nginx
     - name: cert-manager-config
+    #    - name: cluster-secret-store-config
+
   healthChecks:
     - kind: HelmRelease
       name: dex

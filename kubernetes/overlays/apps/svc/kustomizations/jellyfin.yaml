@@ -3,12 +3,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: repositories-apps
+  name: jellyfin
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/apps/overlays/baremetal/applications/repositories
+  path: ./kubernetes/overlays/apps/svc/applications/jellyfin
   prune: false
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
+  healthChecks:
+    - kind: HelmRelease
+      name: jellyfin
+      namespace: jellyfin
+      apiVersion: helm.toolkit.fluxcd.io/v2beta1

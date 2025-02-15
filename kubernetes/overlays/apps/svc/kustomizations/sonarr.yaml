@@ -3,17 +3,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: jellyfin
+  name: sonarr
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/apps/overlays/baremetal/applications/jellyfin
+  path: ./kubernetes/overlays/apps/svc/applications/sonarr
   prune: false
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
   healthChecks:
     - kind: HelmRelease
-      name: jellyfin
-      namespace: jellyfin
-      apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      name: sonarr
+      namespace: sonarr
+      apiVersion: helm.toolkit.fluxcd.io/v2

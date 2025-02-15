@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+- dex.yaml
 - cilium.yaml
 - repositories.yaml
 - external-dns-ipa.yaml
@@ -8,6 +9,7 @@ resources:
 - ingress-nginx.yaml
 - cert-manager.yaml
 - cert-manager-config.yaml
+- cert-manager-csi.yaml
 - longhorn.yaml
 - config.yaml
 - external-secrets.yaml

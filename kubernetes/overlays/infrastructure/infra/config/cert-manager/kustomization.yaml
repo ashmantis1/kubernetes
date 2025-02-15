@@ -1,5 +1,5 @@
 resources: 
 #- clusterissuer.yaml
-#- selfsignedissuer.yaml
+  - selfsignedissuer.yaml
   - ipa-issuer.yaml
   - letsencrypt-issuer.yaml
