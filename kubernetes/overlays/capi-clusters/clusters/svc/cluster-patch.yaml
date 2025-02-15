@@ -43,6 +43,8 @@ spec:
         port: 6443
         interface: eno1
       replicas: 3
+      postKubeadmCommands:
+        -  setsebool -P virt_use_samba on
       mounts:
         - - LABEL=longhorn
           - /var/lib/longhorn
