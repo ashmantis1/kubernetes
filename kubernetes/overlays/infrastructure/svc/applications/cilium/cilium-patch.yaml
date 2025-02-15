@@ -24,6 +24,8 @@ spec:
       exclusive: false
     hostFirewall:
       enabled: true
+    envoy:
+      enabled: false
     hubble: 
       enabled: true
       relay: 
