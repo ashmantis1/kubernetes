@@ -1,5 +1,4 @@
 resources: 
-  - repositories.yaml
   - jellyseer.yaml
   - jellyfin.yaml
   - sonarr.yaml
