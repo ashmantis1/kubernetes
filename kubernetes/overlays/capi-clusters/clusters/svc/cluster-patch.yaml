@@ -19,6 +19,13 @@ spec:
       name: svc
       labels:
         cni: cilium
+      networks:
+        pods:
+          cidrBlocks:
+            - 10.44.0.0/16
+        services:
+          cidrBlocks:
+            - 10.45.0.0/16
     kubernetes:
       version: 1.32.2
     controlPlane:
