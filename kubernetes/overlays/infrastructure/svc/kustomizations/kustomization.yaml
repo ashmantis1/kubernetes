@@ -11,8 +11,8 @@ resources:
 - cert-manager.yaml
 - cert-manager-csi.yaml
 - openshift-console.yaml
-- olm.yaml
-- operator-marketplace.yaml
+#- olm.yaml
+#- operator-marketplace.yaml
 - longhorn.yaml
 - external-secrets-config.yaml
 - cert-manager-config.yaml
