@@ -1,0 +1,16 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: m920q-ec
+  labels: 
+    role: control-plane
+spec:
+  online: true
+  bootMACAddress: 98:fa:9b:fc:5e:ec
+  bootMode: UEFI
+  bmc:
+    address: redfish+http://fakefish-10-140-3-202.fakefish.svc.cluster.local:9000/redfish/v1/Systems/1
+    credentialsName: bml-01
+  rootDeviceHints: 
+    minSizeGigabytes: 10
+    deviceName: /dev/nvme0n1
