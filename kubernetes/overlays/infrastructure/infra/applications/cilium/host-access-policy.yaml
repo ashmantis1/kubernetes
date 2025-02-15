@@ -47,3 +47,5 @@ spec:
         protocol: TCP
       - port: "8472"
         protocol: UDP
+      - port: "6081"
+        protocol: UDP
