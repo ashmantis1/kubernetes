@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: csi-driver-smb
+resources:
+  - ../../../../../bases/csi-driver-smb
+  #  - ./secrets
+  #components:
+  #  - ../../../../../components/network-policies
+patches: 
+  - target:
+      kind: HelmRelease
+    path: ./csi-driver-smb-patch.yaml

@@ -3,21 +3,18 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-config
+  name: csi-driver-smb
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/svc/config
+  path: ./kubernetes/overlays/infrastructure/svc/applications/csi-driver-smb
   dependsOn: 
-    - name: cilium
-    - name: external-secrets
-    - name: cert-manager
-    - name: openshift-console
-    - name: csi-driver-smb
-    - name: cloudnative-pg
-    - name: external-dns-ipa
-    - name: intel-gpu
-    - name: cert-manager-config
+    - name: repositories-infra
+  healthChecks:
+    - kind: HelmRelease
+      name: csi-driver-smb
+      namespace: csi-driver-smb
+      apiVersion: helm.toolkit.fluxcd.io/v2beta1
   prune: false
   sourceRef:
     kind: "GitRepository"

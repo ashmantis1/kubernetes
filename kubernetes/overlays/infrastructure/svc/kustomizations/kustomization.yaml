@@ -19,5 +19,6 @@ resources:
 - nfd.yaml
 - oauth2-proxy.yaml
 #- kube-prometheus-stack.yaml
+- csi-driver-smb.yaml
 - cloudnative-pg.yaml
 - external-dns-ipa.yaml
