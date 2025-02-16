@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   annotations:
     pv.kubernetes.io/provisioned-by: smb.csi.k8s.io
-  name: pv-jellyfin-movies
+  name: pv-sonarr-downloads
 spec:
   capacity:
     storage: 100Gi
@@ -18,22 +18,22 @@ spec:
     driver: smb.csi.k8s.io
     # volumeHandle format: {smb-server-address}#{sub-dir-name}#{share-name}
     # make sure this value is unique for every share in the cluster
-    volumeHandle: storage.infra.ashman.world/movies
+    volumeHandle: storage.infra.ashman.world/downloads
     volumeAttributes:
-      source: //storage.infra.ashman.world/movies
+      source: //storage.infra.ashman.world/downloads
     nodeStageSecretRef:
       name: smbcreds
-      namespace: jellyfin
+      namespace: sonarr
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: movies
+  name: downloads
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 10Gi
-  volumeName: pv-jellyfin-movies
+  volumeName: pv-sonarr-downloads
   storageClassName: smb

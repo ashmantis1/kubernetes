@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   annotations:
     pv.kubernetes.io/provisioned-by: smb.csi.k8s.io
-  name: pv-jellyfin-tv
+  name: pv-sonarr-tv
 spec:
   capacity:
     storage: 100Gi
@@ -23,7 +23,7 @@ spec:
       source: //storage.infra.ashman.world/tv
     nodeStageSecretRef:
       name: smbcreds
-      namespace: jellyfin
+      namespace: sonarr
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -35,5 +35,5 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  volumeName: pv-jellyfin-tv
+  volumeName: pv-sonarr-tv
   storageClassName: smb

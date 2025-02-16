@@ -11,28 +11,26 @@ spec:
           app:
             image:
               repository: ghcr.io/onedr0p/sonarr-develop
-              tag: 4.0.8
+              tag: 4.0.13
     persistence:
       downloads:
         enabled: true
-        type: nfs
-        path: /volume2/torrents
-        server: 10.10.1.12
+        type: persistentVolumeClaim
+        existingClaim: downloads
         globalMounts:
           - path: /downloads
       tv:
         enabled: true
-        type: nfs
-        path: /volume2/TV
-        server: 10.10.1.12
+        type: persistentVolumeClaim
+        existingClaim: tv
         globalMounts:
           - path: /tv
     ingress:
       app: 
         className: nginx
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-prod"
-          nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.k8s.ashman.world/oauth2/start"
+          cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+          nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.svc.k8s.ashman.world/oauth2/start"
           nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=media-admins"
         tls: 
           - hosts:

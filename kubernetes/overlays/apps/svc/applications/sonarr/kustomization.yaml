@@ -3,6 +3,8 @@
 namespace: sonarr
 resources:
   - ../../../../bases/sonarr
+  - secrets/
+  - volumes/
   - namespace.yaml
 patches: 
 - target: 
