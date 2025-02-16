@@ -34,10 +34,10 @@ spec:
           nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=media-admins"
         tls: 
           - hosts:
-              - sonarr.ashman.world
+              - sonarr.apps.ashman.world
             secretName: sonarr-tls-secret
         hosts:
-          - host: sonarr.ashman.world
+          - host: sonarr.apps.ashman.world
             paths:
               - path: /
                 pathType: Prefix
