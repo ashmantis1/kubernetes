@@ -4,6 +4,9 @@ resources:
   - ../../../../../bases/jellyfin
   - volumes/
   - secrets/
+  - network-policies/
+components:
+  - ../../../../../components/network-policies
 patches: 
   - target:
       kind: HelmRelease
