@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/apps/asdf
+  path: ./kubernetes/overlays/apps/svc
   prune: false
   dependsOn: 
     - name: infra

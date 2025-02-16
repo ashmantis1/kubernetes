@@ -8,45 +8,37 @@ spec:
   chart:
     spec:
       chart: jellyfin
-      version: 0.1.10
+      version: "2.1.0"
+      sourceRef:
+        kind: HelmRepository
+        name: jellyfin
+        namespace: flux-system
   values: 
-    image: 
-      tag: latest
-    persistentVolumes: 
-      enabled: true
-      storageClass: longhorn
-      cache: false
-    extraVolumes: 
+    persistence:
+      media:
+        enabled:  false
+    volumes: 
     - name: tv
-      nfs:
-        path: /volume2/TV
-        server: 10.10.1.12
-        readOnly: true
-    - name: movies
-      nfs: 
-        path: /volume2/Movies
-        server: 10.10.1.12
-        readOnly: true
+      persistentVolumeClaim:
+        claimName: tv
     volumeMounts: 
       - mountPath: /tv 
         name: tv 
-      - mountPath: /movies 
-        name: movies
     ingress: 
       enabled: true 
       className: nginx
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        # nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.5.0/24,192.168.1.0/24,10.10.0.0/16 # allow on unpriv network
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+        nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
       hosts: 
-        - host: jellyfin.ashman.world
+        - host: jellyfin.apps.ashman.world
           paths: 
             - path: /
               pathType: Prefix
       tls: 
         - secretName: jellyfin-tls
           hosts: 
-            - jellyfin.ashman.world
+            - jellyfin.apps.ashman.world
     resources: 
       limits:
         gpu.intel.com/i915: 1

@@ -1,7 +1,7 @@
 resources: 
-  - jellyseer.yaml
   - jellyfin.yaml
-  - sonarr.yaml
-  - radarr.yaml
-  - prowlarr.yaml
-  - qbittorrent-gluetun.yaml
+  #- jellyseer.yaml
+  #- sonarr.yaml
+  #- radarr.yaml
+  #- prowlarr.yaml
+  #- qbittorrent-gluetun.yaml

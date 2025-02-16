@@ -1,30 +1,9 @@
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 resources:
-  - ../../../../bases/jellyfin
+  - ../../../../../bases/jellyfin
+  - volumes/
+  - secrets/
 patches: 
   - target:
       kind: HelmRelease
     path: ./jellyfin-patch.yaml
-  # - patch: | 
-  #     - op: add 
-  #       path: /spec/template/spec/securityContext/supplementalGroups/- 
-  #       value: 105
-  # - patch: |
-  #     - op: replace
-  #       path: /spec/rules/0/host
-  #       value: jellyfin.dev.ashman.world
-  #   target:
-  #     kind: Ingress
-  # - patch: |-
-  #     - op: add
-  #       path: /spec/tls/0/hosts/0
-  #       value: jellyfin.dev.ashman.world
-  #   target:
-  #     kind: Ingress
-  # - patch: |-
-  #     - op: add 
-  #       path: /metadata/annotations
-  #       value:
-  #         cert-manager.io/cluster-issuer: letsencrypt-prod
-  #   target:
-  #     kind: Ingress

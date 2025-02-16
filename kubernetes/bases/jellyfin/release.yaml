@@ -12,6 +12,6 @@ spec:
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: ashmantis
+        name: jellyfin
         namespace: flux-system
       interval: 12h
