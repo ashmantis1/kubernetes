@@ -15,5 +15,5 @@ spec:
   healthChecks:
     - kind: HelmRelease
       name: qbittorrent-gluetun 
-      namespace: qbittorrent-gluetun
+      namespace: torrent
       apiVersion: helm.toolkit.fluxcd.io/v2
