@@ -39,7 +39,7 @@ spec:
       staticClients: 
         - id: jellyfin
           redirectURIs: 
-            - https://jellyfin.apps.ashman.world/sso/OID/redirect/dex
+            - https://jellyfin.apps.ashman.world/sso/OID/redirect/keycloak
           name: Jellyfin
           secretEnv: JELLYFIN_CLIENT_SECRET
           #- id: grafana

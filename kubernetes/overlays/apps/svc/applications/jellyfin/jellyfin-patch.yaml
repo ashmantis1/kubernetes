@@ -21,9 +21,14 @@ spec:
     - name: tv
       persistentVolumeClaim:
         claimName: tv
+    - name: movies
+      persistentVolumeClaim:
+        claimName: movies
     volumeMounts: 
       - mountPath: /tv 
         name: tv 
+      - mountPath: /movies 
+        name: movies 
     ingress: 
       enabled: true 
       className: nginx
