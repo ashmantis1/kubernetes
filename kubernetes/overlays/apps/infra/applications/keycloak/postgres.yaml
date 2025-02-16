@@ -39,4 +39,4 @@ spec:
           name: s3-creds
           key: ACCESS_SECRET_KEY
   storage:
-    size: 1Gi
+    size: 10Gi
