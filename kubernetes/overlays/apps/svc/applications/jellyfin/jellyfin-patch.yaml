@@ -14,6 +14,11 @@ spec:
         name: jellyfin
         namespace: flux-system
   values: 
+    securityContext:
+      readOnlyFilesystem: true
+      runAsNonRoot: true
+      runAsUser: 2000
+      runasGroup: 2000
     persistence:
       media:
         enabled:  false
