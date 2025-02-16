@@ -20,7 +20,7 @@ spec:
         containers:
           gluetun:
             image: 
-              repository: docker.io/qmcgaw/gluetun
+              repository: ghcr.io/qdm12/gluetun
               tag: latest
             env: 
               FIREWALL_DEBUG: "on"
@@ -43,6 +43,10 @@ spec:
                 cpu: 49m
                 memory: 1222Mi
     persistence: 
+      #tun:
+        #enabled: true
+        #type: hostPath
+        #hostPath: /dev/net/tun
       config:
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce

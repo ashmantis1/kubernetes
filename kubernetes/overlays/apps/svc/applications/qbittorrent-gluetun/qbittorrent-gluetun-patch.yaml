@@ -11,11 +11,12 @@ spec:
           app:
             image:
               repository: ghcr.io/onedr0p/qbittorrent 
-              tag: 5.0.3
+              tag: 5.0.2
           gluetun:
             env:
               VPN_SERVICE_PROVIDER: "mullvad"
-              SERVER_CITIES: "Sydney,Melbourne"
+              SERVER_CITIES: "Melbourne"
+              DNS_ADDRESS: 1.1.1.1
               VPN_TYPE: "openvpn"
               OPENVPN_PROTOCOL: "tcp"
               OPENVPN_USER:
