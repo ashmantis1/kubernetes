@@ -6,6 +6,7 @@ resources:
   - secrets/
   - volumes/
   - namespace.yaml
+  - network-policies/
 patches: 
 - target: 
     kind: HelmRelease

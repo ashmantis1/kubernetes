@@ -1,5 +1,5 @@
 resources:
   - allow-ingress-controller.yaml
-  - allow-ingress-arr.yaml
+  - allow-ingress-prowlarr.yaml
 
   

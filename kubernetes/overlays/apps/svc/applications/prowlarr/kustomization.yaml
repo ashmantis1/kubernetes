@@ -4,6 +4,7 @@ namespace: prowlarr
 resources:
   - ../../../../../bases/prowlarr
   - namespace.yaml
+  - network-policies/
 components:
   - ../../../../../components/network-policies
 patches: 
