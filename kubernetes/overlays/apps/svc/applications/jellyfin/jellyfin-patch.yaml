@@ -23,6 +23,8 @@ spec:
     persistence:
       media:
         enabled:  false
+      config:
+        existingClaim: jellyfin-config
     volumes: 
     - name: tv
       persistentVolumeClaim:
