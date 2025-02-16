@@ -3,5 +3,5 @@ resources:
   - sonarr.yaml
   #- jellyseer.yaml
   #- radarr.yaml
-  #- prowlarr.yaml
+  - prowlarr.yaml
   #- qbittorrent-gluetun.yaml

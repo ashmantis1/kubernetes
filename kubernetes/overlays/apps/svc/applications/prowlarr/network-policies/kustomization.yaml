@@ -1,0 +1,4 @@
+resources:
+  - allow-ingress-controller.yaml
+
+  

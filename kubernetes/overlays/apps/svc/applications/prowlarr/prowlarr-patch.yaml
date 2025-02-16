@@ -9,6 +9,9 @@ spec:
       prowlarr:
         containers:
           app:
+            image:
+              repository: ghcr.io/onedr0p/prowlarr-develop
+              tag: 1.31.1
             resources:
               requests:
                 cpu: 1000m
@@ -16,15 +19,15 @@ spec:
       app: 
         className: nginx
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-prod"
-          nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.k8s.ashman.world/oauth2/start"
+          cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+          nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.svc.k8s.ashman.world/oauth2/start"
           nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=media-admins"
         tls: 
           - hosts:
-              - prowlarr.ashman.world
+              - prowlarr.apps.ashman.world
             secretName: prowlarr-tls-secret
         hosts:
-          - host: prowlarr.ashman.world
+          - host: prowlarr.apps.ashman.world
             paths:
               - path: /
                 pathType: Prefix

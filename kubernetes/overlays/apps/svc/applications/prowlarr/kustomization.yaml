@@ -2,8 +2,10 @@
 
 namespace: prowlarr
 resources:
-  - ../../../../bases/prowlarr
+  - ../../../../../bases/prowlarr
   - namespace.yaml
+components:
+  - ../../../../../components/network-policies
 patches: 
 - target: 
     kind: HelmRelease
