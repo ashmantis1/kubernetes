@@ -1,10 +1,11 @@
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 
-namespace: qbittorrent-gluetun
+namespace: torrent
 resources:
-  - ../../../../bases/qbittorrent-gluetun
+  - ../../../../../bases/qbittorrent-gluetun
+  - secrets/
+  - volumes/
   - namespace.yaml
-  - vpn-secret.yaml
 patches: 
 - target: 
     kind: HelmRelease

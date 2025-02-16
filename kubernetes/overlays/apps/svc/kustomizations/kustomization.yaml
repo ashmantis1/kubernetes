@@ -4,4 +4,4 @@ resources:
   #- jellyseer.yaml
   #- radarr.yaml
   - prowlarr.yaml
-  #- qbittorrent-gluetun.yaml
+  - qbittorrent-gluetun.yaml
