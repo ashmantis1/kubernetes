@@ -9,8 +9,6 @@ spec:
   interval: 1m0s
   path: ./kubernetes/overlays/apps/svc/applications/jellyseer
   prune: false
-  dependsOn: 
-    - name: repositories-apps
   sourceRef:
     kind: "GitRepository"
     name: "flux-system"
