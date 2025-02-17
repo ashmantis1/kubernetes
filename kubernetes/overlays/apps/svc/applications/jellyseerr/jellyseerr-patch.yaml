@@ -16,7 +16,7 @@ spec:
   values: 
     image: 
       registry: docker.io
-      tag: develop
+      tag: preview-OIDC
     ingress:
       enabled: true
       annotations:
