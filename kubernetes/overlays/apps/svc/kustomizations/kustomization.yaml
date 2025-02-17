@@ -2,6 +2,6 @@ resources:
   - jellyfin.yaml
   - sonarr.yaml
   #- jellyseer.yaml
-  #- radarr.yaml
+  - radarr.yaml
   - prowlarr.yaml
   - qbittorrent-gluetun.yaml
