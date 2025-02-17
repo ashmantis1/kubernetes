@@ -16,7 +16,7 @@ spec:
   values: 
     image: 
       registry: docker.io
-      tag: preview-new-login
+      tag: develop
     ingress:
       enabled: true
       annotations:
