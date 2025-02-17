@@ -5,7 +5,29 @@ metadata:
   name: jellyseer
   namespace: jellyseer
 spec:
+  chart:
+    spec:
+      chart: jellyseer-chart
+      version: "2.1.1"
+      sourceRef:
+        kind: HelmRepository
+        name: jellyseer
+        namespace: flux-system
   values: 
-    common: 
-      image: 
-        tag: latest
+    image: 
+      tag: preview-OIDC
+    ingress:
+      enabled: true
+      ingress:
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-issuer
+        hosts:
+          - host: request.apps.ashman.world
+            paths:
+            - pathType: Prefix
+              path: "/"
+        tls:
+          - hosts:
+            - request.apps.ashman.world
+            secretName: jellyseer-tls
+

@@ -6,12 +6,30 @@ metadata:
   namespace: jellyseer
 spec:
   interval: 30m
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
   chart:
     spec:
-      chart: jellyseer
+      chart: jellyseer-chart
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: qjoly
+        name: jellyseer
         namespace: flux-system
       interval: 12h
+  values: 
+    podSecurityContext:
+      fsGroup: 1000
+      fsGroupChangePolicy: OnRootMismatch
+      runAsGroup: 1000
+      runAsUser: 1000
+    config:
+      persistence:
+        size: 5Gi
+    serviceAccount:
+      create: false
+      automount: false

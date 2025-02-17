@@ -1,8 +1,10 @@
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 
+namespace: jellyseer
 resources:
-  - ../../../../bases/jellyseer
-  - ./ingress.yaml
+  - ../../../../../bases/jellyseer
+  - namespace.yaml
+  #  - ./ingress.yaml
 patches: 
   - target: 
       kind: HelmRelease
