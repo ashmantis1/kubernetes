@@ -19,16 +19,15 @@ spec:
       tag: preview-OIDC
     ingress:
       enabled: true
-      ingress:
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-issuer
-        hosts:
-          - host: request.apps.ashman.world
-            paths:
-            - pathType: Prefix
-              path: "/"
-        tls:
-          - hosts:
-            - request.apps.ashman.world
-            secretName: jellyseerr-tls
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+      hosts:
+        - host: request.apps.ashman.world
+          paths:
+          - pathType: Prefix
+            path: "/"
+      tls:
+        - hosts:
+          - request.apps.ashman.world
+          secretName: jellyseerr-tls
 
