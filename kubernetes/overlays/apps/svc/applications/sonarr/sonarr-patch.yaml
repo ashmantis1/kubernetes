@@ -13,6 +13,10 @@ spec:
               repository: ghcr.io/onedr0p/sonarr-develop
               tag: 4.0.13
     persistence:
+      config:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 10Gi
       downloads:
         enabled: true
         type: persistentVolumeClaim
