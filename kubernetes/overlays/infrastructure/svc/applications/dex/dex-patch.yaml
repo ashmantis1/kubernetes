@@ -42,6 +42,11 @@ spec:
             - https://jellyfin.apps.ashman.world/sso/OID/redirect/dex
           name: Jellyfin
           secretEnv: JELLYFIN_CLIENT_SECRET
+        - id: jellyseerr
+          redirectURIs: 
+            - https://request.apps.ashman.world/*
+          name: Jellyseerr
+          secretEnv: JELLYSEERR_CLIENT_SECRET
           #- id: grafana
           #  redirectURIs: 
           #    - https://grafana.k8s.ashman.world/login/generic_oauth
