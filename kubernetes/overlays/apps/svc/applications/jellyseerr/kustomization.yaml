@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 
-namespace: jellyseer
+namespace: jellyseerr
 resources:
-  - ../../../../../bases/jellyseer
+  - ../../../../../bases/jellyseerr
   - namespace.yaml
   #  - ./ingress.yaml
 patches: 
   - target: 
       kind: HelmRelease
-    path: ./jellyseer-patch.yaml
+    path: ./jellyseerr-patch.yaml
 

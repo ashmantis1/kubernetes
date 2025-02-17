@@ -14,7 +14,7 @@ resources:
 - dex.yaml
 - external-secrets.yaml
 - ingress-nginx.yaml
-- jellyseer.yaml
+- jellyseerr.yaml
 - jetstack.yaml
 - longhorn.yaml
 - metallb.yaml
