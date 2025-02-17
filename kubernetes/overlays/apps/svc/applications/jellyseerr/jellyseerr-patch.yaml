@@ -15,8 +15,7 @@ spec:
         namespace: flux-system
   values: 
     image: 
-      registry: docker.io
-      tag: preview-OIDC
+      tag: latest
     ingress:
       enabled: true
       annotations:
