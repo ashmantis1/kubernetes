@@ -44,7 +44,7 @@ spec:
           secretEnv: JELLYFIN_CLIENT_SECRET
         - id: jellyseerr
           redirectURIs: 
-            - https://request.apps.ashman.world/*
+            - http://request.apps.ashman.world/login/oidc/callback
           name: Jellyseerr
           secretEnv: JELLYSEERR_CLIENT_SECRET
           #- id: grafana
