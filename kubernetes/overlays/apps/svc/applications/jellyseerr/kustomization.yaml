@@ -3,8 +3,10 @@
 namespace: jellyseerr
 resources:
   - ../../../../../bases/jellyseerr
+  - network-policies/
   - namespace.yaml
-  #  - ./ingress.yaml
+components:
+  - ../../../../../components/network-policies
 patches: 
   - target: 
       kind: HelmRelease

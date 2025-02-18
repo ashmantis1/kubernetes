@@ -1,0 +1,20 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-radarr
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: qbittorrent-gluetun
+      app.kubernetes.io/name: qbittorrent-gluetun
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          app: radarr
+      ports:
+      - protocol: TCP
+        port: 8080

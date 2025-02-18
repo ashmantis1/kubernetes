@@ -1,0 +1,6 @@
+resources:
+  - allow-ingress-controller.yaml
+  - allow-ingress-sonarr.yaml
+  - allow-ingress-radarr.yaml
+
+  

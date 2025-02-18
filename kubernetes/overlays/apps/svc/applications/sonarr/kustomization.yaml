@@ -7,6 +7,8 @@ resources:
   - volumes/
   - namespace.yaml
   - network-policies/
+components:
+  - ../../../../../components/network-policies
 patches: 
 - target: 
     kind: HelmRelease

@@ -5,7 +5,10 @@ resources:
   - ../../../../../bases/qbittorrent-gluetun
   - secrets/
   - volumes/
+  - network-policies/
   - namespace.yaml
+components:
+  - ../../../../../components/network-policies
 patches: 
 - target: 
     kind: HelmRelease

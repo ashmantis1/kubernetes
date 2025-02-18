@@ -1,5 +1,6 @@
 resources:
   - allow-ingress-controller.yaml
   - allow-ingress-prowlarr.yaml
+  - allow-ingress-jellyseerr.yaml
 
   
