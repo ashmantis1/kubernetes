@@ -32,11 +32,17 @@ spec:
     - name: movies
       persistentVolumeClaim:
         claimName: movies
+    - name: ipa-ca
+      configMap:
+        name: ipa-ca
     volumeMounts: 
       - mountPath: /tv 
         name: tv 
       - mountPath: /movies 
         name: movies 
+      - mountPath: /etc/ssl/certs/ca-certificates.crt
+        name: ipa-ca
+        subPath: ca-certificates.crt
     ingress: 
       enabled: true 
       className: nginx
