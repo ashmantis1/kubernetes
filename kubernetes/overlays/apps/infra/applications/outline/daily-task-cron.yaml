@@ -15,7 +15,8 @@ spec:
             args:
             - /bin/sh
             - -c
-            - curl "https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET"
+            - curl "https://docs.apps.ashman.world/api/cron.daily?token=${UTILS_SECRET}"
+            - echo ${UTILS_SECRET}
             envFrom:
             - secretRef:
                 name: outline-secret-key
