@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: outline
+spec:
+  values:
+    controllers:
+      outline:
+        containers:
+          app:
+            envFrom:
+              - secretRef:
+                  name: database-credentials
+              - secretRef:
+                  name: outline-s3-creds
+              - secretRef:
+                  name: outline-oidc
+              - secretRef:
+                  name: outline-secret-key
+            env:
+              FILE_STORAGE: s3
+              AWS_REGION: eu-west-1
+              AWS_S3_ACL: private
+              AWS_S3_FORCE_PATH_STYLE: "true"
+              AWS_S3_UPLOAD_BUCKET_NAME: outline
+              AWS_S3_UPLOAD_BUCKET_URL: "https://minio01.infra.ashman.world"
+              FILE_STORAGE_UPLOAD_MAX_SIZE: "26214400"
+              LOG_LEVEL: debug
+              NODE_TLS_REJECT_UNAUTHORIZED: "0"
+              OIDC_AUTH_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/auth"
+              OIDC_CLIENT_ID: outline
+              OIDC_DISPLAY_NAME: Keycloak
+              OIDC_SCOPES: openid profile email offline_access
+              OIDC_TOKEN_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/token"
+              OIDC_USERINFO_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/userinfo"
+              OIDC_USERNAME_CLAIM: preferred_username
+              REDIS_URL: redis://outline-dragonfly.outline.svc.cluster.local.:6379
+              URL: "https://docs.apps.ashman.world"
+    ingress:
+      app: 
+        className: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+          nginx.ingress.kubernetes.io/proxy-body-size: 20m
+        tls: 
+          - hosts:
+              - docs.apps.ashman.world
+            secretName: outline-tls-secret
+        hosts:
+          - host: docs.apps.ashman.world
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: app
+                  port: 8080
+
+

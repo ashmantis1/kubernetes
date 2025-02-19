@@ -6,7 +6,12 @@ metadata:
 spec:
   chart:
     spec:
+      chart: keycloak
       version: "24.4.6"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
   values: 
     production: true
     replicaCount: 1

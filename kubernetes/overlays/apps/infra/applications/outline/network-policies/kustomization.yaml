@@ -1,0 +1,7 @@
+resources:
+  - allow-internal-ingress.yaml
+  - allow-remote-node.yaml
+  - allow-ingress-controller.yaml
+  - allow-dragonfly.yaml
+
+  
