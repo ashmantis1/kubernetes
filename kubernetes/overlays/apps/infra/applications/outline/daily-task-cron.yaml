@@ -10,10 +10,12 @@ spec:
         spec:
           containers:
           - name: daily
-            image: curlimages/curl
+            image: curlimages/curl:latest
             imagePullPolicy: IfNotPresent
-            command:
-            - "https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET"
+            args:
+            - /bin/sh
+            - -c
+            - curl "https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET"
             envFrom:
             - secretRef:
                 name: outline-secret-key
