@@ -1,0 +1,11 @@
+kind: CiliumNetworkPolicy
+apiVersion: cilium.io/v2
+metadata:
+  name: remote-node-allow
+spec:
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/name: dragonfly-operator
+  ingress:
+  - fromEntities:
+    - remote-node
