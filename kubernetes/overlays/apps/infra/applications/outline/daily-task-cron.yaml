@@ -15,7 +15,7 @@ spec:
             args:
             - /bin/sh
             - -c
-            - curl "http://outline.outline.svc.cluster.local:8080/api/cron.daily?token=${UTILS_SECRET}"
+            - curl "https://docs.apps.ashman.world/api/cron.daily?token=${UTILS_SECRET}"
             envFrom:
             - secretRef:
                 name: outline-secret-key

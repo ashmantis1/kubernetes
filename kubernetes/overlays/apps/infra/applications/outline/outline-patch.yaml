@@ -43,6 +43,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-issuer"
           nginx.ingress.kubernetes.io/proxy-body-size: 20m
+          nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
         tls: 
           - hosts:
               - docs.apps.ashman.world
