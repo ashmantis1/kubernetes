@@ -13,7 +13,7 @@ spec:
             image: curlimages/curl
             imagePullPolicy: IfNotPresent
             command:
-            - curl https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET
+            - "https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET"
             envFrom:
             - secretRef:
                 name: outline-secret-key
