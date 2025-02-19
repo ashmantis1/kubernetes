@@ -4,11 +4,10 @@ namespace: outline
 resources:
 - ../../../../../bases/outline
 - secrets/
+- database/
 - network-policies/
-- dragonfly.yaml
-- postgres.yaml
-- scheduled-backup.yaml
 - namespace.yaml
+- daily-task-cron.yaml
 components:
 - ../../../../../components/ca-certs
 - ../../../../../components/network-policies

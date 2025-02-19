@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: outline-daily
+spec:
+  schedule: "* 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: daily
+            image: curlimages/curl
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - curl https://docs.apps.ashman.world/api/cron.daily?token=$UTILS_SECRET
+            envFrom:
+            - secretRef:
+                name: outline-secret-key
+          restartPolicy: OnFailure
+
