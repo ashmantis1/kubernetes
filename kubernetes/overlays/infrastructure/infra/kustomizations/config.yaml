@@ -21,6 +21,7 @@ spec:
     - name: multus-config
     - name: cluster-api-operator
     - name: dragonfly-operator
+    - name: awx-operator
   prune: false
   sourceRef:
     kind: "GitRepository"

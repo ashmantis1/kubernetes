@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: awx
+resources:
+- awx.yaml
+- network-policies/
+- secrets/
+- postgres.yaml
+- scheduled-backup.yaml
+components:
+- ../../../../../components/ca-certs
+- ../../../../../components/network-policies
+- ../../../../../components/k8s-secretstore
+patches:
+- target:
+    kind: SecretStore
+    name: k8s-store
+  patch: |
+    - op: add
+      path: /spec/provider/kubernetes/remoteNamespace
+      value: awx

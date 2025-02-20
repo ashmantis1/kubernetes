@@ -1,0 +1,11 @@
+kind: CiliumNetworkPolicy
+apiVersion: cilium.io/v2
+metadata:
+  name: remote-node-allow
+spec:
+  endpointSelector:
+    matchLabels:
+      cnpg.io/instanceRole: replica
+  ingress:
+  - fromEntities:
+    - remote-node
