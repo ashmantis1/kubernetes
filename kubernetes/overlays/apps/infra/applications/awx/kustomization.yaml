@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: awx
 resources:
 - awx.yaml
+- ingress.yaml
 - network-policies/
 - secrets/
 - postgres.yaml

@@ -2,7 +2,8 @@
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
-  name: awx-test
+  name: awx
 spec:
   postgres_configuration_secret: database-credentials
-  service_type: LoadBalancer
+  service_type: ClusterIP
+  auto_upgrade: true

@@ -6,7 +6,9 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: awx
+      app.kubernetes.io/component: awx
+      app.kubernetes.io/name: awx-web
+
   policyTypes:
   - Ingress
   ingress:
@@ -14,6 +16,6 @@ spec:
     - namespaceSelector:
         matchLabels:
           role: ingress-controller
-      ports:
-      - protocol: TCP
-        port: 8181
+    ports:
+    - protocol: TCP
+      port: 8052

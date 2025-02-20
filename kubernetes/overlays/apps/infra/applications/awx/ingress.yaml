@@ -1,0 +1,25 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/whitelist-source-range: 10.110.0.0/24,10.140.0.0/22
+  name: awx-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - ansible.apps.ashman.world
+      secretName: awx-ingress-tls
+  rules:
+    - host: ansible.apps.ashman.world
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: awx-service
+                port:
+                  number: 8052
