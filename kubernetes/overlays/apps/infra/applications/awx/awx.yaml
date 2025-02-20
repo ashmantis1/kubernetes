@@ -7,3 +7,4 @@ spec:
   postgres_configuration_secret: database-credentials
   service_type: ClusterIP
   auto_upgrade: true
+  ldap_cacert_secret: ldap-ca
