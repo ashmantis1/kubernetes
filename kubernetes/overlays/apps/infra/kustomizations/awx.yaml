@@ -10,7 +10,11 @@ spec:
   path: ./kubernetes/overlays/apps/infra/applications/awx
   healthChecks:
     - kind: Deployment
-      name: awx
+      name: awx-web
+      namespace: awx
+      apiVersion: apps/v1
+    - kind: Deployment
+      name: awx-task
       namespace: awx
       apiVersion: apps/v1
   prune: true
