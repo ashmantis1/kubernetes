@@ -8,3 +8,7 @@ spec:
   service_type: ClusterIP
   auto_upgrade: true
   ldap_cacert_secret: ldap-ca
+  extra_settings_files:
+    secrets:
+      - name: custom-ldap-settings
+        key: custom_ldap_settings.py
