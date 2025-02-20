@@ -12,7 +12,7 @@ spec:
     - name: repositories-infra
   healthChecks:
     - kind: Deployment
-      name: awx-operator
+      name: awx-operator-controller-manager
       namespace: awx
       apiVersion: apps/v1
   prune: false
