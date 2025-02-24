@@ -61,7 +61,7 @@ spec:
         hosts:
           - grafana.k8s.ashman.world
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          cert-manager.io/cluster-issuer: "letsencrypt-issuer"
         tls:
         - secretName: grafana-general-tls
           hosts:
