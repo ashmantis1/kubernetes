@@ -6,4 +6,4 @@ spec:
   schedule: "@daily"
   backupOwnerReference: self
   cluster:
-    name: keycloak-postgres
+    name: awx-postgres
