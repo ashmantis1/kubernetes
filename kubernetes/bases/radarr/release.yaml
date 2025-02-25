@@ -31,7 +31,7 @@ spec:
               TZ: Australia/Sydney
             image:
               repository: ghcr.io/onedr0p/radarr
-              tag: 5.18.4
+              tag: 5.19.3
             probes:
               liveness:
                 enabled: true
