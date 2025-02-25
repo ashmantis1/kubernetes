@@ -36,7 +36,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-issuer"
           nginx.ingress.kubernetes.io/auth-signin: "https://oauth-proxy.svc.k8s.ashman.world/oauth2/start"
-          nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=media-admins"
+          nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth?allowed_groups=qbittorrent-admins"
         tls: 
           - hosts:
               - torrent.apps.ashman.world
