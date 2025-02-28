@@ -4,11 +4,9 @@ metadata:
   name: awx-postgres
 spec:
   instances: 1
-  #bootstrap:
-  #  recovery:
-  #    source: awx-postgres-backup
-  #    recoveryTarget:
-  #      backupID: 20250215T000001
+  bootstrap:
+    recovery:
+      source: awx-postgres-backup
   externalClusters:
     - name: awx-postgres-backup
       barmanObjectStore:
@@ -27,7 +25,7 @@ spec:
             key: ACCESS_SECRET_KEY
   backup:
     barmanObjectStore:
-      serverName: awx-postgres-backup-01
+      serverName: awx-postgres-backup-02
       destinationPath: "s3://cloudnative-pg-backups"
       endpointURL: "https://minio01.infra.ashman.world:443"
       endpointCA:
