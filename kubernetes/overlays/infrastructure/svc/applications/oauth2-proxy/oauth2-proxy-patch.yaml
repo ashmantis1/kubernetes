@@ -28,6 +28,7 @@ spec:
       email-domain: "*"
       ##
       skip-provider-button: 'true'
+      approval-prompt: false
       #      force-https: 'false'
       #      pass-authorization-header: 'true'
       #      pass-basic-auth: 'false'
