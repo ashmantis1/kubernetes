@@ -49,6 +49,11 @@ spec:
         nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
         nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       tls: true
+    resources:
+      requests:
+        memory: 2048Mi
+      limits:
+        memory: 4096Mi
     adminIngress:
       enabled: true
       ingressClassName: nginx
