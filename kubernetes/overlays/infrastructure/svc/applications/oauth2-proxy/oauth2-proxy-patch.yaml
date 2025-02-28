@@ -17,7 +17,6 @@ spec:
     config: 
       existingSecret: oauth2-proxy-secret
     extraArgs:
-
       provider: oidc
       provider-display-name: "K8S Dex"
       oidc-issuer-url: "https://dex.svc.k8s.ashman.world"
