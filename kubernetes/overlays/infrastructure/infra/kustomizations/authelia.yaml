@@ -11,6 +11,10 @@ spec:
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets-config
+    - name: ingress-nginx
+    - name: dragonfly-operator
+    - name: cloudnative-pg
+    - name: cert-manager
   healthChecks:
     - kind: HelmRelease
       name: authelia
