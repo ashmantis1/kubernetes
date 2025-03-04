@@ -15,9 +15,52 @@ spec:
   values: 
     ingress:
       enabled: true
-      annotations: {}
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+      tls:
+        enabled: true
+    secret:
+      additionalSecrets:
+        encryption-key:
+          items: {}
+        database-password:
+          items: {}
+        ldap-bind-password:
+          items:
+            - key: bind_password
+              path: bind_password
+    certificates:
+      existingSecret: ipa-ca
+    pod:
+      env:
+        - name: AUTHELIA_AUTHENTICATION_BACKEND_LDAP_PASSWORD_FILE
+          value: /secrets/ldap-bind-password/bind_password
+      extraVolumeMounts:
+        - name: ldap
+          mountPath: /config/configuration.ldap.yaml
+          subPath: configuration.ldap.yaml
+        - name: oidc
+          mountPath: /config/configuration.oidc.yaml
+          subPath: configuration.oidc.yaml
+      extraVolumes:
+        - name: ldap
+          configMap:
+            name: ldap-config
+        - name: oidc
+          secret:
+            secretName: oidc-clients
     configMap:
       theme: dark
+      authentication_backend:
+        password_reset:
+          disable: true
+      totp:
+        disable: true
+      webauthn:
+        disable: true
+      extraConfigs:
+        - "/config/configuration.ldap.yaml"
+        - "/config/configuration.oidc.yaml"
       storage:
         encryption_key:
           secret_name: encryption-key
@@ -39,7 +82,8 @@ spec:
           enabled: true
           host: authelia-dragonfly.authelia.svc.cluster.local
           port: 6379
-      tls:
-        enabled: true
+      notifier:
+        filesystem:
+          enabled: true
 
 

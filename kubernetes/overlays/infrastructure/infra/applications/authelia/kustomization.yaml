@@ -19,3 +19,10 @@ patches:
       - op: add
         path: /spec/provider/kubernetes/remoteNamespace
         value: authelia
+
+configMapGenerator:
+  - name: ldap-config 
+    files:
+      - config/configuration.ldap.yaml
+generatorOptions:
+  disableNameSuffixHash: true
