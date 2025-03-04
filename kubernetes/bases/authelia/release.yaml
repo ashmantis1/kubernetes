@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: authelia
+spec:
+  interval: 30m
+  install:
+    remediation:
+      retries: -1
+  upgrade: 
+    remediation:
+      retries: -1
+  chart:
+    spec:
+      chart: authelia
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: authelia
+        namespace: flux-system
+      interval: 12h
+  values: 
+    pod:
+      kind: DaemonSet
+    totp:
+      disable: true
+    webauthn:
+      disable: true

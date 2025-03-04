@@ -27,3 +27,4 @@ resources:
 - cluster-api-operator.yaml
 - jellyfin.yaml
 - dragonfly-operator.yaml
+- authelia.yaml
