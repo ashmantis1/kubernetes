@@ -22,10 +22,4 @@ resources:
 - cluster-api-operator.yaml
 - dragonfly-operator.yaml
 - awx-operator.yaml
-#- external-dns-cloudflare.yaml
-#- keycloak.yaml
-#- config.yaml
-#- cert-manager-csi.yaml
-#- longhorn.yaml
-#- kube-prometheus-stack.yaml
-#- keycloak.yaml
+- reloader.yaml
