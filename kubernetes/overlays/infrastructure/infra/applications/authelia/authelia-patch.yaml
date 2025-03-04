@@ -32,6 +32,8 @@ spec:
     certificates:
       existingSecret: ipa-ca
     pod:
+      annotations:
+        reloader.stakater.com/auto: "true"
       env:
         - name: AUTHELIA_AUTHENTICATION_BACKEND_LDAP_PASSWORD_FILE
           value: /secrets/ldap-bind-password/bind_password
