@@ -22,6 +22,7 @@ spec:
     - name: cluster-api-operator
     - name: dragonfly-operator
     - name: awx-operator
+    - name: authelia
   prune: false
   sourceRef:
     kind: "GitRepository"

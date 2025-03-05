@@ -38,6 +38,9 @@ spec:
         - name: AUTHELIA_AUTHENTICATION_BACKEND_LDAP_PASSWORD_FILE
           value: /secrets/ldap-bind-password/bind_password
       extraVolumeMounts:
+        - name: acl
+          mountPath: /config/configuration.acl.yaml
+          subPath: configuration.acl.yaml
         - name: ldap
           mountPath: /config/configuration.ldap.yaml
           subPath: configuration.ldap.yaml
@@ -45,6 +48,9 @@ spec:
           mountPath: /config/configuration.oidc.yaml
           subPath: configuration.oidc.yaml
       extraVolumes:
+        - name: acl
+          configMap:
+            name: acl-config
         - name: ldap
           configMap:
             name: ldap-config
@@ -63,6 +69,7 @@ spec:
       extraConfigs:
         - "/config/configuration.ldap.yaml"
         - "/config/configuration.oidc.yaml"
+        - "/config/configuration.acl.yaml"
       storage:
         encryption_key:
           secret_name: encryption-key

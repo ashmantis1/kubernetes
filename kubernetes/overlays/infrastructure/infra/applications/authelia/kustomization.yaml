@@ -27,5 +27,8 @@ configMapGenerator:
   - name: oidc-config 
     files:
       - config/configuration.oidc.yaml
+  - name: acl-config
+    files:
+      - config/configuration.acl.yaml
 generatorOptions:
   disableNameSuffixHash: true
