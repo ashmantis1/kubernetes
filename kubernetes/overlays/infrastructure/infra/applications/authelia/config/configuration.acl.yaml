@@ -13,3 +13,9 @@ access_control:
     - 'internal'
     subject:
     - ['group:k8s-admins']
+  - domain: 'cilium.infra.k8s.ashman.world'
+    policy: 'one_factor'
+    networks:
+    - 'internal'
+    subject:
+    - ['group:k8s-admins']
