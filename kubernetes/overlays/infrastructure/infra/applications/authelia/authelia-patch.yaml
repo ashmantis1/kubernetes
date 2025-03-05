@@ -23,7 +23,7 @@ spec:
       additionalSecrets:
         encryption-key:
           items: {}
-        database-password:
+        authelia-postgres-app:
           items: {}
         ldap-bind-password:
           items:
@@ -32,8 +32,7 @@ spec:
     certificates:
       existingSecret: ipa-ca
     pod:
-      annotations:
-        reloader.stakater.com/auto: "true"
+      annotations: {}
       env:
         - name: AUTHELIA_AUTHENTICATION_BACKEND_LDAP_PASSWORD_FILE
           value: /secrets/ldap-bind-password/bind_password
@@ -73,8 +72,8 @@ spec:
           database: app
           username: app
           password:
-            secret_name: database-password
-            path: database_password
+            secret_name: authelia-postgres-app
+            path: password
       session:
         name: authelia_infra_session
         cookies:
