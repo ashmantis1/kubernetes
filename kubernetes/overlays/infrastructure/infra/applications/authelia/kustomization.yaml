@@ -24,5 +24,8 @@ configMapGenerator:
   - name: ldap-config 
     files:
       - config/configuration.ldap.yaml
+  - name: oidc-config 
+    files:
+      - config/configuration.oidc.yaml
 generatorOptions:
   disableNameSuffixHash: true
