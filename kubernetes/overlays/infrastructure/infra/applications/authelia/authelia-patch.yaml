@@ -23,7 +23,7 @@ spec:
       additionalSecrets:
         encryption-key:
           items: {}
-        authelia-postgres-app:
+        database-password:
           items: {}
         ldap-bind-password:
           items:
@@ -73,8 +73,8 @@ spec:
           database: app
           username: app
           password:
-            secret_name: authelia-postgres-app
-            path: password
+            secret_name: database-password
+            path: database_password
       session:
         name: authelia_infra_session
         cookies:
