@@ -73,8 +73,8 @@ spec:
           database: app
           username: app
           password:
-            secret_name: database-password
-            path: database_password
+            secret_name: authelia-postgres-app
+            path: password
       session:
         name: authelia_infra_session
         cookies:
