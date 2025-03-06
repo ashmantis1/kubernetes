@@ -14,7 +14,6 @@ identity_providers:
         authorization_policy: 'one_factor'
         consent_mode: pre-configured
         pre_configured_consent_duration: 6M
-        userinfo_signed_response_alg: 'none'
         token_endpoint_auth_method: 'client_secret_basic'
         redirect_uris:
           - 'https://gitlab.apps.ashman.world/users/auth/openid_connect/callback'
