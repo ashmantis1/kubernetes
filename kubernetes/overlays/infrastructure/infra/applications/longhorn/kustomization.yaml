@@ -1,7 +1,6 @@
 namespace: longhorn-system
 resources: 
 - namespace.yaml
-- storageclass.yaml
 - ./network-policies
 - ./secrets
 - ../../../../../bases/longhorn
