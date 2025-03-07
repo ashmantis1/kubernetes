@@ -42,3 +42,4 @@ spec:
           key: ACCESS_SECRET_KEY
   storage:
     size: 5Gi
+    storageClass: longhorn-rc1
