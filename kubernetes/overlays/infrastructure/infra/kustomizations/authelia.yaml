@@ -15,7 +15,7 @@ spec:
     - name: dragonfly-operator
     - name: cloudnative-pg
     - name: cert-manager
-    - name: longhorn-system
+    - name: longhorn
   healthChecks:
     - kind: HelmRelease
       name: authelia
