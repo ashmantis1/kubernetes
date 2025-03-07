@@ -38,3 +38,19 @@ identity_providers:
           - 'email'
           - 'groups'
         userinfo_signed_response_alg: 'none'
+      - client_id: 'kubelogin'
+        client_name: 'KubeAPI'
+        client_secret: '{{ .kubelogin_password_hash }}'  # The digest of 'insecure_secret'.
+        public: false
+        authorization_policy: 'one_factor'
+        consent_mode: implicit
+        redirect_uris:
+          - http://localhost:8000
+          - http://localhost:18000
+          - https://console.infra.k8s.ashman.world/auth/callback
+        scopes:
+          - 'openid'
+          - 'profile'
+          - 'email'
+          - 'groups'
+        userinfo_signed_response_alg: 'none'
