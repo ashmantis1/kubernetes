@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: authelia-postgres
 spec:
-  instances: 3
+  instances: 1
   #bootstrap:
   #  recovery:
   #    source: authelia-postgres-backup
