@@ -64,6 +64,7 @@ spec:
       edition: ee
       redis:
         serviceName: gitlab-dragonfly
+        host: gitlab-dragonfly.gitlab.svc.cluster.local
         port: 6379
         auth:
           enabled: false
