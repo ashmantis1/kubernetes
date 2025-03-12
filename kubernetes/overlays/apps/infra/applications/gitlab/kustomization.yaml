@@ -3,9 +3,9 @@ kind: Kustomization
 namespace: gitlab
 resources:
 - ../../../../../bases/gitlab
-- ./network-policies
-- postgres.yaml
-- ./secrets
+- network-policies/
+- database/
+- secrets/
 #- namespace.yaml
 components:
 - ../../../../../components/ca-certs

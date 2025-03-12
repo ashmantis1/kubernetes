@@ -62,6 +62,11 @@ spec:
             max: 2
     global:
       edition: ee
+      redis:
+        serviceName: gitlab-dragonfly
+        port: 6379
+        auth:
+          enabled: false
       registry:
         bucket: gitlab-registry
       hosts:
@@ -150,3 +155,5 @@ spec:
       install: false
     nginx-ingress:
       enabled: false
+    redis:
+      install: false
