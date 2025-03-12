@@ -67,6 +67,10 @@ spec:
         disable: true
       webauthn:
         disable: true
+      server:
+        buffers:
+          read: 16384
+          write:  16384
       extraConfigs:
         - "/config/configuration.ldap.yaml"
         - "/config/configuration.oidc.yaml"
