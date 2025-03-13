@@ -62,10 +62,10 @@ spec:
             max: 2
     global:
       edition: ee
-      redis:
-        serviceName: gitlab-dragonfly
-        host: gitlab-dragonfly.gitlab.svc.cluster.local
-        port: 6379
+      #      redis:
+      #        serviceName: gitlab-dragonfly
+      #        host: gitlab-dragonfly.gitlab.svc.cluster.local
+      #        port: 6379
       registry:
         bucket: gitlab-registry
       hosts:
@@ -155,4 +155,4 @@ spec:
     nginx-ingress:
       enabled: false
     redis:
-      install: false
+      install: true
