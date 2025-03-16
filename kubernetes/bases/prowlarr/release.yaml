@@ -43,7 +43,7 @@ spec:
               TZ: Australia/Sydney
             image:
               repository: ghcr.io/onedr0p/prowlarr-develop
-              tag: 1.32.1
+              tag: 1.32.2
             probes:
               liveness:
                 enabled: true
