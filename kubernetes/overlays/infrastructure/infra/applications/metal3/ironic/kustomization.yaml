@@ -2,12 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: baremetal-operator-system
 resources:
-- https://github.com/metal3-io/baremetal-operator/ironic-deployment/base?ref=v0.9.0
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/base?ref=v0.9.1
 - service.yaml
 - secrets/
 components:
-- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/basic-auth?ref=v0.9.0
-- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/tls?ref=v0.9.0
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/basic-auth?ref=v0.9.1
+- https://github.com/metal3-io/baremetal-operator/ironic-deployment/components/tls?ref=v0.9.1
 images:
 - name: quay.io/metal3-io/ironic
   newTag: v28.0.0
