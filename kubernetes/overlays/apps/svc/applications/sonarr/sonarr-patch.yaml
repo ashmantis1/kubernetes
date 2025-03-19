@@ -10,8 +10,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/sonarr-develop
-              tag: 4.0.13
+              repository: ghcr.io/home-operations/sonarr
+              tag: 4.0.14.2938
     persistence:
       config:
         type: persistentVolumeClaim

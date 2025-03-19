@@ -10,8 +10,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/radarr
-              tag: 5.18.4.9674
+              repository: ghcr.io/home-operations/radarr
+              tag: 5.20.2 
     persistence:
       downloads:
         enabled: true

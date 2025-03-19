@@ -10,7 +10,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/qbittorrent 
+              repository: ghcr.io/home-operations/qbittorrent
+              tag: 5.0.4
           gluetun:
             env:
               VPN_SERVICE_PROVIDER: "mullvad"
