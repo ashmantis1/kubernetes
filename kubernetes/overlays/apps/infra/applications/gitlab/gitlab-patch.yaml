@@ -6,7 +6,11 @@ metadata:
 spec:
   chart:
     spec:
-      version: "8.8.1"
+      version: "8.10.1"
+      sourceRef:
+        kind: HelmRepository
+        name: gitlab
+        namespace: flux-system
   values: 
     registry:
       storage:
