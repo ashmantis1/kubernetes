@@ -52,7 +52,7 @@ spec:
           cron:
             enabled: true
             schedule: "@daily"
-            extraArgs: "--s3tool awscli --aws-s3-endpoint-url https://minio01.infra.ashman.world --skip registry --skip artifacts --skip packages --skip lfs --maximum-backups 3"
+            extraArgs: "--s3tool awscli --aws-s3-endpoint-url https://minio01.infra.ashman.world --skip registry --skip artifacts --skip packages --skip lfs"
       sidekiq:
         concurrency: 10
       webservice:
