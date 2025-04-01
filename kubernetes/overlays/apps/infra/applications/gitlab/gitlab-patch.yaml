@@ -19,7 +19,7 @@ spec:
         redirect:
           disable: true
       ingress:
-        proxyBodySize: 4096m
+        proxyBodySize: 8196m
         tls:
           secretName: gitlab-registry-tls
     gitlab-runner:
@@ -57,7 +57,7 @@ spec:
         concurrency: 10
       webservice:
         ingress:
-          proxyBodySize: 4096m
+          proxyBodySize: 8196m
           tls:
             secretName: gitlab-webservice-tls
         puma:
@@ -89,7 +89,7 @@ spec:
         configureCertmanager: false
         tls:
           enabled: true
-        proxyBodySize: 4096m
+        proxyBodySize: 8196m
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-issuer"
           nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
