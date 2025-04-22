@@ -3,6 +3,7 @@ Provides a method to deploy and maintain my homelab while trying to follow gitop
 ## Getting started
 ### Setup Requirements 
 - Proxmox cluster
+- A will to live
 
 ### Kubernetes
 #### External Secrets
