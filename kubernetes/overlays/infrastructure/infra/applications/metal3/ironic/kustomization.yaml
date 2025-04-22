@@ -52,9 +52,3 @@ patches:
   target:
     kind: Certificate
     name: ironic-cert|ironic-inspector-cert
-- patch: |-
-    - op: remove
-      path: /spec/ipAddresses
-  target:
-    kind: Certificate
-    name: ironic-cacert
