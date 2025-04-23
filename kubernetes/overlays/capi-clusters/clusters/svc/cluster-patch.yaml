@@ -56,10 +56,10 @@ spec:
     machines:
       image:
         checksum: 
-          url: "https://gitlab.apps.ashman.world/api/v4/projects/3/packages/generic/release/${version}/SHA256SUM"
+          url: "https://gitlab.apps.ashman.world/api/v4/projects/2/packages/generic/release/${version}/SHA256SUM"
           type: sha256
         format: qcow2
-        url: "https://gitlab.apps.ashman.world/api/v4/projects/3/packages/generic/release/${version}/kube-node-image.qcow2"
+        url: "https://gitlab.apps.ashman.world/api/v4/projects/2/packages/generic/release/${version}/kube-node-image.qcow2"
     # Global cloudInit values (will be applied to both control plane and worker nodes)
     cloudInit:
       users:
