@@ -24,6 +24,7 @@ spec:
             name: s3-creds
             key: ACCESS_SECRET_KEY
   backup:
+    retentionPolicy: "30d"
     barmanObjectStore:
       serverName: awx-postgres-backup-02
       destinationPath: "s3://cloudnative-pg-backups"
