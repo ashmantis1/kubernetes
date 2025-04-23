@@ -6,6 +6,7 @@ metadata:
 spec:
   chart:
     spec:
+      chart: gitlab
       version: "8.10.1"
       sourceRef:
         kind: HelmRepository
