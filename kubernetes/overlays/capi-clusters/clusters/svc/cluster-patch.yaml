@@ -27,7 +27,7 @@ spec:
           cidrBlocks:
             - 10.45.0.0/16
     kubernetes:
-      version: 1.32.2
+      version: 1.32.3
     controlPlane:
       apiServer:
         extraArgs:
