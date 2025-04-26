@@ -23,3 +23,4 @@ resources:
 - csi-driver-smb.yaml
 - cloudnative-pg.yaml
 - external-dns-ipa.yaml
+- authelia.yaml
