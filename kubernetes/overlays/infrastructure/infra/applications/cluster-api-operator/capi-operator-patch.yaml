@@ -13,7 +13,11 @@ spec:
         name: cluster-api-operator
         namespace: flux-system
   values: 
-    infrastructure: metal3
-    bootstrap: kubeadm
-    controlPlane: kubeadm
-    addon: helm
+    infrastructure: 
+      metal3: {}
+    bootstrap: 
+      kubeadm: {}
+    controlPlane: 
+      kubeadm: {}
+    addon: 
+      helm: {}
