@@ -37,7 +37,7 @@ spec:
       impersonateOpenShift: true
       oidc: 
         enabled: true
-        issuerUrl: https://dex.svc.k8s.ashman.world
+        issuerUrl: https://auth.svc.k8s.ashman.world
         clientId: kubelogin
     volumes: 
       - name: logo 
