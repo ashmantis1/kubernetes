@@ -28,7 +28,7 @@ identity_providers:
           - 'email'
           - 'groups'
         userinfo_signed_response_alg: 'none'
-        - client_id: 'kasm'
+      - client_id: 'kasm'
         client_name: 'Kasm Workspaces'
         client_secret: '{{ .kasm_password_hash }}' 
         public: false
