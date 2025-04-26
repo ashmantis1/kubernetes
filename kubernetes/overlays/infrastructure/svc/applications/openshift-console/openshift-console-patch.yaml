@@ -32,7 +32,7 @@ spec:
         value: /opt/bridge/static/assets/k8s-logo.png
     console: 
       dex: 
-        host: "https://dex.svc.k8s.ashman.world"
+        host: "https://auth.svc.k8s.ashman.world"
       baseUrl: https://console.svc.k8s.ashman.world
       impersonateOpenShift: true
       oidc: 
