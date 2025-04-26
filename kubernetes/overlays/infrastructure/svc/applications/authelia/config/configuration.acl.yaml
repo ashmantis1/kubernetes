@@ -25,3 +25,21 @@ access_control:
     - 'internal'
     subject:
     - ['group:sonarr-admins']
+  - domain: 'radarr.apps.ashman.world'
+    policy: 'one_factor'
+    networks:
+    - 'internal'
+    subject:
+    - ['group:radarr-admins']
+  - domain: 'prowlarr.apps.ashman.world'
+    policy: 'one_factor'
+    networks:
+    - 'internal'
+    subject:
+    - ['group:prowlarr-admins']
+  - domain: 'torrent.apps.ashman.world'
+    policy: 'one_factor'
+    networks:
+    - 'internal'
+    subject:
+    - ['group:qbittorrent-admins']
