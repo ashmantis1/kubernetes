@@ -11,7 +11,8 @@ spec:
   prune: false
   dependsOn: 
     - name: repositories-infra
-    - name: dex
+    - name: authelia
+    #    - name: dex
   healthChecks:
     - kind: HelmRelease
       name: openshift-console
