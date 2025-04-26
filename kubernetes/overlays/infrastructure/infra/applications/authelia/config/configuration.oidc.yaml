@@ -33,6 +33,7 @@ identity_providers:
         client_secret: '{{ .kasm_password_hash }}' 
         public: false
         authorization_policy: 'one_factor'
+        consent_mode: pre-configured
         redirect_uris:
           - 'https://kasm01.infra.ashman.world/api/oidc_callback'
         scopes:
