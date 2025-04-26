@@ -24,3 +24,4 @@ resources:
 - cloudnative-pg.yaml
 - external-dns-ipa.yaml
 - authelia.yaml
+- reloader.yaml
