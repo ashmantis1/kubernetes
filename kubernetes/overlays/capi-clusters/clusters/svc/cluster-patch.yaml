@@ -33,7 +33,7 @@ spec:
         extraArgs:
           oidc-client-id: kubelogin
           oidc-groups-claim: groups
-          oidc-issuer-url: https://dex.svc.k8s.ashman.world
+          oidc-issuer-url: https://auth.svc.k8s.ashman.world
           oidc-username-claim: email
       skipKubeProxy: true
       schedulable: true
