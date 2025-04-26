@@ -92,8 +92,6 @@ spec:
         cookies:
         - subdomain: auth
           domain: svc.k8s.ashman.world
-        - subdomain: apps
-          domain: ashman.world
         redis:
           enabled: true
           host: authelia-dragonfly.authelia.svc.cluster.local
