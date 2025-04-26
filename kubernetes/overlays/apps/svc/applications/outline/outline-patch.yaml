@@ -28,12 +28,13 @@ spec:
               FILE_STORAGE_UPLOAD_MAX_SIZE: "26214400"
               LOG_LEVEL: debug
               NODE_TLS_REJECT_UNAUTHORIZED: "0"
-              OIDC_AUTH_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/auth"
               OIDC_CLIENT_ID: outline
-              OIDC_DISPLAY_NAME: Keycloak
+              OIDC_DISPLAY_NAME: Authelia
               OIDC_SCOPES: openid profile email offline_access
-              OIDC_TOKEN_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/token"
-              OIDC_USERINFO_URI: "https://auth.apps.ashman.world/realms/apps/protocol/openid-connect/userinfo"
+              OIDC_AUTH_URI: "https://auth-svc.apps.ashman.world/api/oidc/authorization"
+              OIDC_TOKEN_URI: "https://auth-svc.apps.ashman.world/api/oidc/token"
+              OIDC_USERINFO_URI: "https://auth-svc.apps.ashman.world/api/oidc/userinfo"
+              OIDC_LOGOUT_URI: "https://auth-svc.apps.ashman.world/logout"
               OIDC_USERNAME_CLAIM: preferred_username
               REDIS_URL: redis://outline-dragonfly.outline.svc.cluster.local.:6379
               URL: "https://docs.apps.ashman.world"

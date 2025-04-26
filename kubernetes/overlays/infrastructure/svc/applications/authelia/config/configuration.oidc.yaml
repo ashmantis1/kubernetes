@@ -28,3 +28,17 @@ identity_providers:
           - 'email'
           - 'groups'
         userinfo_signed_response_alg: 'none'
+      - client_id: 'outline'
+        client_name: 'Outline'
+        client_secret: '{{ .outline_password_hash }}'  # The digest of 'insecure_secret'.
+        public: false
+        authorization_policy: 'one_factor'
+        redirect_uris:
+          - 'https://docs.apps.ashman.world/auth/oidc.callback'
+        scopes:
+          - 'openid'
+          - 'offline_access'
+          - 'profile'
+          - 'email'
+        userinfo_signed_response_alg: 'none'
+        token_endpoint_auth_method: 'client_secret_post'
