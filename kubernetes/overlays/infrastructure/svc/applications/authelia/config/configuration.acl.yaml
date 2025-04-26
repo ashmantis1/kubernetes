@@ -19,3 +19,9 @@ access_control:
     - 'internal'
     subject:
     - ['group:k8s-admins']
+  - domain: 'sonarr.apps.ashman.world'
+    policy: 'one_factor'
+    networks:
+    - 'internal'
+    subject:
+    - ['group:sonarr-admins']
