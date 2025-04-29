@@ -19,8 +19,8 @@ spec:
       service: 
         externalTrafficPolicy: "Local"
       config: 
-      #whitelist-source-range: "10.110.0.0/24"
-        use-proxy-protocol: "false" 
+        denylist-source-range: "10.2.2.2/32"
+        use-proxy-protocol: "true" 
       extraArgs: 
         enable-ssl-passthrough: false
       # service: 
