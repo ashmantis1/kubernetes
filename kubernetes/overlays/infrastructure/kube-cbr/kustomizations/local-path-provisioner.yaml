@@ -13,7 +13,7 @@ spec:
   healthChecks:
     - kind: Deployment
       name: local-path-provisioner
-      namespace: local-path-provisioner
+      namespace: local-path-storage
       apiVersion: apps/v1
   prune: false
   sourceRef:
