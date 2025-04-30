@@ -4,5 +4,5 @@ metadata:
   name: "infranet"
 spec:
   blocks:
-  - start: "10.140.2.240"
-    stop: "10.140.2.254"
+  - start: "10.210.3.240"
+    stop: "10.210.3.254"
