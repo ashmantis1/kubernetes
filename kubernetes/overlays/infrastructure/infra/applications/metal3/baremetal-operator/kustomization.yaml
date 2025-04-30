@@ -9,7 +9,7 @@ resources:
 - secrets/
 images:
 - name: quay.io/metal3-io/baremetal-operator
-  newTag: v0.10.0
+  newTag: v0.10.1
 # Create a ConfigMap from ironic.env and name it ironic.
 configMapGenerator:
 - name: ironic
