@@ -7,7 +7,7 @@ access_control:
     - '172.16.0.0/12'
     - '192.168.0.0/16'
   rules:
-  - domain: 'cilium.infra.k8s.ashman.world'
+  - domain: 'cilium.cbr.k8s.ashman.world'
     policy: 'one_factor'
     networks:
     - 'internal'
