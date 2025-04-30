@@ -1,4 +1,4 @@
 resources:
   - dragonfly.yaml
   - postgres.yaml
-  - scheduled-backup.yaml
+  #  - scheduled-backup.yaml

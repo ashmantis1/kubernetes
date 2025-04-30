@@ -7,12 +7,6 @@ access_control:
     - '172.16.0.0/12'
     - '192.168.0.0/16'
   rules:
-  - domain: 'longhorn.infra.k8s.ashman.world'
-    policy: 'one_factor'
-    networks:
-    - 'internal'
-    subject:
-    - ['group:k8s-admins']
   - domain: 'cilium.infra.k8s.ashman.world'
     policy: 'one_factor'
     networks:

@@ -11,54 +11,6 @@ identity_providers:
     ## The other portions of the mandatory OpenID Connect 1.0 configuration go here.
     ## See: https://www.authelia.com/c/oidc
     clients:
-      - client_id: 'gitlab'
-        client_name: 'GitLab'
-        client_secret: '{{ .gitlab_password_hash }}'  # The digest of 'insecure_secret'.
-        public: false
-        authorization_policy: 'one_factor'
-        consent_mode: pre-configured
-        claims_policy: 'default'
-        pre_configured_consent_duration: 6M
-        token_endpoint_auth_method: 'client_secret_basic'
-        redirect_uris:
-          - 'https://gitlab.apps.ashman.world/users/auth/openid_connect/callback'
-        scopes:
-          - 'openid'
-          - 'profile'
-          - 'email'
-          - 'groups'
-        userinfo_signed_response_alg: 'none'
-      - client_id: 'kasm'
-        client_name: 'Kasm Workspaces'
-        client_secret: '{{ .kasm_password_hash }}' 
-        public: false
-        authorization_policy: 'one_factor'
-        consent_mode: pre-configured
-        redirect_uris:
-          - 'https://kasm01.infra.ashman.world/api/oidc_callback'
-        scopes:
-          - 'openid'
-          - 'profile'
-          - 'groups'
-          - 'email'
-        userinfo_signed_response_alg: 'none'
-        token_endpoint_auth_method: 'client_secret_basic'
-      - client_id: 'Minio'
-        client_name: 'MinIO'
-        client_secret: '{{ .minio_password_hash }}'  # The digest of 'insecure_secret'.
-        public: false
-        claims_policy: 'default'
-        authorization_policy: 'one_factor'
-        consent_mode: pre-configured
-        pre_configured_consent_duration: 6M
-        redirect_uris:
-          - 'https://minio01.infra.ashman.world:9092/oauth_callback'
-        scopes:
-          - 'openid'
-          - 'profile'
-          - 'email'
-          - 'groups'
-        userinfo_signed_response_alg: 'none'
       - client_id: 'kubelogin'
         client_name: 'KubeAPI'
         client_secret: '{{ .kubelogin_password_hash }}'  # The digest of 'insecure_secret'.
@@ -69,7 +21,7 @@ identity_providers:
         redirect_uris:
           - http://localhost:8000
           - http://localhost:18000
-          - https://console.infra.k8s.ashman.world/auth/callback
+          - https://console.cbr.k8s.ashman.world/auth/callback
         scopes:
           - 'openid'
           - 'profile'
