@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/infra/applications/repositories
+  path: ./kubernetes/overlays/infrastructure/kube-cbr/applications/repositories
   prune: false
   sourceRef:
     kind: "GitRepository"

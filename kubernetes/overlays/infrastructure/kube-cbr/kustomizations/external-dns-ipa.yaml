@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/infra/applications/external-dns-ipa
+  path: ./kubernetes/overlays/infrastructure/kube-cbr/applications/external-dns-ipa
   prune: false
   dependsOn: 
     - name: external-secrets-config

@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kubernetes/overlays/infrastructure/infra/applications/cert-manager
+  path: ./kubernetes/overlays/infrastructure/kube-cbr/applications/cert-manager
   dependsOn: 
     - name: repositories-infra
     - name: external-secrets-config
