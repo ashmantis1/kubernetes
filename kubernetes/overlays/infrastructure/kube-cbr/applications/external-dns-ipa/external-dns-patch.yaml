@@ -17,10 +17,11 @@ spec:
     provider: rfc2136
     policy: sync
     rfc2136:
-      host: "10.110.0.10"
+      host: "10.210.0.10"
       secretName: "ipa-tsig-secret"
       tsigKeyname: acme-update
       tsigSecretAlg: hmac-sha512
       zones:
+        - "infra.ashman.world"
         - "k8s.ashman.world"
         - "apps.ashman.world"
