@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: dragonfly-operator
+resources: 
+  - ../../../../../bases/dragonfly-operator
+  - network-policies/
+  - namespace.yaml
+components:
+  - ../../../../../components/network-policies
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: dragonfly-operator-patch.yaml

@@ -1,0 +1,24 @@
+authentication_backend:
+ ldap:
+    address: 'ldaps://ipa.infra.ashman.world'
+    implementation: 'custom'
+    timeout: '5s'
+    start_tls: false
+    tls:
+      server_name: 'ipa.infra.ashman.world'
+      skip_verify: false
+      #minimum_version: 'TLS1.2'
+    base_dn: 'dc=infra,DC=ashman,DC=world'
+    additional_users_dn: 'CN=users,CN=accounts'
+    users_filter: '(&(|({username_attribute}={input})({mail_attribute}={input}))(objectClass=person))'
+    additional_groups_dn: 'cn=groups,cn=accounts'
+    #groups_filter: '(&(member=UID={input},CN=users,CN=accounts,DC=example,DC=com)(objectClass=groupOfNames))'
+    groups_filter: '(&(|{memberof:rdn})(objectClass=groupOfNames))'
+    group_search_mode: 'memberof'
+    user: 'UID=svc-authelia-bind,CN=users,CN=accounts,DC=infra,DC=ashman,DC=world'
+    attributes:
+      distinguished_name: 'distinguishedName'
+      username: 'uid'
+      mail: 'mail'
+      member_of: 'memberOf'
+      group_name: 'cn'

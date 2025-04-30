@@ -1,0 +1,12 @@
+kind: CiliumNetworkPolicy
+apiVersion: cilium.io/v2
+metadata:
+  name: remote-node-allow
+  namespace: external-secrets
+spec:
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/name: external-secrets-webhook
+  ingress:
+  - fromEntities:
+    - remote-node

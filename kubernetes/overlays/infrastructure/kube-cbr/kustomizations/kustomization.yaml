@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  #- authelia.yaml
+- cilium.yaml
+- repositories.yaml
+- external-dns-ipa.yaml
+- cloudnative-pg.yaml
+- ingress-nginx.yaml
+- cert-manager.yaml
+- cert-manager-config.yaml
+- config.yaml
+- external-secrets.yaml
+- external-secrets-config.yaml
+- dragonfly-operator.yaml
+- reloader.yaml
+- local-path-provisioner.yaml

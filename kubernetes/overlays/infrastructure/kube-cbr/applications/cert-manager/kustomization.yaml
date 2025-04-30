@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+namespace: cert-manager
+resources: 
+  - ../../../../../bases/cert-manager
+  - ./network-policies
+  - ./secrets
+components:
+  - ../../../../../components/ca-certs/
+  - ../../../../../components/network-policies
+patches: 
+  - target: 
+      kind: HelmRelease
+    path: cert-manager-patch.yaml
+  - target:
+      kind: Namespace
+    patch: |
+      - op: add
+        path: /metadata/labels
+        value:
+          app: cert-manager

@@ -1,0 +1,45 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: authelia-postgres
+spec:
+  instances: 3
+  #bootstrap:
+  #  recovery:
+  #    source: authelia-postgres-backup
+  #    recoveryTarget:
+  #      backupID: 20250215T000001
+  externalClusters:
+    - name: authelia-postgres-backup
+      barmanObjectStore:
+        serverName: authelia-postgres-backup-01
+        destinationPath: "s3://cloudnative-pg-backups"
+        endpointURL: "https://minio01.infra.ashman.world:443"
+        endpointCA:
+          name: ipa-ca
+          key: ca-certificates.crt
+        s3Credentials:
+          accessKeyId: 
+            name: s3-creds
+            key: ACCESS_KEY_ID
+          secretAccessKey: 
+            name: s3-creds
+            key: ACCESS_SECRET_KEY
+  backup:
+    retentionPolicy: "30d"
+    barmanObjectStore:
+      serverName: authelia-postgres-backup-01
+      destinationPath: "s3://cloudnative-pg-backups"
+      endpointURL: "https://minio01.infra.ashman.world:443"
+      endpointCA:
+        name: ipa-ca
+        key: ca-certificates.crt
+      s3Credentials:
+        accessKeyId: 
+          name: s3-creds
+          key: ACCESS_KEY_ID
+        secretAccessKey: 
+          name: s3-creds
+          key: ACCESS_SECRET_KEY
+  storage:
+    size: 5Gi

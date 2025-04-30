@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: authelia-backup
+spec:
+  schedule: "@daily"
+  backupOwnerReference: self
+  cluster:
+    name: authelia-postgres
