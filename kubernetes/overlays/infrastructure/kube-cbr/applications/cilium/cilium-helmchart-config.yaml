@@ -39,9 +39,9 @@ spec:
             nginx.ingress.kubernetes.io/whitelist-source-range: 10.110.0.0/24,10.140.0.0/22
           className: "nginx"
           hosts:
-            - cilium.infra.k8s.ashman.world
+            - cilium.k8s.cbr.infra.ashman.world
           labels: {}
           tls: 
             - secretName: hubble-ui-tls
               hosts:
-                - cilium.infra.k8s.ashman.world
+                - cilium.k8s.cbr.infra.ashman.world
