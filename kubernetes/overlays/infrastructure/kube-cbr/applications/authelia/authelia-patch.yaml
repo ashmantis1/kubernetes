@@ -91,7 +91,7 @@ spec:
         name: authelia_infra_session
         cookies:
         - subdomain: auth
-          domain: infra.k8s.ashman.world
+          domain: cbr.k8s.ashman.world
         redis:
           enabled: true
           host: authelia-dragonfly.authelia.svc.cluster.local

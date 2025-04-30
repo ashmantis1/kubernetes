@@ -34,14 +34,14 @@ spec:
           annotations: 
             cert-manager.io/cluster-issuer: "letsencrypt-issuer"
             nginx.ingress.kubernetes.io/auth-method: 'GET'
-            nginx.ingress.kubernetes.io/auth-signin: "https://auth.k8s.cbr.infra.ashman.world?rm=$request_method"
+            nginx.ingress.kubernetes.io/auth-signin: "https://auth.cbr.k8s.ashman.world?rm=$request_method"
             nginx.ingress.kubernetes.io/auth-url: "http://authelia.authelia.svc.cluster.local/api/authz/auth-request"
             nginx.ingress.kubernetes.io/whitelist-source-range: 10.110.0.0/24,10.140.0.0/22
           className: "nginx"
           hosts:
-            - cilium.k8s.cbr.infra.ashman.world
+            - cilium.cbr.k8s.ashman.world
           labels: {}
           tls: 
             - secretName: hubble-ui-tls
               hosts:
-                - cilium.k8s.cbr.infra.ashman.world
+                - cilium.cbr.k8s.ashman.world
