@@ -12,6 +12,8 @@ spec:
     tunnelProtocol: geneve # New
     bpf: # New
       masquerade: true # New
+    operator:
+      replicas: 1
     loadBalancer:                     # New
       mode: dsr                       # New
       dsrDispatch: geneve             # New
