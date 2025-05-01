@@ -16,6 +16,9 @@ spec:
   values: 
     replicas: 1
     mode: standalone
+    resources:
+      requests:
+        memory: 1Gi
     persistence:
       existingClaim: minio-storage
     ingress:
