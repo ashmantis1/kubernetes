@@ -4,7 +4,7 @@ metadata:
   name: pv-minio-storage
 spec:
   capacity:
-    storage: 1000GiB
+    storage: 16T
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
@@ -21,6 +21,6 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1000GiB
+      storage: 15T
   volumeName: pv-minio-storage
   storageClassName: manual
