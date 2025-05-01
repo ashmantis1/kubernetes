@@ -39,3 +39,19 @@ spec:
         - secretName: minio-tls
           hosts:
             - console.minio.cbr.k8s.ashman.world
+    oidc:
+      enabled: true
+      configUrl: "https://auth.cbr.k8s.ashman.world/.well-known/openid-configuration"
+      clientId: "minio"
+      clientSecret: ""
+      # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientId` and/or `clientSecret``
+      existingClientSecretName: ""
+      existingClientIdKey: ""
+      existingClientSecretKey: ""
+      claimName: "policy"
+      scopes: "openid,profile,email,groups"
+      redirectUri: "https://console-endpoint-url/oauth_callback"
+      # Can leave empty
+      claimPrefix: ""
+      comment: ""
+      displayName: ""

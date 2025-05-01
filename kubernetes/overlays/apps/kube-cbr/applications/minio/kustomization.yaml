@@ -1,7 +1,8 @@
-
+namespace: minio
 resources:
 - ../../../../../bases/minio
 - volumes/
+- namespace.yaml
 patches:
 - target:
     kind: HelmRelease
