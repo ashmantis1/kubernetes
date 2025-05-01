@@ -21,7 +21,7 @@ spec:
       config: 
         use-proxy-protocol: "false" 
         whitelist-source-range: "10.110.0.0/24"
-        annotation-risk-level: Critical
+        annotations-risk-level: Critical
       extraArgs: 
         enable-ssl-passthrough: false
       allowSnippetAnnotations: true
