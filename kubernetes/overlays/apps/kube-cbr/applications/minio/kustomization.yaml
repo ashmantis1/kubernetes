@@ -1,0 +1,7 @@
+
+resources:
+- ../../../../../bases/minio
+patches:
+- target:
+    kind: HelmRelease
+  path: minio-patch.yaml

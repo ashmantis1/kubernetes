@@ -1,0 +1,41 @@
+
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: minio
+spec:
+  chart:
+    spec:
+      chart: minio
+      version: "5.4.0"
+      sourceRef:
+        kind: HelmRepository
+        name: minio
+        namespace: flux-system
+  values: 
+    replicas: 1
+    persistence:
+      existingClaim: minio-storage
+    ingress:
+      enabled: true
+      ingressClassName: ingress-nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+      hosts:
+        - minio.cbr.k8s.ashman.world
+      tls:
+        - secretName: minio-tls
+          hosts:
+            - minio.cbr.k8s.ashman.world
+    consoleIngress:
+      enabled: false
+      ingressClassName: ingress-nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+      hosts:
+        - console.minio.cbr.k8s.ashman.world
+      tls:
+        - secretName: minio-tls
+          hosts:
+            - console.minio.cbr.k8s.ashman.world

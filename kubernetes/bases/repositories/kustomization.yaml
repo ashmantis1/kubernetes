@@ -28,3 +28,4 @@ resources:
 - jellyfin.yaml
 - dragonfly-operator.yaml
 - authelia.yaml
+- minio.yaml

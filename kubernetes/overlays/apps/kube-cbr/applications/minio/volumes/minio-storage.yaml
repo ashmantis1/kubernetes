@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-minio-storage
+spec:
+  capacity:
+    storage: 1000GiB
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/opt/shared/minio"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: minio-storage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1000GiB
+  volumeName: pv-minio-storage
+  storageClassName: manual
