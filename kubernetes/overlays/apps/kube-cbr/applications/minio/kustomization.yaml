@@ -1,6 +1,7 @@
 
 resources:
 - ../../../../../bases/minio
+- volumes/
 patches:
 - target:
     kind: HelmRelease
