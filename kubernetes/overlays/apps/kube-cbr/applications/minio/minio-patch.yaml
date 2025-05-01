@@ -40,7 +40,7 @@ spec:
       hosts:
         - console.minio.cbr.k8s.ashman.world
       tls:
-        - secretName: minio-tls
+        - secretName: minio-tls-console
           hosts:
             - console.minio.cbr.k8s.ashman.world
     oidc:
