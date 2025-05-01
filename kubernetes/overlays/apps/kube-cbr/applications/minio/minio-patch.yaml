@@ -23,7 +23,7 @@ spec:
       existingClaim: minio-storage
     ingress:
       enabled: true
-      ingressClassName: ingress-nginx
+      ingressClassName: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
       hosts:
@@ -34,7 +34,7 @@ spec:
             - minio.cbr.k8s.ashman.world
     consoleIngress:
       enabled: false
-      ingressClassName: ingress-nginx
+      ingressClassName: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
       hosts:
