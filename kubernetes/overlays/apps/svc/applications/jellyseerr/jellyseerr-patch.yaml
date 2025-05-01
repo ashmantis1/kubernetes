@@ -20,6 +20,7 @@ spec:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
+        nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
       hosts:
         - host: request.apps.ashman.world
           paths:
