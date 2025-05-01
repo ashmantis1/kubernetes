@@ -26,6 +26,12 @@ spec:
       ingressClassName: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
+        nginx.ingress.kubernetes.io/rewrite-target: /
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/server-snippet: |
+          client_max_body_size 0;
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          chunked_transfer_encoding off;
       hosts:
         - minio.cbr.k8s.ashman.world
       tls:
