@@ -37,7 +37,7 @@ identity_providers:
         consent_mode: pre-configured
         pre_configured_consent_duration: 6M
         redirect_uris:
-          - 'https://minio01.infra.ashman.world:9092/oauth_callback'
+          - 'https://console.minio.cbr.k8s.ashman.world/oauth_callback'
         scopes:
           - 'openid'
           - 'profile'
