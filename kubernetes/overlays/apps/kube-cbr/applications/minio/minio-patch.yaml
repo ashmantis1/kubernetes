@@ -61,7 +61,10 @@ spec:
                  - 'arn:aws:s3:::backup*/*'
                actions:
                  - "s3:*"
-          
+    buckets:
+      - name: backup
+        versioning: false
+        purge: false
     oidc:
       enabled: true
       configUrl: "https://auth.cbr.k8s.ashman.world/.well-known/openid-configuration"
