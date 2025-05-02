@@ -2,6 +2,7 @@ namespace: minio
 resources:
 - ../../../../../bases/minio
 - volumes/
+- secrets/
 - namespace.yaml
 patches:
 - target:
