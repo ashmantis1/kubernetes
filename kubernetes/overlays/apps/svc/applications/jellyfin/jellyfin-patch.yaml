@@ -32,6 +32,9 @@ spec:
     - name: movies
       persistentVolumeClaim:
         claimName: movies
+    - name: music
+      persistentVolumeClaim:
+        claimName: music
     - name: ipa-ca
       configMap:
         name: ipa-ca
@@ -40,6 +43,8 @@ spec:
         name: tv 
       - mountPath: /movies 
         name: movies 
+      - mountPath: /music 
+        name: music 
       - mountPath: /etc/ssl/certs/ca-certificates.crt
         name: ipa-ca
         subPath: ca-certificates.crt

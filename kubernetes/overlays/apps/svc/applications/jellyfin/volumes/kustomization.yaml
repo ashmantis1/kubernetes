@@ -1,3 +1,4 @@
 resources:
   - tv.yaml
   - movies.yaml
+  - music.yaml
