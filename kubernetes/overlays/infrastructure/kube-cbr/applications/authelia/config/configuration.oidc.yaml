@@ -32,13 +32,15 @@ identity_providers:
         client_name: 'MinIO'
         client_secret: '{{ .minio_password_hash }}'  # The digest of 'insecure_secret'.
         public: false
+        claims_policy: 'default'
         authorization_policy: 'one_factor'
+        consent_mode: pre-configured
+        pre_configured_consent_duration: 6M
         redirect_uris:
-          - 'https://console.minio.cbr.k8s.ashman.world/oauth_callback'
+          - 'https://minio01.infra.ashman.world:9092/oauth_callback'
         scopes:
           - 'openid'
           - 'profile'
           - 'email'
           - 'groups'
         userinfo_signed_response_alg: 'none'
-        token_endpoint_auth_method: 'client_secret_basic'
