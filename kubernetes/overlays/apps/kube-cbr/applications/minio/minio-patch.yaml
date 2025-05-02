@@ -56,7 +56,6 @@ spec:
       existingClientSecretName: "minio-oidc"
       existingClientIdKey: "id"
       existingClientSecretKey: "secret"
-      claimName: "policy"
       scopes: "openid,profile,email,groups"
       redirectUri: "https://console.minio.cbr.k8s.ashman.world/oauth_callback"
       # Can leave empty
@@ -64,7 +63,7 @@ spec:
       claimName: "groups"
     policies:
       - name: minio-admins
-       statements:
+        statements:
          - effect: Allow
            resources:
              - 'arn:aws:s3:::*'
