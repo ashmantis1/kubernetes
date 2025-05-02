@@ -60,6 +60,19 @@ spec:
       scopes: "openid,profile,email,groups"
       redirectUri: "https://console.minio.cbr.k8s.ashman.world/oauth_callback"
       # Can leave empty
-      claimPrefix: ""
-      comment: ""
-      displayName: ""
+      displayName: "Authelia"
+      claimName: "groups"
+    policies:
+      - name: minio-admins
+       statements:
+         - effect: Allow
+           resources:
+             - 'arn:aws:s3:::*'
+           actions:
+             - "s3:*"
+         - effect: Allow
+           actions:
+             - "admin:*"
+         - effect: Allow
+           actions:
+             - "kms:*"
