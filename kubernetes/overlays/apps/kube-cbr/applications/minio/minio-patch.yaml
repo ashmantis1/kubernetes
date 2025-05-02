@@ -52,15 +52,14 @@ spec:
     oidc:
       enabled: true
       configUrl: "https://auth.cbr.k8s.ashman.world/.well-known/openid-configuration"
-      # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientId` and/or `clientSecret``
       existingClientSecretName: "minio-oidc"
       existingClientIdKey: "id"
       existingClientSecretKey: "secret"
       scopes: "openid,profile,email,groups"
       redirectUri: "https://console.minio.cbr.k8s.ashman.world/oauth_callback"
-      # Can leave empty
       displayName: "Authelia"
       claimName: "groups"
+      claimPrefix: ""
     policies:
       - name: minio-admins
         statements:
