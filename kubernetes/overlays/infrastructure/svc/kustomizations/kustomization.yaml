@@ -18,7 +18,7 @@ resources:
 - external-secrets-config.yaml
 - cert-manager-config.yaml
 - nfd.yaml
-- oauth2-proxy.yaml
+#- oauth2-proxy.yaml
 #- kube-prometheus-stack.yaml
 - csi-driver-smb.yaml
 - cloudnative-pg.yaml

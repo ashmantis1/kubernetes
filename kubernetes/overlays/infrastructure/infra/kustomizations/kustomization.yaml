@@ -15,7 +15,7 @@ resources:
 - config.yaml
 - external-secrets.yaml
 - external-secrets-config.yaml
-- oauth2-proxy.yaml
+#- oauth2-proxy.yaml
 - multus-config.yaml
 - metal3.yaml
 - fakefish.yaml
