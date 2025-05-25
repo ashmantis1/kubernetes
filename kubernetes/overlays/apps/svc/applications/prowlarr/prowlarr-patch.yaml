@@ -11,7 +11,7 @@ spec:
           app:
             image:
               repository: ghcr.io/home-operations/prowlarr
-              tag: 1.36.2.5059
+              tag: 1.36.3.5071
             resources:
               requests:
                 cpu: 1000m
