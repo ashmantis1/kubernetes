@@ -159,5 +159,7 @@ spec:
       install: false
     nginx-ingress:
       enabled: false
+    prometheus:
+      install: false
     redis:
       install: true
